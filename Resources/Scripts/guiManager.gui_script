@@ -1,11 +1,15 @@
 -- integer
 _G.Number_of_click = 0
+local counterSmoothnessSpeed = 1
+-- float
+local updated_counter = 0
 -- components
 local counter_text
 -- bool
 
 _G.skills = require "Resources.Module.SkillsInfoModule"
 local cursor = require "Resources.Module.CursorModule"
+local counter_functions = require "Resources.Module.ClickCounterModule"
 local shop_buttons = require "Resources.Module.ShopButtonsLib"
 local passive_skills_functions = require "Resources.Module.PassiveSkillsModule"
 local active_skills = require "Resources.Module.ActiveSkillsModule"
@@ -15,13 +19,16 @@ function init(self)
 	counter_text = gui.get_node("counter_text")
 	
 	timer.delay(1, true, function() 
-		passive_skills_functions.tick_damage(_G.skills.weapon) 
+		passive_skills_functions.tick_damage(_G.skills.weapon)
 	end)
 	
 end
 
 function update(self, dt)
-	gui.set_text(counter_text, _G.Number_of_click)
+
+	updated_counter = counter_functions.SmoothAddClicks( updated_counter, dt)
+	
+	gui.set_text(counter_text, updated_counter)
 end
 
 function on_input(self, action_id, action)
