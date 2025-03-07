@@ -19,7 +19,6 @@ function cursor.move_cursor_sprite(action)
 	local cursor_node = gui.get_node(cursor.cursor_node)
 	gui.set_position(cursor_node, screen)
 
-	-- enable/disable mouse cursor depending on if we're inside or outside the game window
 	if screen.x < 0 or screen.y < 0 or screen.x > WIDTH or screen.y > HEIGHT then
 		defos.set_cursor_visible(true)
 	else
