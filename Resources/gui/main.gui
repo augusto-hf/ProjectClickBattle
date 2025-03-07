@@ -43,6 +43,108 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
+  id: "shop_icon_cursor"
+  parent: "Shop"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 40.26063
+    y: -7.378601
+  }
+  scale {
+    x: 0.1392
+    y: 0.1392
+    z: 0.1392
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.8
+    y: 0.502
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "cursor_upgrade_button"
+  parent: "shop_icon_cursor"
+  layer: "Hud"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  scale {
+    x: 2.14
+    y: 2.14
+    z: 2.14
+  }
+  size {
+    x: 70.0
+    y: 30.0
+  }
+  type: TYPE_TEXT
+  text: "Upgrade"
+  font: "default"
+  id: "cursor_upgrade_label1"
+  parent: "cursor_upgrade_button"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 54.051716
+    y: 11.226126
+  }
+  scale {
+    x: 0.62
+    y: 0.62
+    z: 0.62
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "1"
+  font: "default"
+  id: "level_cursor"
+  parent: "shop_icon_cursor"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 34.925724
+    y: 11.226126
+  }
+  scale {
+    x: 0.62
+    y: 0.62
+    z: 0.62
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "default"
+  id: "label_cursor"
+  parent: "shop_icon_cursor"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -49.0
+    y: 103.466446
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
   id: "shop_icon_weapon"
   parent: "Shop"
   layer: "Hud"
@@ -220,6 +322,10 @@ nodes {
   inherit_alpha: true
 }
 nodes {
+  position {
+    x: 8.0
+    y: 2.0
+  }
   rotation {
     y: 180.0
   }
@@ -237,10 +343,10 @@ nodes {
   size_mode: SIZE_MODE_AUTO
 }
 layers {
-  name: "Hud"
+  name: "Game"
 }
 layers {
-  name: "Game"
+  name: "Hud"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT
