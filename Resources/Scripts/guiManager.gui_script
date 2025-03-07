@@ -1,0 +1,55 @@
+-- integer
+_G.Number_of_click = 0
+-- components
+local counter_text
+-- bool
+
+_G.skills = require "Resources.Module.SkillsInfoModule"
+local cursor = require "Resources.Module.CursorModule"
+local shop_buttons = require "Resources.Module.ShopButtonsLib"
+local passive_skills_functions = require "Resources.Module.PassiveSkillsModule"
+local active_skills = require "Resources.Module.ActiveSkillsModule"
+
+function init(self)
+	msg.post(".", "acquire_input_focus")
+	counter_text = gui.get_node("counter_text")
+	
+	timer.delay(1, true, function() 
+		passive_skills_functions.tick_damage(_G.skills.weapon) 
+	end)
+	
+end
+
+function update(self, dt)
+	gui.set_text(counter_text, _G.Number_of_click)
+end
+
+function on_input(self, action_id, action)
+	cursor.move_cursor_sprite(action)
+	if action_id == hash("touch") and action.pressed then
+		
+		-- In Game
+		local enemy = gui.get_node("Enemy")
+		if gui.pick_node(enemy, action.x, action.y)then
+			_G.Number_of_click = _G.Number_of_click + 1
+		end
+		
+		-- In Game/skill
+		local weapon_skill_button = gui.get_node("skill_button_weapon")
+		if gui.pick_node(weapon_skill_button, action.x, action.y)then
+			active_skills.UseSkill(_G.skills.weapon)
+		end
+		
+		-- Shop
+		local cursor_upgrade_button = gui.get_node("cursor_upgrade_button")
+		if gui.pick_node(cursor_upgrade_button, action.x, action.y)then
+			shop_buttons.CursorUpgrade(cursor)
+		end
+		
+		local weapon_upgrade_button =  gui.get_node("weapon_upgrade_button")
+		if gui.pick_node(weapon_upgrade_button, action.x, action.y)then
+			shop_buttons.SkillUpgrade(_G.skills.weapon)
+			_G.skills.weapon.upgrade_level = _G.skills.weapon.upgrade_level + 1
+		end
+	end
+end

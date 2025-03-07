@@ -1,0 +1,40 @@
+image: "/Resources/Sprites/#1 - Transparent Icons.png"
+tile_width: 32
+tile_height: 32
+collision_groups: "default"
+animations {
+  id: "skull_enemyPlaceHolder"
+  start_tile: 1
+  end_tile: 1
+  playback: PLAYBACK_NONE
+  fps: 1
+}
+animations {
+  id: "weapon_level1"
+  start_tile: 81
+  end_tile: 81
+  playback: PLAYBACK_NONE
+  fps: 1
+}
+animations {
+  id: "weapon_level2"
+  start_tile: 82
+  end_tile: 82
+  playback: PLAYBACK_NONE
+  fps: 1
+}
+animations {
+  id: "weapon_level3"
+  start_tile: 83
+  end_tile: 83
+  playback: PLAYBACK_NONE
+  fps: 1
+}
+animations {
+  id: "weapon_level4"
+  start_tile: 84
+  end_tile: 84
+  playback: PLAYBACK_NONE
+  fps: 1
+}
+extrude_borders: 2
