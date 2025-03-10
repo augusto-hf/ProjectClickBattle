@@ -302,6 +302,48 @@ nodes {
 }
 nodes {
   position {
+    x: 0.248783
+    y: -14.940829
+  }
+  scale {
+    x: 0.197904
+    y: 0.197904
+    z: 0.197904
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "HP"
+  font: "default"
+  id: "label_enemy"
+  parent: "Enemy"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 0.03645
+    y: -17.695246
+  }
+  scale {
+    x: 0.197904
+    y: 0.197904
+    z: 0.197904
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "10"
+  font: "default"
+  id: "label_hp_value"
+  parent: "Enemy"
+  inherit_alpha: true
+}
+nodes {
+  position {
     x: 716.72455
     y: 608.37274
   }
