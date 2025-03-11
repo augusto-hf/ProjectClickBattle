@@ -10,7 +10,7 @@ local weapon_icon_sprites = {
 
 skills.weapon = { -- use as template
 	upgrade_level = 0,
-	upgrade_bonus = 1.03,
+	upgrade_bonus = 0.30,
 	starting_price = 0,
 	price_bonus = 1.00,
 	passive_damage = 1,
@@ -25,6 +25,8 @@ skills.weapon = { -- use as template
 	icon_sprites = weapon_icon_sprites
 }
 
-
+skills.all_skills_passive_damage = {
+	skills.weapon,
+}
 
 return skills

@@ -344,6 +344,50 @@ nodes {
 }
 nodes {
   position {
+    x: -28.121704
+    y: -22.194124
+  }
+  scale {
+    x: 0.197904
+    y: 0.197904
+    z: 0.197904
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "default"
+  id: "label_phase"
+  parent: "Enemy"
+  layer: "Debug"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -28.121704
+    y: -27.152075
+  }
+  scale {
+    x: 0.197904
+    y: 0.197904
+    z: 0.197904
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "default"
+  id: "label_enemy_counter"
+  parent: "Enemy"
+  layer: "Debug"
+  inherit_alpha: true
+}
+nodes {
+  position {
     x: 716.72455
     y: 608.37274
   }
@@ -384,11 +428,35 @@ nodes {
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
+nodes {
+  position {
+    x: 716.72455
+    y: 569.37274
+  }
+  scale {
+    x: 2.007612
+    y: 2.007612
+    z: 2.007612
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "default"
+  id: "label_dps"
+  layer: "Hud"
+  inherit_alpha: true
+}
 layers {
   name: "Game"
 }
 layers {
   name: "Hud"
+}
+layers {
+  name: "Debug"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

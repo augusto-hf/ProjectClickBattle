@@ -1,6 +1,7 @@
 local enemy = {
 	hp = 100,
-	defense = 0.00;
+	defense = 0.00,
+	is_alive = true
 }
 
 local enemy_info = require "Resources.Module.EnemyInfoModule"
@@ -23,19 +24,37 @@ local function calculate_next_hp(current_index, current_phase)
 	return hp
 end
 
-function enemy.generate_basic_enemy(current_index, current_phase)
-	enemy.hp = calculate_next_hp(current_index, current_phase)
-	enemys[current_index] = enemy
+function enemy.generate_basic_enemy()
+	_G.Enemy_index = _G.Enemy_index + 1
+	enemy.hp = calculate_next_hp(_G.Enemy_index, _G.Phase)
+	enemys[_G.Enemy_index] = enemy
 end
 
-function enemy.generate_boss_enemy(current_phase)
-	enemy.hp = enemy_info.boss_first_life + (enemy_info.boss_life_upgrade * (current_phase - 1))
-	bosses[current_phase] = enemy
+function enemy.generate_boss_enemy()
+	_G.Phase = _G.Phase + 1
+	enemy.hp = enemy_info.boss_first_life + (enemy_info.boss_life_upgrade * _G.Phase)
+	bosses[_G.Phase] = enemy
+end
+
+function enemy.respawner()
+	if enemy.hp <= 0 then
+		enemy.is_alive = false
+	end
+	
+	if not enemy.is_alive then
+		if _G.Enemy_index <= 5 then
+			enemy.generate_basic_enemy()
+		else
+			_G.Enemy_index = 0
+			enemy.generate_boss_enemy()
+		end
+		enemy.is_alive = true
+	end
 end
 
 function enemy.show_hp()
 	local hp_value = gui.get_node("label_hp_value")
-	gui.set_text(hp_value, enemy.hp)
+	gui.set_text(hp_value, math.floor(enemy.hp))
 end
 
 return enemy
