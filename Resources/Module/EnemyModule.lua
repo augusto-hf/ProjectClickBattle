@@ -25,15 +25,18 @@ local function calculate_next_hp(current_index, current_phase)
 end
 
 function enemy.generate_basic_enemy()
+	enemys[_G.Enemy_index] = enemy
 	_G.Enemy_index = _G.Enemy_index + 1
 	enemy.hp = calculate_next_hp(_G.Enemy_index, _G.Phase)
-	enemys[_G.Enemy_index] = enemy
+	enemy.is_alive = true
 end
 
 function enemy.generate_boss_enemy()
+	_G.Enemy_index = 0
 	_G.Phase = _G.Phase + 1
 	enemy.hp = enemy_info.boss_first_life + (enemy_info.boss_life_upgrade * _G.Phase)
 	bosses[_G.Phase] = enemy
+	enemy.is_alive = true
 end
 
 function enemy.respawner()
@@ -45,10 +48,8 @@ function enemy.respawner()
 		if _G.Enemy_index <= 5 then
 			enemy.generate_basic_enemy()
 		else
-			_G.Enemy_index = 0
 			enemy.generate_boss_enemy()
 		end
-		enemy.is_alive = true
 	end
 end
 
