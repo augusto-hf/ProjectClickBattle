@@ -15,9 +15,9 @@ local function calculate_next_hp(current_index, current_phase)
 		hp = last_hp + (last_hp * enemy_info.life_upgrade[current_phase]) 
 	else
 		if bosses[current_phase - 1] ~= nil then
-			hp = enemy_info.phase.life_upgrade[current_phase - 1]
+			hp = bosses[current_phase - 1].hp + enemy_info.boss_life_upgrade
 		else
-			hp = enemy_info.basic_first_life
+			hp = enemy_info.boss_first_life
 		end
 	end
 	
@@ -25,37 +25,44 @@ local function calculate_next_hp(current_index, current_phase)
 end
 
 function enemy.generate_basic_enemy()
-	enemys[_G.Enemy_index] = enemy
+	local new_enemy = {
+		hp = calculate_next_hp(_G.Enemy_index, _G.Phase),
+		defense = 0.00,
+		is_alive = true
+	}
+	enemys[_G.Enemy_index] = new_enemy
 	_G.Enemy_index = _G.Enemy_index + 1
-	enemy.hp = calculate_next_hp(_G.Enemy_index, _G.Phase)
-	enemy.is_alive = true
+	return new_enemy
 end
 
 function enemy.generate_boss_enemy()
+	local new_boss = {
+		hp = enemy_info.boss_first_life + (enemy_info.boss_life_upgrade * _G.Phase),
+		defense = 0.00,
+		is_alive = true
+	}
 	_G.Enemy_index = 0
 	_G.Phase = _G.Phase + 1
-	enemy.hp = enemy_info.boss_first_life + (enemy_info.boss_life_upgrade * _G.Phase)
-	bosses[_G.Phase] = enemy
-	enemy.is_alive = true
+	bosses[_G.Phase] = new_boss
+	return new_boss
 end
 
 function enemy.respawner()
-	if enemy.hp <= 0 then
-		enemy.is_alive = false
-	end
-	
+	enemy.is_alive = false
+	local enemy_to_spawn
 	if not enemy.is_alive then
 		if _G.Enemy_index <= 5 then
-			enemy.generate_basic_enemy()
+			enemy_to_spawn = enemy.generate_basic_enemy()
 		else
-			enemy.generate_boss_enemy()
+			enemy_to_spawn = enemy.generate_boss_enemy()
 		end
 	end
+	return enemy_to_spawn
 end
 
 function enemy.show_hp()
 	local hp_value = gui.get_node("label_hp_value")
-	gui.set_text(hp_value, math.floor(enemy.hp))
+	gui.set_text(hp_value, math.floor(_G.current_enemy.hp))
 end
 
 return enemy
