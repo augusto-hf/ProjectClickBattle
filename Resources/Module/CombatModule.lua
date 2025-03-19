@@ -22,11 +22,11 @@ local damageDealtInAnotherEnemies = {
 function combat_functions.dealDamage()
 	if _G.current_enemy.is_alive then
 		local current_damage = _G.damage.get_all()
-		print("ready to deal damage")
+		--print("ready to deal damage")
 		for key, value in pairs(current_damage) do
 			if damageDealt[key] < current_damage[key] then
 				local damage_to_deal = current_damage[key] - damageDealt[key]
-				print("dealing ".. damage_to_deal)	
+				--print("dealing ".. damage_to_deal)
 				damageDealt[key] = damageDealt[key] + damage_to_deal
 				_G.current_enemy.hp = _G.current_enemy.hp - (damage_to_deal * _G.current_enemy.defense[key])
 			end

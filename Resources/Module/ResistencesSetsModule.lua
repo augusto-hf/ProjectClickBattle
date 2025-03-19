@@ -12,90 +12,90 @@ local set_0 = {
 local set_1 = {
 	["neutral"] = 1.00,
 	["physical"] = 1.00,
-	["magic"] = 1.00,
-	["elemental"] = 1.00,
+	["magic"] = 0.00,
+	["elemental"] = 0.75,
 	["explosive"] = 1.00,
-	["espiritual"] = 1.00
+	["espiritual"] = 0.75
 }
 local set_2 = {
 	["neutral"] = 1.00,
-	["physical"] = 1.00,
+	["physical"] = 0.00,
 	["magic"] = 1.00,
 	["elemental"] = 1.00,
-	["explosive"] = 1.00,
-	["espiritual"] = 1.00
+	["explosive"] = 0.75,
+	["espiritual"] = 0.00
 }
 local set_3 = {
 	["neutral"] = 1.00,
-	["physical"] = 1.00,
-	["magic"] = 1.00,
-	["elemental"] = 1.00,
+	["physical"] = 0.75,
+	["magic"] = 0.75,
+	["elemental"] = 0.00,
 	["explosive"] = 1.00,
 	["espiritual"] = 1.00
 }
 local set_4 = {
 	["neutral"] = 1.00,
-	["physical"] = 1.00,
-	["magic"] = 1.00,
-	["elemental"] = 1.00,
+	["physical"] = 0.50,
+	["magic"] = 0.50,
+	["elemental"] = 0.00,
 	["explosive"] = 1.00,
 	["espiritual"] = 1.00
 }
 local set_5 = {
 	["neutral"] = 1.00,
-	["physical"] = 1.00,
+	["physical"] = 0.50,
 	["magic"] = 1.00,
-	["elemental"] = 1.00,
-	["explosive"] = 1.00,
+	["elemental"] = 0.50,
+	["explosive"] = 0.00,
 	["espiritual"] = 1.00
 }
 local set_6 = {
 	["neutral"] = 1.00,
-	["physical"] = 1.00,
+	["physical"] = 0.00,
 	["magic"] = 1.00,
 	["elemental"] = 1.00,
-	["explosive"] = 1.00,
-	["espiritual"] = 1.00
+	["explosive"] = 0.00,
+	["espiritual"] = 0.00
 }
 local set_7 = {
 	["neutral"] = 1.00,
 	["physical"] = 1.00,
-	["magic"] = 1.00,
-	["elemental"] = 1.00,
+	["magic"] = 0.00,
+	["elemental"] = 0.00,
 	["explosive"] = 1.00,
-	["espiritual"] = 1.00
+	["espiritual"] = 0.00
 }
 local set_8 = {
 	["neutral"] = 1.00,
-	["physical"] = 1.00,
+	["physical"] = 0.25,
 	["magic"] = 1.00,
-	["elemental"] = 1.00,
-	["explosive"] = 1.00,
+	["elemental"] = 0.25,
+	["explosive"] = 0.25,
 	["espiritual"] = 1.00
 }
 local set_9 = {
 	["neutral"] = 1.00,
-	["physical"] = 1.00,
-	["magic"] = 1.00,
+	["physical"] = 0.00,
+	["magic"] = 0.25,
 	["elemental"] = 1.00,
-	["explosive"] = 1.00,
+	["explosive"] = 0.25,
 	["espiritual"] = 1.00
 }
 local set_10 = {
 	["neutral"] = 1.00,
-	["physical"] = 1.00,
+	["physical"] = 0.00,
 	["magic"] = 1.00,
 	["elemental"] = 1.00,
-	["explosive"] = 1.00,
-	["espiritual"] = 1.00
+	["explosive"] = 0.00,
+	["espiritual"] = 0.00
 }
 local set_11 = {
 	["neutral"] = 1.00,
-	["physical"] = 1.00,
-	["magic"] = 1.00,
-	["elemental"] = 1.00,
-	["explosive"] = 1.00,
-	["espiritual"] = 1.00
+	["physical"] = 0.20,
+	["magic"] = 0.20,
+	["elemental"] = 0.20,
+	["explosive"] = 0.20,
+	["espiritual"] = 0.20
 }
 
 resistences.sets = {
