@@ -1,0 +1,106 @@
+local resistences = {
+}
+local set_0 = {
+	["neutral"] = 1.00,
+	["physical"] = 1.00,
+	["magic"] = 1.00,
+	["elemental"] = 1.00,
+	["explosive"] = 1.00,
+	["espiritual"] = 1.00
+}
+
+local set_1 = {
+	["neutral"] = 1.00,
+	["physical"] = 1.00,
+	["magic"] = 1.00,
+	["elemental"] = 1.00,
+	["explosive"] = 1.00,
+	["espiritual"] = 1.00
+}
+local set_2 = {
+	["neutral"] = 1.00,
+	["physical"] = 1.00,
+	["magic"] = 1.00,
+	["elemental"] = 1.00,
+	["explosive"] = 1.00,
+	["espiritual"] = 1.00
+}
+local set_3 = {
+	["neutral"] = 1.00,
+	["physical"] = 1.00,
+	["magic"] = 1.00,
+	["elemental"] = 1.00,
+	["explosive"] = 1.00,
+	["espiritual"] = 1.00
+}
+local set_4 = {
+	["neutral"] = 1.00,
+	["physical"] = 1.00,
+	["magic"] = 1.00,
+	["elemental"] = 1.00,
+	["explosive"] = 1.00,
+	["espiritual"] = 1.00
+}
+local set_5 = {
+	["neutral"] = 1.00,
+	["physical"] = 1.00,
+	["magic"] = 1.00,
+	["elemental"] = 1.00,
+	["explosive"] = 1.00,
+	["espiritual"] = 1.00
+}
+local set_6 = {
+	["neutral"] = 1.00,
+	["physical"] = 1.00,
+	["magic"] = 1.00,
+	["elemental"] = 1.00,
+	["explosive"] = 1.00,
+	["espiritual"] = 1.00
+}
+local set_7 = {
+	["neutral"] = 1.00,
+	["physical"] = 1.00,
+	["magic"] = 1.00,
+	["elemental"] = 1.00,
+	["explosive"] = 1.00,
+	["espiritual"] = 1.00
+}
+local set_8 = {
+	["neutral"] = 1.00,
+	["physical"] = 1.00,
+	["magic"] = 1.00,
+	["elemental"] = 1.00,
+	["explosive"] = 1.00,
+	["espiritual"] = 1.00
+}
+local set_9 = {
+	["neutral"] = 1.00,
+	["physical"] = 1.00,
+	["magic"] = 1.00,
+	["elemental"] = 1.00,
+	["explosive"] = 1.00,
+	["espiritual"] = 1.00
+}
+local set_10 = {
+	["neutral"] = 1.00,
+	["physical"] = 1.00,
+	["magic"] = 1.00,
+	["elemental"] = 1.00,
+	["explosive"] = 1.00,
+	["espiritual"] = 1.00
+}
+local set_11 = {
+	["neutral"] = 1.00,
+	["physical"] = 1.00,
+	["magic"] = 1.00,
+	["elemental"] = 1.00,
+	["explosive"] = 1.00,
+	["espiritual"] = 1.00
+}
+
+resistences.sets = {
+	[0] = set_0, [1] = set_1, [2] = set_2, [3] = set_3, [4] = set_4, [5] = set_5, [6] = set_6, 
+	[7] = set_7, [8] = set_8, [9] = set_9, [10] = set_10, [11] = set_11
+}
+
+return resistences

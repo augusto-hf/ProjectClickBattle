@@ -1,7 +1,4 @@
 local enemy = {
-	hp = 100,
-	defense = 0.00,
-	is_alive = true
 }
 
 local enemy_info = require "Resources.Module.EnemyInfoModule"
@@ -11,11 +8,11 @@ local bosses = {}
 local function calculate_next_hp(current_index, current_phase)
 	local hp
 	if enemys[current_index - 1] ~= nil then
-		local last_hp = enemys[current_index  - 1].hp
+		local last_hp = enemys[current_index  - 1].max_hp
 		hp = last_hp + (last_hp * enemy_info.life_upgrade[current_phase]) 
 	else
 		if bosses[current_phase - 1] ~= nil then
-			hp = bosses[current_phase - 1].hp + enemy_info.boss_life_upgrade
+			hp = bosses[current_phase - 1].max_hp + enemy_info.boss_life_upgrade
 		else
 			hp = enemy_info.boss_first_life
 		end
@@ -26,39 +23,57 @@ end
 
 function enemy.generate_basic_enemy()
 	local new_enemy = {
-		hp = calculate_next_hp(_G.Enemy_index, _G.Phase),
-		defense = 0.00,
-		is_alive = true
+		hp = calculate_next_hp(_G.Enemy_index + 1, _G.Phase),
+		max_hp = calculate_next_hp(_G.Enemy_index + 1, _G.Phase),
+		is_alive = true,
+		defense = {
+			["neutral"] = 1.00,
+			["physical"] = 1.00,
+			["magic"] = 1.00,
+			["elemental"] = 1.00,
+			["explosive"] = 1.00,
+			["espiritual"] = 1.00
+		}
 	}
-	enemys[_G.Enemy_index] = new_enemy
-	_G.Enemy_index = _G.Enemy_index + 1
+	enemys[_G.Enemy_index + 1] = new_enemy
 	return new_enemy
 end
 
 function enemy.generate_boss_enemy()
 	local new_boss = {
 		hp = enemy_info.boss_first_life + (enemy_info.boss_life_upgrade * _G.Phase),
-		defense = 0.00,
-		is_alive = true
+		max_hp = enemy_info.boss_first_life + (enemy_info.boss_life_upgrade * _G.Phase),
+		is_alive = true,
+		defense = enemy_info.get_boss_resistence(_G.Phase)
 	}
 	_G.Enemy_index = 0
 	_G.Phase = _G.Phase + 1
 	bosses[_G.Phase] = new_boss
-	return new_boss
+	return bosses[_G.Phase]
 end
 
 function enemy.respawner()
-	enemy.is_alive = false
+	--print("Respawner called. Current Enemy Index:", _G.Enemy_index)
+	--print("Current Enemy Alive:", _G.current_enemy.is_alive)
+
+	_G.current_enemy.is_alive = false
 	local enemy_to_spawn
-	if not enemy.is_alive then
-		if _G.Enemy_index <= 5 then
-			enemy_to_spawn = enemy.generate_basic_enemy()
-		else
-			enemy_to_spawn = enemy.generate_boss_enemy()
-		end
+
+	if _G.Enemy_index < 4 then
+		--print("Spawning basic enemy. New Enemy Index:", _G.Enemy_index + 1)
+		enemy_to_spawn = enemy.generate_basic_enemy()
+		_G.Enemy_index = _G.Enemy_index + 1
+	elseif _G.Enemy_index == 4 then
+		--print("Spawning boss. Resetting Enemy Index to 0.")
+		enemy_to_spawn = enemy.generate_boss_enemy()
+		_G.Enemy_index = 0
 	end
+
+	--print("New Enemy Index after respawn:", _G.Enemy_index)
 	return enemy_to_spawn
 end
+
+
 
 function enemy.show_hp()
 	local hp_value = gui.get_node("label_hp_value")

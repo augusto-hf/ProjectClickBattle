@@ -1,15 +1,50 @@
 local combat_functions = {
 }
 
-local damageDealt = 0
+local damageDealt = {
+	["neutral"] = 0,
+	["physical"] = 0,
+	["magic"] = 0,
+	["elemental"] = 0,
+	["explosive"] = 0,
+	["espiritual"] = 0
+}
 
-function combat_functions.dealDamage(enemy)
-	if enemy.is_alive then
-		if damageDealt < _G.Number_of_click then
-			enemy.hp = enemy.hp - (_G.Number_of_click - damageDealt)
-			damageDealt = _G.Number_of_click
+local damageDealtInAnotherEnemies = {
+	["neutral"] = 0,
+	["physical"] = 0,
+	["magic"] = 0,
+	["elemental"] = 0,
+	["explosive"] = 0,
+	["espiritual"] = 0
+}
+
+function combat_functions.dealDamage()
+	if _G.current_enemy.is_alive then
+		local current_damage = _G.damage.get_all()
+		print("ready to deal damage")
+		for key, value in pairs(current_damage) do
+			if damageDealt[key] < current_damage[key] then
+				local damage_to_deal = current_damage[key] - damageDealt[key]
+				print("dealing ".. damage_to_deal)	
+				damageDealt[key] = damageDealt[key] + damage_to_deal
+				_G.current_enemy.hp = _G.current_enemy.hp - (damage_to_deal * _G.current_enemy.defense[key])
+			end
 		end
+	else
+		combat_functions.resetDamageDealt()
+		_G.damage.reset()
 	end
+end
+
+function combat_functions.resetDamageDealt()
+	_G.Number_of_click = 0
+	
+	for key, value in pairs(damageDealt) do
+		damageDealtInAnotherEnemies[key] = damageDealtInAnotherEnemies[key] + damageDealt[key]
+		damageDealt[key] = 0
+	end
+
 end
 
 
