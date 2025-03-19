@@ -21,19 +21,16 @@ local function calculate_next_hp(current_index, current_phase)
 	return hp
 end
 
+function enemy.generate_seeded_infos()
+	enemy_info.generate_bosses_resistences()
+end
+
 function enemy.generate_basic_enemy()
 	local new_enemy = {
 		hp = calculate_next_hp(_G.Enemy_index + 1, _G.Phase),
 		max_hp = calculate_next_hp(_G.Enemy_index + 1, _G.Phase),
 		is_alive = true,
-		defense = {
-			["neutral"] = 1.00,
-			["physical"] = 1.00,
-			["magic"] = 1.00,
-			["elemental"] = 1.00,
-			["explosive"] = 1.00,
-			["espiritual"] = 1.00
-		}
+		defense = enemy_info.get_basic_resistence()
 	}
 	enemys[_G.Enemy_index + 1] = new_enemy
 	return new_enemy
@@ -44,7 +41,7 @@ function enemy.generate_boss_enemy()
 		hp = enemy_info.boss_first_life + (enemy_info.boss_life_upgrade * _G.Phase),
 		max_hp = enemy_info.boss_first_life + (enemy_info.boss_life_upgrade * _G.Phase),
 		is_alive = true,
-		defense = enemy_info.get_boss_resistence(_G.Phase)
+		defense = enemy_info.get_boss_resistence(_G.Phase),
 	}
 	_G.Enemy_index = 0
 	_G.Phase = _G.Phase + 1
@@ -55,20 +52,22 @@ end
 function enemy.respawner()
 	--print("Respawner called. Current Enemy Index:", _G.Enemy_index)
 	--print("Current Enemy Alive:", _G.current_enemy.is_alive)
-
-	_G.current_enemy.is_alive = false
 	local enemy_to_spawn
-
-	if _G.Enemy_index < 4 then
-		--print("Spawning basic enemy. New Enemy Index:", _G.Enemy_index + 1)
+	if _G.current_enemy == nil then
 		enemy_to_spawn = enemy.generate_basic_enemy()
 		_G.Enemy_index = _G.Enemy_index + 1
-	elseif _G.Enemy_index == 4 then
-		--print("Spawning boss. Resetting Enemy Index to 0.")
-		enemy_to_spawn = enemy.generate_boss_enemy()
-		_G.Enemy_index = 0
+	else
+		_G.current_enemy.is_alive = false
+		if _G.Enemy_index < 4 then
+			--print("Spawning basic enemy. New Enemy Index:", _G.Enemy_index + 1)
+			enemy_to_spawn = enemy.generate_basic_enemy()
+			_G.Enemy_index = _G.Enemy_index + 1
+		elseif _G.Enemy_index == 4 then
+			--print("Spawning boss. Resetting Enemy Index to 0.")
+			enemy_to_spawn = enemy.generate_boss_enemy()
+			_G.Enemy_index = 0
+		end
 	end
-
 	--print("New Enemy Index after respawn:", _G.Enemy_index)
 	return enemy_to_spawn
 end

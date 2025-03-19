@@ -4,19 +4,6 @@ _G.Clicks_per_second = 0
 _G.Number_of_click = 0
 _G.Phase = 0
 _G.Enemy_index = 0
-_G.current_enemy = {
-	hp = 0,
-	max_hp = 0,
-	is_alive = true,
-	defense = {
-		["neutral"] = 1.00,
-		["physical"] = 1.00,
-		["magic"] = 1.00,
-		["elemental"] = 1.00,
-		["explosive"] = 1.00,
-		["espiritual"] = 1.00
-	}
-}
 -- float
 -- components
 local counter_text
@@ -34,8 +21,12 @@ local shop_buttons = require "Resources.Module.ShopButtonsLib"
 local passive_skills_functions = require "Resources.Module.PassiveSkillsModule"
 local active_skills = require "Resources.Module.ActiveSkillsModule"
 
+_G.current_enemy = enemy.respawner()
+
 function init(self)
 	seed.generate_seed()
+	enemy.generate_seeded_infos()
+	
 	msg.post(".", "acquire_input_focus")
 	counter_text = gui.get_node("counter_text")
 	self.speed = 50

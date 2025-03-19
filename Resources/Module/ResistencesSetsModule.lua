@@ -1,6 +1,7 @@
 local resistences = {
 }
 local set_0 = {
+	["id"] = 0,
 	["neutral"] = 1.00,
 	["physical"] = 1.00,
 	["magic"] = 1.00,
@@ -10,6 +11,7 @@ local set_0 = {
 }
 
 local set_1 = {
+	["id"] = 1,
 	["neutral"] = 1.00,
 	["physical"] = 1.00,
 	["magic"] = 0.00,
@@ -18,6 +20,7 @@ local set_1 = {
 	["espiritual"] = 0.75
 }
 local set_2 = {
+	["id"] = 2,
 	["neutral"] = 1.00,
 	["physical"] = 0.00,
 	["magic"] = 1.00,
@@ -26,6 +29,7 @@ local set_2 = {
 	["espiritual"] = 0.00
 }
 local set_3 = {
+	["id"] = 3,
 	["neutral"] = 1.00,
 	["physical"] = 0.75,
 	["magic"] = 0.75,
@@ -34,6 +38,7 @@ local set_3 = {
 	["espiritual"] = 1.00
 }
 local set_4 = {
+	["id"] = 4,
 	["neutral"] = 1.00,
 	["physical"] = 0.50,
 	["magic"] = 0.50,
@@ -42,6 +47,7 @@ local set_4 = {
 	["espiritual"] = 1.00
 }
 local set_5 = {
+	["id"] = 5,
 	["neutral"] = 1.00,
 	["physical"] = 0.50,
 	["magic"] = 1.00,
@@ -50,6 +56,7 @@ local set_5 = {
 	["espiritual"] = 1.00
 }
 local set_6 = {
+	["id"] = 6,
 	["neutral"] = 1.00,
 	["physical"] = 0.00,
 	["magic"] = 1.00,
@@ -58,6 +65,7 @@ local set_6 = {
 	["espiritual"] = 0.00
 }
 local set_7 = {
+	["id"] = 7,
 	["neutral"] = 1.00,
 	["physical"] = 1.00,
 	["magic"] = 0.00,
@@ -66,6 +74,7 @@ local set_7 = {
 	["espiritual"] = 0.00
 }
 local set_8 = {
+	["id"] = 8,
 	["neutral"] = 1.00,
 	["physical"] = 0.25,
 	["magic"] = 1.00,
@@ -74,6 +83,7 @@ local set_8 = {
 	["espiritual"] = 1.00
 }
 local set_9 = {
+	["id"] = 9,
 	["neutral"] = 1.00,
 	["physical"] = 0.00,
 	["magic"] = 0.25,
@@ -82,6 +92,7 @@ local set_9 = {
 	["espiritual"] = 1.00
 }
 local set_10 = {
+	["id"] = 10,
 	["neutral"] = 1.00,
 	["physical"] = 0.00,
 	["magic"] = 1.00,
@@ -90,6 +101,7 @@ local set_10 = {
 	["espiritual"] = 0.00
 }
 local set_11 = {
+	["id"] = 11,
 	["neutral"] = 1.00,
 	["physical"] = 0.20,
 	["magic"] = 0.20,
