@@ -14,7 +14,7 @@ function damage.add(damage_type, value)
 	if damage_value[damage_type] ~= nil then
 		if damage_value[damage_type] < value then
 			damage_value[damage_type] = damage_value[damage_type] + (value - damage_value[damage_type])
-			print(damage_value[damage_type])
+			--print(damage_value[damage_type])
 		end
 	else
 		print("invalid type of damage")

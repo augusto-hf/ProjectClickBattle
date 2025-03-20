@@ -1,10 +1,12 @@
 local seed = {
 }
 
-_G.current_seed = math.random(100, 10000)
+_G.current_seed = os.time()
 
 function seed.generate_seed()
-	math.randomseed(_G.current_seed)
+	local time =  os.time()
+	math.randomseed(time)
+	_G.current_seed = time
 end
 
 function seed.set_custom_seed(seed)

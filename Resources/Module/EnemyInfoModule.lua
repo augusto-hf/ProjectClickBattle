@@ -15,39 +15,44 @@ enemy_info.life_upgrade = {
 	[4] = 0.14,
 }
 
-local range = {
-min = 0, max = 0
-}
 local boss_set_range = {
-	[1] = range{min = 0, max = 0},
-	[2] = range{min = 1, max = 3},
-	[3] = range{min = 2, max = 5},
-	[4] = range{min = 3, max = 7},
-	[5] = range{min = 5, max = 8},
-	[6] = range{min = 6, max = 9},
-	[7] = range{min = 8, max = 10},
-	[8] = range{min = 9, max = 11},
+	[0] = {min = 0, max = 0},
+	[1] = {min = 1, max = 3},
+	[2] = {min = 2, max = 5},
+	[3] = {min = 3, max = 7},
+	[4] = {min = 5, max = 8},
+	[5] = {min = 6, max = 9},
+	[6] = {min = 8, max = 10},
+	[7] = {min = 9, max = 11},
 }
 
 local bosses_resistences = {}
 
+
 function enemy_info.generate_bosses_resistences()
 	for key, value in pairs(boss_set_range) do
-		local x = math.random(boss_set_range[key].range["min"], boss_set_range[key].range["max"])
-		table.insert(bosses_resistences, key, resistences.sets[x] )
+		local x = math.random(value.min, value.max)
+		-- print("Random value generated for boss " .. key .. ": " .. x) -- Debug print
+
+		if resistences.sets[x] then
+			bosses_resistences[key] = resistences.sets[x]
+			print("Boss " .. key .. " resistance set ID: " .. bosses_resistences[key].id) 
+		else
+			print("Error: Invalid resistance index for boss " .. key .. ": " .. x) 
+		end
 	end
-end 
+end
 
 function enemy_info.get_boss_resistence(phase)
 	if boss_set_range[phase] ~= nil then
-		return boss_set_range[phase]
+		return bosses_resistences[phase]
 	else
-		return boss_set_range[0] 
+		return bosses_resistences[0] 
 	end
 end
 
 function enemy_info.get_basic_resistence()
-	return boss_set_range[0]
+	return resistences.sets[0]
 end
 
 return enemy_info

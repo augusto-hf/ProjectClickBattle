@@ -19,6 +19,16 @@ local damageDealtInAnotherEnemies = {
 	["espiritual"] = 0
 }
 
+local function resetDamageDealt()
+	_G.Number_of_click = 0
+
+	for key, value in pairs(damageDealt) do
+		damageDealtInAnotherEnemies[key] = damageDealtInAnotherEnemies[key] + damageDealt[key]
+		damageDealt[key] = 0
+	end
+
+end
+
 function combat_functions.dealDamage()
 	if _G.current_enemy.is_alive then
 		local current_damage = _G.damage.get_all()
@@ -32,19 +42,9 @@ function combat_functions.dealDamage()
 			end
 		end
 	else
-		combat_functions.resetDamageDealt()
+		resetDamageDealt()
 		_G.damage.reset()
 	end
-end
-
-function combat_functions.resetDamageDealt()
-	_G.Number_of_click = 0
-	
-	for key, value in pairs(damageDealt) do
-		damageDealtInAnotherEnemies[key] = damageDealtInAnotherEnemies[key] + damageDealt[key]
-		damageDealt[key] = 0
-	end
-
 end
 
 
