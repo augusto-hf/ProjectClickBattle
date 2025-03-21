@@ -13,7 +13,7 @@ function active_skills.UseSkill(skill)
 		gui.set_fill_angle(cooldown_icon_node, 360)
 		skill.is_in_cooldown = true
 		
-		_G.Number_of_click = _G.Number_of_click + damage
+		_G.damage.add(skill.active_value, damage)
 		gui.animate(cooldown_icon_node, "fill_angle", vmath.vector4(360,0,1,0), gui.EASING_INOUTQUAD, skill.active_cooldown , 0, function() cooldown_ended(skill) end)
 	end
 end
