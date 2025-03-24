@@ -18,9 +18,10 @@ local function get_noise()
 	return vmath.vector3(perlin.noise(shake_timer + 0.1, 14.23, 0.58 ), perlin.noise(shake_timer + 0.1, 1.23, 18.58),0)
 end
 
-local function trigger_enemy_shake(damage)
+local function trigger_enemy_shake(magnitude)
+	perlin.init()
 	enemy_starter_position = gui.get_position(_G.Enemy_node)
-	shake_range_final = shake_range * (damage * 0.75)
+	shake_range_final = shake_range * (magnitude)
 	shake_timer = 20
 end 
 
@@ -60,9 +61,8 @@ end
 
 function vfx.trigger_damage_number(enemy_resistance, damage)
 	local enemy_pos = gui.get_position(_G.Enemy_node)
-	perlin.init()
-	shake_timer = 10
-	trigger_enemy_shake(damage)
+	local damage_magnitude = _G.current_enemy.max_hp / damage
+	trigger_enemy_shake(damage_magnitude)
 	
 	damage_number_animation(false, enemy_resistance, enemy_pos, damage)
 end

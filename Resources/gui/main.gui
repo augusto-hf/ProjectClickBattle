@@ -302,136 +302,6 @@ nodes {
 }
 nodes {
   position {
-    x: 0.248783
-    y: -14.940829
-  }
-  scale {
-    x: 0.197904
-    y: 0.197904
-    z: 0.197904
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "HP"
-  font: "default"
-  id: "label_enemy"
-  parent: "Enemy"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 0.03645
-    y: -17.695246
-  }
-  scale {
-    x: 0.197904
-    y: 0.197904
-    z: 0.197904
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "10"
-  font: "default"
-  id: "label_hp_value"
-  parent: "Enemy"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: -28.121704
-    y: -22.194124
-  }
-  scale {
-    x: 0.197904
-    y: 0.197904
-    z: 0.197904
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "default"
-  id: "label_phase"
-  parent: "Enemy"
-  layer: "Debug"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: -28.121704
-    y: -27.152075
-  }
-  scale {
-    x: 0.197904
-    y: 0.197904
-    z: 0.197904
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "default"
-  id: "label_enemy_counter"
-  parent: "Enemy"
-  layer: "Debug"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: -28.121704
-    y: -31.2837
-  }
-  scale {
-    x: 0.197904
-    y: 0.197904
-    z: 0.197904
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "default"
-  id: "label_enemy_resistance_counter"
-  parent: "Enemy"
-  layer: "Debug"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 11.633705
-    y: -34.221745
-  }
-  scale {
-    x: 0.105285
-    y: 0.105285
-    z: 0.105285
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "default"
-  id: "label_seed"
-  parent: "Enemy"
-  layer: "Debug"
-  inherit_alpha: true
-}
-nodes {
-  position {
     x: 716.72455
     y: 608.37274
   }
@@ -491,6 +361,130 @@ nodes {
   font: "default"
   id: "label_dps"
   layer: "Hud"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 719.2488
+    y: 207.05917
+  }
+  scale {
+    x: 1.947375
+    y: 1.947375
+    z: 1.947375
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "HP"
+  font: "default"
+  id: "label_enemy"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 718.03644
+    y: 181.30475
+  }
+  scale {
+    x: 1.947375
+    y: 1.947375
+    z: 1.947375
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "10"
+  font: "default"
+  id: "label_hp_value"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 466.8783
+    y: 97.80588
+  }
+  scale {
+    x: 1.947375
+    y: 1.947375
+    z: 1.947375
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "default"
+  id: "label_phase"
+  layer: "Debug"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 467.8783
+    y: 64.84792
+  }
+  scale {
+    x: 1.947375
+    y: 1.947375
+    z: 1.947375
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "default"
+  id: "label_enemy_counter"
+  layer: "Debug"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 467.8783
+    y: 27.7163
+  }
+  scale {
+    x: 1.947375
+    y: 1.947375
+    z: 1.947375
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "default"
+  id: "label_enemy_resistance_counter"
+  layer: "Debug"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 880.6337
+    y: 18.778255
+  }
+  scale {
+    x: 1.036004
+    y: 1.036004
+    z: 1.036004
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "default"
+  id: "label_seed"
+  layer: "Debug"
   inherit_alpha: true
 }
 layers {
