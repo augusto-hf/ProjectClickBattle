@@ -41,7 +41,6 @@ function init(self)
 	timer.delay(_G.Numbers_update_speed, true, function()
 		counter_functions.SmoothAddClicks()
 	end)
-	_G.vfx.set_enemy_position(gui.get_screen_position(gui.get_node("Enemy")))
 end
 
 function update(self, dt)

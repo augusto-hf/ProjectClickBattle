@@ -24,8 +24,6 @@ end
 function damage.deal(damage_type, value)
 	if damage_value[damage_type] ~= nil then
 			damage_value[damage_type] = damage_value[damage_type] + value
-
-		end
 	else
 		print("invalid type of damage")
 	end

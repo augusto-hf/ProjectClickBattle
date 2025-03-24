@@ -44,7 +44,7 @@ function combat_functions.dealDamage()
 				_G.current_enemy.hp = _G.current_enemy.hp - damageDealtAfterDefense
 
 				if key ~= "neutral" then
-					_G.vfx.trigger_damage_number(damageDealtAfterDefense)
+					_G.vfx.trigger_damage_number(_G.current_enemy.defense[key], damageDealtAfterDefense)
 				end
 			end
 		end
