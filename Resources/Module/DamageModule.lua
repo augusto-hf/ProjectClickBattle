@@ -21,6 +21,16 @@ function damage.add(damage_type, value)
 	end
 end
 
+function damage.deal(damage_type, value)
+	if damage_value[damage_type] ~= nil then
+			damage_value[damage_type] = damage_value[damage_type] + value
+
+		end
+	else
+		print("invalid type of damage")
+	end
+end
+
 function damage.reset()
 	for key, _ in pairs(damage_value) do
 		damage_value[key] = 0
