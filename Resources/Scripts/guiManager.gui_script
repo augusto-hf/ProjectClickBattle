@@ -9,7 +9,9 @@ _G.Enemy_index = 0
 local counter_text
 -- bool
 
+
 local seed = require "Resources.Module.SeedModule"
+_G.vfx = require "Resources.Module.VFXModules"
 _G.skills = require "Resources.Module.SkillsInfoModule"
 _G.damage = require "Resources.Module.DamageModule"
 local cursor = require "Resources.Module.CursorModule"
@@ -39,7 +41,7 @@ function init(self)
 	timer.delay(_G.Numbers_update_speed, true, function()
 		counter_functions.SmoothAddClicks()
 	end)
-	
+	_G.vfx.set_enemy_position(gui.get_screen_position(gui.get_node("Enemy")))
 end
 
 function update(self, dt)
@@ -63,6 +65,7 @@ function on_input(self, action_id, action)
 		-- In Game
 		local enemy_sprite = gui.get_node("Enemy")
 		if gui.pick_node(enemy_sprite, action.x, action.y)then
+			_G.vfx.trigger_damage_number_on_click(action, cursor.click_damage)
 			_G.Number_of_click = _G.Number_of_click + cursor.click_damage
 		end
 		
