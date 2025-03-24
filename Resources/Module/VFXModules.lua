@@ -1,7 +1,6 @@
 local vfx = {
 }
-
-require "Resources.ExternalModules.perlin"
+local perlin = require "Resources.ExternalModules.perlin"
 
 local resisted_damage_color = vmath.vector4(0,0,1,1)
 local vulnerable_damage_color = vmath.vector4(1,0,0,1)
@@ -9,19 +8,20 @@ local neutral_damage_color = vmath.vector4(0,0,0,1)
 
 local random_variation_range = 85
 
-local function enemy_shake(enemy_node, damage)
-	if self.shake_timer > 0 then
-		local p = go.get_world_position()
-		local noise = get_noise(self)
-		p.x = self.position.x + (noise.x * self.shake_range.x)
-		p.y = self.position.y + (noise.y * self.shake_range.y) 
-		go.set_position(p)
-		self.shake_timer = self.shake_timer - 1
-		if self.shake_timer == 0 then
-			go.set_position(self.position)
-		end	
-	end
-	
+local shake_timer = 0
+local shake_range = vmath.vector3(10,10,1)
+
+local enemy_starter_position
+local shake_range_final
+
+local function get_noise()
+	return vmath.vector3(perlin.noise(shake_timer + 0.1, 14.23, 0.58 ), perlin.noise(shake_timer + 0.1, 1.23, 18.58),0)
+end
+
+local function trigger_enemy_shake(damage)
+	enemy_starter_position = gui.get_position(_G.Enemy_node)
+	shake_range_final = shake_range * (damage * 0.75)
+	shake_timer = 20
 end 
 
 local function damage_number_animation(is_cursor, enemy_resistance, position, damage)
@@ -59,14 +59,31 @@ end
 
 
 function vfx.trigger_damage_number(enemy_resistance, damage)
-	local enemy_node = gui.get_node("Enemy")
-	local enemy_pos = gui.get_position(enemy_node)
-	enemy_shake(enemy_node, damage)
+	local enemy_pos = gui.get_position(_G.Enemy_node)
+	perlin.init()
+	shake_timer = 10
+	trigger_enemy_shake(damage)
+	
 	damage_number_animation(false, enemy_resistance, enemy_pos, damage)
 end
 
 function vfx.trigger_damage_number_on_click(action, damage, type)
 	damage_number_animation(true, 1.00, vmath.vector3(action.x, action.y, 0), damage)
+end
+
+function vfx.run_on_update_effects()
+	if shake_timer > 0 then -- Shake enemy
+		local p = gui.get_position(_G.Enemy_node)
+		local noise = get_noise()
+		p.x = enemy_starter_position.x + (noise.x * shake_range_final.x)
+		p.y = enemy_starter_position.y + (noise.y * shake_range_final.y) 
+		gui.set_position(_G.Enemy_node, p)
+		shake_timer = shake_timer - 1
+		if shake_timer == 0 then
+			gui.set_position(_G.Enemy_node, enemy_starter_position)
+		end	
+	end
+	
 end
 
 return vfx
