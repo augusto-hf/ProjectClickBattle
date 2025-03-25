@@ -9,7 +9,7 @@ function active_skills.UseSkill(skill)
 	if not skill.is_in_cooldown then
 		local damage = skill.active_damage * skill.upgrade_level
 		local cooldown_icon_node = gui.get_node(skill.cooldown_icon)
-	
+		
 		gui.set_fill_angle(cooldown_icon_node, 360)
 		skill.is_in_cooldown = true
 		

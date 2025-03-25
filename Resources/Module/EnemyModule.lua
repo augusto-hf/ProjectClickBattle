@@ -30,7 +30,8 @@ function enemy.generate_basic_enemy()
 		hp = calculate_next_hp(_G.Enemy_index + 1, _G.Phase),
 		max_hp = calculate_next_hp(_G.Enemy_index + 1, _G.Phase),
 		is_alive = true,
-		defense = enemy_info.get_basic_resistence()
+		defense = enemy_info.get_basic_resistence(),
+		drop = enemy_info.money_drop * (1 + _G.Phase + (_G.Enemy_index * 1))
 	}
 	enemys[_G.Enemy_index + 1] = new_enemy
 	return new_enemy
@@ -42,6 +43,7 @@ function enemy.generate_boss_enemy()
 		max_hp = enemy_info.boss_first_life + (enemy_info.boss_life_upgrade * _G.Phase),
 		is_alive = true,
 		defense = enemy_info.get_boss_resistence(_G.Phase),
+		drop = enemy_info.money_drop * (1 + _G.Phase + (_G.Enemy_index * 1))
 	}
 	_G.Enemy_index = 0
 	_G.Phase = _G.Phase + 1
@@ -57,6 +59,8 @@ function enemy.respawner()
 		enemy_to_spawn = enemy.generate_basic_enemy()
 		_G.Enemy_index = _G.Enemy_index + 1
 	else
+		_G.Money = _G.Money + _G.current_enemy.drop
+		
 		_G.current_enemy.is_alive = false
 		if _G.Enemy_index < 4 then
 			--print("Spawning basic enemy. New Enemy Index:", _G.Enemy_index + 1)

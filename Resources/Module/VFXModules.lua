@@ -11,7 +11,6 @@ local random_variation_range = 85
 local shake_timer = 0
 local shake_range = vmath.vector3(10,10,1)
 
-local enemy_starter_position
 local shake_range_final
 
 local function get_noise()
@@ -20,7 +19,6 @@ end
 
 local function trigger_enemy_shake(magnitude)
 	perlin.init()
-	enemy_starter_position = gui.get_position(_G.Enemy_node)
 	shake_range_final = shake_range * (magnitude)
 	shake_timer = 20
 end 
@@ -61,29 +59,27 @@ end
 
 function vfx.trigger_damage_number(enemy_resistance, damage)
 	local enemy_pos = gui.get_position(_G.Enemy_node)
-	local damage_magnitude = _G.current_enemy.max_hp / damage
-	trigger_enemy_shake(damage_magnitude)
-	
 	damage_number_animation(false, enemy_resistance, enemy_pos, damage)
 end
 
 function vfx.trigger_damage_number_on_click(action, damage, type)
+	local damage_magnitude = (damage * 100) / _G.current_enemy.max_hp
+	trigger_enemy_shake(damage_magnitude)
 	damage_number_animation(true, 1.00, vmath.vector3(action.x, action.y, 0), damage)
 end
 
 function vfx.run_on_update_effects()
-	if shake_timer > 0 then -- Shake enemy
+	if shake_timer > 0 then
 		local p = gui.get_position(_G.Enemy_node)
 		local noise = get_noise()
-		p.x = enemy_starter_position.x + (noise.x * shake_range_final.x)
-		p.y = enemy_starter_position.y + (noise.y * shake_range_final.y) 
+		p.x = _G.Enemy_node_position.x + (noise.x * shake_range_final.x)
+		p.y = _G.Enemy_node_position.y + (noise.y * shake_range_final.y)
 		gui.set_position(_G.Enemy_node, p)
 		shake_timer = shake_timer - 1
 		if shake_timer == 0 then
-			gui.set_position(_G.Enemy_node, enemy_starter_position)
-		end	
+			gui.set_position(_G.Enemy_node, _G.Enemy_node_position)	
+		end
 	end
-	
 end
 
 return vfx

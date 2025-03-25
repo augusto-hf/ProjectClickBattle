@@ -15,6 +15,7 @@ active_dot_time = 0,
 is_in_cooldown = false,
 level_text = "level_weapon",
 shop_icon = "shop_icon_weapon",
+price_text = "value_weapon",
 skill_icon = "skill_button_weapon",
 cooldown_icon = "skill_cooldown_weapon",
 icon_sprites = {
@@ -40,12 +41,13 @@ is_in_cooldown = false,
 active_cooldown = 30,
 level_text = "level_warrior_soap",
 shop_icon = "shop_icon_warrior_soap",
+price_text = "value_warrior_soap",
 skill_icon = "skill_button_warrior_soap",
 cooldown_icon = "skill_cooldown_warrior_soap",
 icon_sprites = {
-	[5] = "warrior_soap_level2",
-	[10] = "warrior_soap_level3",
-	[15] = "warrior_soap_level4"
+	[5] = "weapon_level2",
+	[10] = "weapon_level3",
+	[15] = "weapon_level4"
 },
 skill_description = "Um guerreiro fraco, iniciante que dá dano utilizando espada."
 }
