@@ -14,6 +14,7 @@ local counter_text
 local seed = require "Resources.Module.SeedModule"
 _G.vfx = require "Resources.Module.VFXModules"
 _G.skills = require "Resources.Module.SkillsInfoModule"
+_G.click_skills = require "Resources.Module.ClickSkillsInfoModule" 
 _G.damage = require "Resources.Module.DamageModule"
 local cursor = require "Resources.Module.CursorModule"
 local counter_functions = require "Resources.Module.ClickCounterModule"

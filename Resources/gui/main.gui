@@ -13,11 +13,11 @@ textures {
 }
 nodes {
   position {
-    x: 127.0
+    x: 167.0
     y: 324.0
   }
   size {
-    x: 200.0
+    x: 300.0
     y: 500.0
   }
   color {
@@ -33,7 +33,7 @@ nodes {
 }
 nodes {
   position {
-    x: -49.0
+    x: -99.0
     y: 200.46645
   }
   scale {
@@ -135,7 +135,7 @@ nodes {
 }
 nodes {
   position {
-    x: -49.0
+    x: -99.0
     y: 103.466446
   }
   scale {
@@ -261,7 +261,7 @@ nodes {
 }
 nodes {
   position {
-    x: -49.0
+    x: -99.0
     y: 6.466446
   }
   scale {
@@ -387,7 +387,7 @@ nodes {
 }
 nodes {
   position {
-    x: 293.0
+    x: 379.0
     y: 324.0
   }
   size {
