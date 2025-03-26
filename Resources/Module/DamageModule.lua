@@ -10,6 +10,18 @@ local damage_value = {
 	["espiritual"] = 0
 }
 
+function damage.add_click(click_skill)
+	if damage_value[click_skill.damage_type] ~= nil then
+		_G.cursor.extra_damage_value[click_skill.damage_type] = click_skill.damage_value
+	end
+end
+
+function damage.reset_click()
+	for key, _ in pairs(damage_value) do
+		_G.cursor.extra_damage_value[key] = value
+	end
+end
+
 function damage.add(damage_type, value)
 	if damage_value[damage_type] ~= nil then
 		if damage_value[damage_type] < value then
@@ -33,7 +45,6 @@ function damage.reset()
 	for key, _ in pairs(damage_value) do
 		damage_value[key] = 0
 	end
-	
 end
 
 function damage.get_type(type)

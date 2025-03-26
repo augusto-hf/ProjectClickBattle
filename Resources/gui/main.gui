@@ -387,11 +387,11 @@ nodes {
 }
 nodes {
   position {
-    x: 379.0
+    x: 429.0
     y: 324.0
   }
   size {
-    x: 100.0
+    x: 200.0
     y: 500.0
   }
   type: TYPE_BOX
@@ -402,8 +402,8 @@ nodes {
 }
 nodes {
   position {
-    x: -1.0
-    y: 200.46643
+    x: -45.0
+    y: 100.46643
   }
   scale {
     x: 2.405104
@@ -430,6 +430,72 @@ nodes {
   texture: "testSpritesAtlas/istockphoto-ampulheta"
   id: "skill_cooldown_weapon"
   parent: "skill_button_weapon"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -45.0
+    y: 2.46643
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_warrior_soap"
+  parent: "Skills "
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_warrior_soap"
+  parent: "skill_button_warrior_soap"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 61.0
+    y: 100.46643
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "click_skill_button_heavy_glove"
+  parent: "Skills "
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_weapon2"
+  parent: "click_skill_button_heavy_glove"
   pieFillAngle: 0.0
   size_mode: SIZE_MODE_AUTO
 }

@@ -1,7 +1,14 @@
 local cursor = {
 	upgrade_level = 1,
 	click_damage = 1,
-	
+	extra_damage_value = {
+		["neutral"] = 0,
+		["physical"] = 0,
+		["magic"] = 0,
+		["elemental"] = 0,
+		["explosive"] = 0,
+		["espiritual"] = 0
+	},
 	level_text = "level_cursor",
 	node = "cursor",
 	shop_icon = "shop_icon_cursor",

@@ -11,7 +11,10 @@ click_skills.template = {
 	damage_type = "neutral",
 	is_in_cooldown = false,
 	cooldown = 30,
-	duration = 15
+	duration = 15,
+	cooldown_icon_node = "skill_cooldown_",
+	skill_node = "click_skill_button_",
+	shop_node = "_upgrade_button"
 }
 
 click_skills.heavy_gloves = {
@@ -23,7 +26,10 @@ click_skills.heavy_gloves = {
 	damage_type = "neutral",
 	is_in_cooldown = false,
 	cooldown = 30,
-	duration = 15
+	duration = 15,
+	cooldown_icon_node = "skill_cooldown_heavy_gloves",
+	skill_node = "click_skill_button_heavy_glove",
+	shop_node = "heavy_glove_upgrade_button"
 }
 
 click_skills.bolder = {
