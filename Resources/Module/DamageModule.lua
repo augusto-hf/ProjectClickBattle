@@ -12,13 +12,19 @@ local damage_value = {
 
 function damage.add_click(click_skill)
 	if damage_value[click_skill.damage_type] ~= nil then
-		_G.cursor.extra_damage_value[click_skill.damage_type] = click_skill.damage_value
+		_G.cursor.extra_damage_value[click_skill.damage_type] = _G.cursor.extra_damage_value[click_skill.damage_type] + click_skill.damage_value
+	end
+end
+
+function damage.remove_click(click_skill)
+	if damage_value[click_skill.damage_type] ~= nil then
+		_G.cursor.extra_damage_value[click_skill.damage_type] = _G.cursor.extra_damage_value[click_skill.damage_type] - click_skill.damage_value
 	end
 end
 
 function damage.reset_click()
-	for key, _ in pairs(damage_value) do
-		_G.cursor.extra_damage_value[key] = value
+	for key, _ in pairs(_G.cursor.extra_damage_value) do
+		_G.cursor.extra_damage_value[key] = 0
 	end
 end
 
