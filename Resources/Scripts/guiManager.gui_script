@@ -71,6 +71,7 @@ function on_input(self, action_id, action)
 		if gui.pick_node(_G.Enemy_node, action.x, action.y)then
 			_G.vfx.trigger_damage_number_on_click(action, _G.cursor.click_damage)
 			_G.Number_of_click = _G.Number_of_click + _G.cursor.click_damage
+			--_G.deal(, value)
 		end
 		
 		-- In Game/skill
