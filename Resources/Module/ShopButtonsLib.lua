@@ -38,4 +38,18 @@ function shop_buttons.SkillUpgrade(skill)
 	end
 end
 
+function shop_buttons.PassiveUpgrade(click_skill)
+	local price = (math.max(click_skill.starting_price, click_skill.upgrade_level * click_skill.starting_price))
+		if _G.Money > price or _G.Money == price then
+			_G.Money = _G.Money - price
+			local new_level = click_skill.upgrade_level + 1
+			click_skill.upgrade_level = new_level
+
+			gui.set_text(gui.get_node(click_skill.level_text), new_level)
+			gui.set_text(gui.get_node(click_skill.level_text), new_level)
+			gui.set_text(gui.get_node(click_skill.price_text), price)
+	end
+end
+
+
 return shop_buttons

@@ -29,7 +29,9 @@ click_skills.heavy_gloves = {
 	duration = 15,
 	cooldown_icon_node = "skill_cooldown_heavy_gloves",
 	skill_node = "click_skill_button_heavy_glove",
-	shop_node = "heavy_glove_upgrade_button"
+	shop_node = "heavy_glove_upgrade_button",
+	level_text = "level_heavy_gloves",
+	price_text = "value_heavy_gloves",
 }
 
 click_skills.bolder = {

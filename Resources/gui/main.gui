@@ -387,6 +387,94 @@ nodes {
 }
 nodes {
   position {
+    x: 99.08622
+    y: 203.28319
+  }
+  scale {
+    x: 0.349281
+    y: 0.349281
+    z: 0.349281
+  }
+  size {
+    x: 200.0
+    y: 200.0
+  }
+  color {
+    x: 0.8
+    y: 0.502
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "heavy_glove_upgrade_button"
+  parent: "Shop"
+  layer: "Hud"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -37.96283
+  }
+  scale {
+    x: 2.14
+    y: 2.14
+    z: 2.14
+  }
+  size {
+    x: 70.0
+    y: 30.0
+  }
+  type: TYPE_TEXT
+  text: " Heavy \n"
+  "Glove\n"
+  ""
+  font: "default"
+  id: "heavy_glove_upgrade_label"
+  parent: "heavy_glove_upgrade_button"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 73.69512
+  }
+  scale {
+    x: 2.14
+    y: 2.14
+    z: 2.14
+  }
+  size {
+    x: 70.0
+    y: 30.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "default"
+  id: "level_heavy_gloves"
+  parent: "heavy_glove_upgrade_button"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 27.886732
+  }
+  scale {
+    x: 2.14
+    y: 2.14
+    z: 2.14
+  }
+  size {
+    x: 70.0
+    y: 30.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "default"
+  id: "value_heavy_gloves"
+  parent: "heavy_glove_upgrade_button"
+  inherit_alpha: true
+}
+nodes {
+  position {
     x: 429.0
     y: 324.0
   }
@@ -494,7 +582,7 @@ nodes {
   }
   type: TYPE_PIE
   texture: "testSpritesAtlas/istockphoto-ampulheta"
-  id: "skill_cooldown_weapon2"
+  id: "skill_cooldown_heavy_gloves"
   parent: "click_skill_button_heavy_glove"
   pieFillAngle: 0.0
   size_mode: SIZE_MODE_AUTO

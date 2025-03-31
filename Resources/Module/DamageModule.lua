@@ -10,17 +10,22 @@ local damage_value = {
 	["espiritual"] = 0
 }
 
+function damage.remove_click(click_skill, damage_when_was_added)
+	if damage_value[click_skill.damage_type] ~= nil then
+		local damage_to_remove = _G.cursor.extra_damage_value[click_skill.damage_type] - damage_when_was_added
+		_G.cursor.extra_damage_value[click_skill.damage_type] = damage_to_remove
+		end
+end
+
 function damage.add_click(click_skill)
 	if damage_value[click_skill.damage_type] ~= nil then
-		_G.cursor.extra_damage_value[click_skill.damage_type] = _G.cursor.extra_damage_value[click_skill.damage_type] + click_skill.damage_value
+		local damage_to_add = _G.cursor.extra_damage_value[click_skill.damage_type] + click_skill.damage_value
+		_G.cursor.extra_damage_value[click_skill.damage_type] = damage_to_add
+		timer.delay(click_skill.duration, false, function() damage.remove_click(click_skill, damage_to_add) end)
 	end
 end
 
-function damage.remove_click(click_skill)
-	if damage_value[click_skill.damage_type] ~= nil then
-		_G.cursor.extra_damage_value[click_skill.damage_type] = _G.cursor.extra_damage_value[click_skill.damage_type] - click_skill.damage_value
-	end
-end
+
 
 function damage.reset_click()
 	for key, _ in pairs(_G.cursor.extra_damage_value) do

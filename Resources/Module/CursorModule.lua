@@ -23,7 +23,7 @@ local WIDTH = tonumber(sys.get_config("display.width"))
 local HEIGHT = tonumber(sys.get_config("display.height")) 
 
 function cursor.move_cursor_sprite(action)
-	local screen = vmath.vector3(action.x, action.y, 0)
+	local screen = vmath.vector3(action.x + 22, action.y - 22, 0)
 	local cursor_node = gui.get_node(cursor.node)
 	gui.set_position(cursor_node, screen)
 

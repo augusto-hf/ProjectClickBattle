@@ -5,11 +5,15 @@ local enemy_info = require "Resources.Module.EnemyInfoModule"
 local enemys = {}
 local bosses = {}
 
-local function calculate_next_hp(current_index, current_phase)
+local function calculate_next_hp(current_index, current_phase, is_boss)
 	local hp
-	if enemys[current_index - 1] ~= nil then
-		local last_hp = enemys[current_index  - 1].max_hp
-		hp = last_hp + (last_hp * enemy_info.life_upgrade[current_phase]) 
+	if not is_boss then
+		if enemys[current_index - 1] ~= nil then
+			local last_hp = enemys[current_index  - 1].max_hp
+			hp = (last_hp * enemy_info.life_upgrade) 
+		else
+			hp = enemy_info.basic_first_life
+		end
 	else
 		if bosses[current_phase - 1] ~= nil then
 			hp = bosses[current_phase - 1].max_hp + enemy_info.boss_life_upgrade

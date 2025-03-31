@@ -4,7 +4,7 @@ _G.Clicks_per_second = 0
 _G.Number_of_click = 0
 _G.Phase = 0
 _G.Enemy_index = 0
-_G.Money = 0
+_G.Money = 1000
 -- float
 -- components
 local counter_text
@@ -69,7 +69,7 @@ function on_input(self, action_id, action)
 		
 		-- In Game
 		if gui.pick_node(_G.Enemy_node, action.x, action.y)then
-			_G.vfx.trigger_damage_number_on_click(action, _G.cursor.click_damage)
+			_G.vfx.trigger_damage_number_on_click(action)
 			_G.Number_of_click = _G.Number_of_click + _G.cursor.click_damage
 			--_G.deal(, value)
 		end
@@ -78,6 +78,11 @@ function on_input(self, action_id, action)
 		local weapon_skill_button = gui.get_node("skill_button_weapon")
 		if gui.pick_node(weapon_skill_button, action.x, action.y)then
 			active_skills.UseSkill(_G.skills.weapon)
+		end
+		
+		local click_skill_button_heavy_glove = gui.get_node("click_skill_button_heavy_glove")
+		if gui.pick_node(click_skill_button_heavy_glove, action.x, action.y)then
+			active_skills.UseClickSkill(_G.click_skills.heavy_gloves)
 		end
 		
 		-- Shop
@@ -97,5 +102,12 @@ function on_input(self, action_id, action)
 			shop_buttons.SkillUpgrade(_G.skills.warrior_soap)
 			passive_skills_functions.update_tick_damage()
 		end
+
+		-- Shop -- Cursor Passives
+		local heavy_glove_upgrade_button = gui.get_node("heavy_glove_upgrade_button")
+		if gui.pick_node(heavy_glove_upgrade_button, action.x, action.y)then
+			shop_buttons.PassiveUpgrade(_G.click_skills.heavy_gloves)
+		end
+		
 	end
 end
