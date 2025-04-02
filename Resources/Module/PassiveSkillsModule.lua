@@ -1,10 +1,6 @@
 local passive_skills_functions = {
 }
 
-function init(self)
-
-end
-
 function passive_skills_functions.update_tick_damage ()
 	local damage_per_second = 0
 	local passive_damage = _G.skills.all_skills_passive_damage

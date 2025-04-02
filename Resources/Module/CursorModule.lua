@@ -35,4 +35,25 @@ function cursor.move_cursor_sprite(action)
 	end
 end
 
+function cursor.remove_click(click_skill, damage_when_was_added)
+	if cursor.extra_damage_value[click_skill.damage_type] ~= nil then
+		local damage_to_remove = cursor.extra_damage_value[click_skill.damage_type] - damage_when_was_added
+		cursor.extra_damage_value[click_skill.damage_type] = damage_to_remove
+	end
+end
+
+function cursor.add_click(click_skill)
+	if cursor.extra_damage_value[click_skill.damage_type] ~= nil then
+		local damage_to_add = cursor.extra_damage_value[click_skill.damage_type] + click_skill.damage_value
+		cursor.extra_damage_value[click_skill.damage_type] = damage_to_add
+		timer.delay(click_skill.duration, false, function() cursor.remove_click(click_skill, damage_to_add) end)
+	end
+end
+
+function cursor.reset_click()
+	for key, _ in pairs(cursor.extra_damage_value) do
+		cursor.extra_damage_value[key] = 0
+	end
+end
+
 return cursor

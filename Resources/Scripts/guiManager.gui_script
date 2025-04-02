@@ -17,7 +17,7 @@ _G.skills = require "Resources.Module.SkillsInfoModule"
 _G.click_skills = require "Resources.Module.ClickSkillsInfoModule" 
 _G.damage = require "Resources.Module.DamageModule"
 _G.cursor = require "Resources.Module.CursorModule"
-local counter_functions = require "Resources.Module.ClickCounterModule"
+_G.counter_functions = require "Resources.Module.ClickCounterModule"
 local enemy = require "Resources.Module.EnemyModule"
 local debug = require "Resources.Module.DebugModule"
 local combat_functions = require "Resources.Module.CombatModule"
@@ -43,12 +43,12 @@ function init(self)
 	passive_skills_functions.update_tick_damage()
 	
 	timer.delay(_G.Numbers_update_speed, true, function()
-		counter_functions.SmoothAddClicks()
+		_G.damage.deal("neutral", _G.Clicks_per_second * 0.1)
+		_G.counter_functions.SmoothAddClicksFromPassiveDamage()
 	end)
 end
 
 function update(self, dt)
-	_G.damage.add("neutral", _G.Number_of_click)
 	combat_functions.dealDamage()
 	gui.set_text(counter_text, math.floor(_G.Number_of_click))
 
@@ -69,9 +69,12 @@ function on_input(self, action_id, action)
 		
 		-- In Game
 		if gui.pick_node(_G.Enemy_node, action.x, action.y)then
-			_G.vfx.trigger_damage_number_on_click(action)
-			_G.Number_of_click = _G.Number_of_click + _G.cursor.click_damage
-			--_G.deal(, value)
+			_G.damage.deal("neutral", _G.cursor.click_damage)
+			_G.vfx.trigger_damage_number_on_click(action, _G.cursor.click_damage, "neutral")
+			_G.damage.deal_multiple(_G.cursor.extra_damage_value)
+			if _G.cursor.extra_damage_value["neutral"] > 0 then
+				_G.vfx.trigger_damage_number("neutral", _G.cursor.extra_damage_value["neutral"])
+			end
 		end
 		
 		-- In Game/skill

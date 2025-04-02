@@ -34,7 +34,7 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 		position.y = position.y + math.random(-random_variation_range, random_variation_range)
 	end
 	local node = gui.new_text_node(position, tostring(damage))
-	
+
 	if _G.current_enemy.defense[damage_type] > 1 then
 		gui.set_outline(node, vulnerable_damage_color)
 	elseif _G.current_enemy.defense[damage_type] < 1 then
@@ -58,7 +58,7 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 	local end_alpha = 0.0
 
 	gui.animate(node, "color.w", end_alpha, gui.EASING_LINEAR, duration, 0, function() gui.delete_node(node) end)
-	gui.animate(node, "position", end_position, gui.EASING_INOUTELASTIC, duration, 0, print("gave damage"))
+	gui.animate(node, "position", end_position, gui.EASING_INOUTELASTIC, duration, 0)
 	gui.animate(node, "scale", final_scale, gui.EASING_INBOUNCE, duration / 3 , 0)
 end
 
@@ -66,13 +66,14 @@ end
 function vfx.trigger_damage_number(type, damage)
 	local damage_magnitude = (damage * 100) / _G.current_enemy.max_hp
 	local enemy_pos = gui.get_position(_G.Enemy_node)
+	--print(type, damage)
 	damage_number_animation(false, type, enemy_pos, damage, damage_magnitude)
 end
 
 function vfx.trigger_damage_number_on_click(action, damage, type)
 	local damage_magnitude = (damage * 100) / _G.current_enemy.max_hp
 	trigger_enemy_shake(damage_magnitude)
-	damage_number_animation(true, "neutral", vmath.vector3(action.x, action.y, 0), damage, damage_magnitude)
+	damage_number_animation(true, type, vmath.vector3(action.x, action.y, 0), damage, damage_magnitude)
 end
 
 function vfx.run_on_update_effects()
