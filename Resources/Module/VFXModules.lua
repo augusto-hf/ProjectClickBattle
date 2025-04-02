@@ -34,6 +34,8 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 		position.y = position.y + math.random(-random_variation_range, random_variation_range)
 	end
 	local node = gui.new_text_node(position, tostring(damage))
+	gui.set_color(node, vmath.vector4(1,1,1,1))
+	gui.set_font(node, "Doom") 
 
 	if _G.current_enemy.defense[damage_type] > 1 then
 		gui.set_outline(node, vulnerable_damage_color)
@@ -43,8 +45,6 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 		gui.set_outline(node, neutral_damage_color)
 	end
 	
-	gui.set_color(node, vmath.vector4(1,1,1,1))
-	gui.set_font(node, "default") 
 	local magnitude_scale = starting_scale * vmath.clamp(magnitude, 0.60, 1.33)
 	gui.set_scale(node, magnitude_scale)
 	gui.set_rotation(node, vmath.vector3(0, 0, math.random(-random_rotation_range, random_rotation_range)))
