@@ -3,6 +3,10 @@ fonts {
   name: "default"
   font: "/builtins/fonts/default.font"
 }
+fonts {
+  name: "Doom"
+  font: "/Resources/fonts/Doom.font"
+}
 textures {
   name: "Icons"
   texture: "/Resources/Tiles/Icons.tilesource"
@@ -86,7 +90,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "Upgrade"
-  font: "default"
+  font: "Doom"
   id: "cursor_upgrade_label1"
   parent: "cursor_upgrade_button"
   inherit_alpha: true
@@ -107,7 +111,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "1"
-  font: "default"
+  font: "Doom"
   id: "level_cursor"
   parent: "shop_icon_cursor"
   inherit_alpha: true
@@ -128,7 +132,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "level:"
-  font: "default"
+  font: "Doom"
   id: "label_cursor"
   parent: "shop_icon_cursor"
   inherit_alpha: true
@@ -191,7 +195,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "Upgrade"
-  font: "default"
+  font: "Doom"
   id: "weapon_upgrade_label"
   parent: "weapon_upgrade_button"
   inherit_alpha: true
@@ -212,7 +216,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "0"
-  font: "default"
+  font: "Doom"
   id: "level_weapon"
   parent: "shop_icon_weapon"
   inherit_alpha: true
@@ -233,7 +237,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "level:"
-  font: "default"
+  font: "Doom"
   id: "label_weapon"
   parent: "shop_icon_weapon"
   inherit_alpha: true
@@ -254,7 +258,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "0"
-  font: "default"
+  font: "Doom"
   id: "value_weapon"
   parent: "shop_icon_weapon"
   inherit_alpha: true
@@ -317,7 +321,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "Upgrade"
-  font: "default"
+  font: "Doom"
   id: "warrior_soap_upgrade_label"
   parent: "warrior_soap_upgrade_button"
   inherit_alpha: true
@@ -338,7 +342,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "0"
-  font: "default"
+  font: "Doom"
   id: "level_warrior_soap"
   parent: "shop_icon_warrior_soap"
   inherit_alpha: true
@@ -359,7 +363,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "level:"
-  font: "default"
+  font: "Doom"
   id: "label_warrior_soap"
   parent: "shop_icon_warrior_soap"
   inherit_alpha: true
@@ -380,7 +384,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "0"
-  font: "default"
+  font: "Doom"
   id: "value_warrior_soap"
   parent: "shop_icon_warrior_soap"
   inherit_alpha: true
@@ -428,7 +432,7 @@ nodes {
   text: " Heavy \n"
   "Glove\n"
   ""
-  font: "default"
+  font: "Doom"
   id: "heavy_glove_upgrade_label"
   parent: "heavy_glove_upgrade_button"
   inherit_alpha: true
@@ -448,7 +452,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "0"
-  font: "default"
+  font: "Doom"
   id: "level_heavy_gloves"
   parent: "heavy_glove_upgrade_button"
   inherit_alpha: true
@@ -468,7 +472,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "0"
-  font: "default"
+  font: "Doom"
   id: "value_heavy_gloves"
   parent: "heavy_glove_upgrade_button"
   inherit_alpha: true
@@ -620,7 +624,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "0"
-  font: "default"
+  font: "Doom"
   id: "counter_text"
   layer: "Hud"
   inherit_alpha: true
@@ -662,7 +666,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "0"
-  font: "default"
+  font: "Doom"
   id: "label_dps"
   layer: "Hud"
   inherit_alpha: true
@@ -683,7 +687,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "HP"
-  font: "default"
+  font: "Doom"
   id: "label_enemy"
   inherit_alpha: true
 }
@@ -703,7 +707,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "10"
-  font: "default"
+  font: "Doom"
   id: "label_hp_value"
   inherit_alpha: true
 }
@@ -723,7 +727,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "0"
-  font: "default"
+  font: "Doom"
   id: "label_phase"
   layer: "Debug"
   inherit_alpha: true
@@ -744,7 +748,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "0"
-  font: "default"
+  font: "Doom"
   id: "label_enemy_counter"
   layer: "Debug"
   inherit_alpha: true
@@ -765,7 +769,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "0"
-  font: "default"
+  font: "Doom"
   id: "label_enemy_resistance_counter"
   layer: "Debug"
   inherit_alpha: true
@@ -786,7 +790,7 @@ nodes {
   }
   type: TYPE_TEXT
   text: "0"
-  font: "default"
+  font: "Doom"
   id: "label_seed"
   layer: "Debug"
   inherit_alpha: true
