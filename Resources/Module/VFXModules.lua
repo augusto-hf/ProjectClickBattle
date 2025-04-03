@@ -34,7 +34,7 @@ local function sprite_animation_based_on_resistance(number_node, defense)
 	else
 		gui.play_flipbook(sprite_node, "vulnerable_damage_icon")
 	end
-	--gui.play_flipbook(sprite_node, "resited_damage_icon") -- pra testar se ta aparecendo
+	gui.play_flipbook(sprite_node, "resited_damage_icon") -- pra testar se ta aparecendo
 	
 	gui.set_position(sprite_node, gui.get_position(number_node))
 	gui.animate(sprite_node, "color.w", 0, gui.EASING_LINEAR, 1.0, 0)
@@ -77,12 +77,20 @@ end
 function vfx.drop_money()
 	local coin_nodes = {
 		"coin_1", "coin_2" }
-		local pos_to_fall = vmath.vector3(_G.Enemy_node_position.x, _G.Enemy_node_position.y - 20, _G.Enemy_node_position.z)
+		local height_to_fly = _G.Enemy_node_position.y + 100
+		local height_to_fall =  _G.Enemy_node_position.y - 200
 
-		
-		local current_node = gui.get_node(coin_nodes[1])
-		gui.set_color(current_node, vmath.vector4(1,1,1,1))
-		gui.animate(current_node, "position", pos_to_fall, gui.EASING_LINEAR, 0.75)
+		for key, value in pairs(coin_nodes) do
+			local current_node = gui.get_node(coin_nodes[1])
+			gui.set_position(current_node, _G.Enemy_node_position)
+			gui.set_color(current_node, vmath.vector4(1,1,1,1))
+
+			gui.animate(current_node, "position.y", height_to_fly, gui.EASING_LINEAR, 0.25, 0, function()
+				gui.animate(current_node, "position.y", height_to_fall, gui.EASING_LINEAR, 0.75)
+			end)
+			
+			gui.animate(current_node, "position.x", _G.Enemy_node_position.x + math.random(-250, 250), gui.EASING_LINEAR, 0.75)
+	end
 end
 
 function vfx.trigger_damage_number(type, damage)
