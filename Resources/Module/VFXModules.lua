@@ -26,6 +26,20 @@ local function trigger_enemy_shake(magnitude)
 	shake_timer = 20
 end 
 
+local function sprite_animation_based_on_resistance(number_node, defense)
+	local sprite_node = gui.get_node("damage_icon")
+	gui.set_color(sprite_node, vmath.vector4(1,1,1,1))
+	if defense < 1 then
+		gui.play_flipbook(sprite_node, "resited_damage_icon")
+	else
+		gui.play_flipbook(sprite_node, "vulnerable_damage_icon")
+	end
+	--gui.play_flipbook(sprite_node, "resited_damage_icon") -- pra testar se ta aparecendo
+	
+	gui.set_position(sprite_node, gui.get_position(number_node))
+	gui.animate(sprite_node, "color.w", 0, gui.EASING_LINEAR, 1.0, 0)
+end
+
 local function damage_number_animation(is_cursor, damage_type, position, damage, magnitude)
 	if is_cursor then
 		position = position
@@ -36,14 +50,6 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 	local node = gui.new_text_node(position, tostring(damage))
 	gui.set_color(node, vmath.vector4(1,1,1,1))
 	gui.set_font(node, "Doom") 
-
-	if _G.current_enemy.defense[damage_type] > 1 then
-		gui.set_outline(node, vulnerable_damage_color)
-	elseif _G.current_enemy.defense[damage_type] < 1 then
-		gui.set_outline(node, resisted_damage_color)
-	else
-		gui.set_outline(node, neutral_damage_color)
-	end
 	
 	local magnitude_scale = starting_scale * vmath.clamp(magnitude, 0.60, 1.33)
 	gui.set_scale(node, magnitude_scale)
@@ -60,8 +66,24 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 	gui.animate(node, "color.w", end_alpha, gui.EASING_LINEAR, duration, 0, function() gui.delete_node(node) end)
 	gui.animate(node, "position", end_position, gui.EASING_INOUTELASTIC, duration, 0)
 	gui.animate(node, "scale", final_scale, gui.EASING_INBOUNCE, duration / 3 , 0)
+	
+	--if _G.current_enemy.defense[damage_type] ~= 1 then
+	sprite_animation_based_on_resistance(node, _G.current_enemy.defense[damage_type])
+	--end
+	
+	
 end
 
+function vfx.drop_money()
+	local coin_nodes = {
+		"coin_1", "coin_2" }
+		local pos_to_fall = vmath.vector3(_G.Enemy_node_position.x, _G.Enemy_node_position.y - 20, _G.Enemy_node_position.z)
+
+		
+		local current_node = gui.get_node(coin_nodes[1])
+		gui.set_color(current_node, vmath.vector4(1,1,1,1))
+		gui.animate(current_node, "position", pos_to_fall, gui.EASING_LINEAR, 0.75)
+end
 
 function vfx.trigger_damage_number(type, damage)
 	local damage_magnitude = (damage * 100) / _G.current_enemy.max_hp

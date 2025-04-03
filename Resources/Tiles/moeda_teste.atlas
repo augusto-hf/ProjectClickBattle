@@ -1,0 +1,4 @@
+images {
+  image: "/Resources/Sprites/istockphoto-1224395181-1024x1024.jpg"
+}
+extrude_borders: 2

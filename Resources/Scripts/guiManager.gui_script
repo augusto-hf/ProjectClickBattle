@@ -58,6 +58,7 @@ function update(self, dt)
 	_G.vfx.run_on_update_effects()
 
 	if _G.current_enemy.hp <= 0 and _G.current_enemy.is_alive then
+		_G.vfx.drop_money()
 		print("Enemy defeated. Current Enemy Index:", _G.Enemy_index)
 		_G.current_enemy = enemy.respawner()
 	end

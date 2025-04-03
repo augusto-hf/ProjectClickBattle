@@ -15,6 +15,10 @@ textures {
   name: "testSpritesAtlas"
   texture: "/Resources/Tiles/testSpritesAtlas.atlas"
 }
+textures {
+  name: "moeda_teste"
+  texture: "/Resources/Tiles/moeda_teste.atlas"
+}
 nodes {
   position {
     x: 167.0
@@ -815,6 +819,185 @@ nodes {
   id: "label_money"
   layer: "Hud"
   inherit_alpha: true
+}
+nodes {
+  position {
+    x: 994.0
+    y: 375.0
+  }
+  scale {
+    x: 3.04
+    y: 3.04
+    z: 3.04
+  }
+  type: TYPE_BOX
+  texture: "Icons/resited_damage_icon"
+  id: "damage_icon"
+  layer: "Game"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "coins"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1190.0
+    y: 385.0
+  }
+  scale {
+    x: 0.1216
+    y: 0.1216
+    z: 0.1216
+  }
+  type: TYPE_BOX
+  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  id: "coin_1"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1190.0
+    y: 385.0
+  }
+  scale {
+    x: 0.1216
+    y: 0.1216
+    z: 0.1216
+  }
+  type: TYPE_BOX
+  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  id: "coin_2"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1190.0
+    y: 385.0
+  }
+  scale {
+    x: 0.1216
+    y: 0.1216
+    z: 0.1216
+  }
+  type: TYPE_BOX
+  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  id: "coin_3"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1190.0
+    y: 385.0
+  }
+  scale {
+    x: 0.1216
+    y: 0.1216
+    z: 0.1216
+  }
+  type: TYPE_BOX
+  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  id: "coin_4"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1190.0
+    y: 385.0
+  }
+  scale {
+    x: 0.1216
+    y: 0.1216
+    z: 0.1216
+  }
+  type: TYPE_BOX
+  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  id: "coin_5"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1190.0
+    y: 385.0
+  }
+  scale {
+    x: 0.1216
+    y: 0.1216
+    z: 0.1216
+  }
+  type: TYPE_BOX
+  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  id: "coin_6"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1190.0
+    y: 385.0
+  }
+  scale {
+    x: 0.1216
+    y: 0.1216
+    z: 0.1216
+  }
+  type: TYPE_BOX
+  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  id: "coin_7"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1190.0
+    y: 385.0
+  }
+  scale {
+    x: 0.1216
+    y: 0.1216
+    z: 0.1216
+  }
+  type: TYPE_BOX
+  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  id: "coin_8"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
 }
 layers {
   name: "Game"
