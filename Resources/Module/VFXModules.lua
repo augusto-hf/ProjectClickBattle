@@ -2,15 +2,27 @@ local vfx = {
 }
 local perlin = require "Resources.ExternalModules.perlin"
 
+-- coins:
+local coin_nodes = {
+	"coin_1", "coin_2", "coin_3", "coin_4", "coin_5", "coin_6", "coin_7", "coin_8" }
+local duration_up = 0.15
+local duration_fall = 1.5
+local x_fall_range = 170
+local delay_until_next_coin = 0.033
+local current_dropped_coin = 0
+
+-- damage number :
 local resisted_damage_color = vmath.vector4(0,0,1,1)
 local vulnerable_damage_color = vmath.vector4(1,0,0,1)
 local neutral_damage_color = vmath.vector4(0,0,0,1)
 
-local random_variation_range = 85
+local random_position_variation_range = 85
 local random_rotation_range = 15
 local starting_scale = vmath.vector3(4, 4, 4)
 local final_scale = vmath.vector3(1, 1, 1)
 
+
+-- shake :
 local shake_timer = 0
 local shake_range = vmath.vector3(10,10,1)
 
@@ -22,7 +34,7 @@ end
 
 local function trigger_enemy_shake(magnitude)
 	perlin.init()
-	shake_range_final = shake_range * (magnitude)
+	shake_range_final = shake_range * vmath.clamp(magnitude, 0.60, 1.33)
 	shake_timer = 20
 end 
 
@@ -37,21 +49,25 @@ local function sprite_animation_based_on_resistance(number_node, defense)
 	gui.play_flipbook(sprite_node, "resited_damage_icon") -- pra testar se ta aparecendo
 	
 	gui.set_position(sprite_node, gui.get_position(number_node))
+	gui.set_rotation(sprite_node, gui.get_rotation(number_node))
+	gui.set_scale(sprite_node, gui.get_scale(number_node))
+	
 	gui.animate(sprite_node, "color.w", 0, gui.EASING_LINEAR, 1.0, 0)
+	gui.animate(sprite_node, "scale", final_scale, gui.EASING_INBOUNCE, 1.0 / 3 , 0)
 end
 
 local function damage_number_animation(is_cursor, damage_type, position, damage, magnitude)
 	if is_cursor then
 		position = position
 	else
-		position.x = position.x + math.random(-random_variation_range, random_variation_range)
-		position.y = position.y + math.random(-random_variation_range, random_variation_range)
+		position.x = position.x + math.random(-random_position_variation_range, random_position_variation_range)
+		position.y = position.y + math.random(-random_position_variation_range, random_position_variation_range)
 	end
 	local node = gui.new_text_node(position, tostring(damage))
 	gui.set_color(node, vmath.vector4(1,1,1,1))
 	gui.set_font(node, "Doom") 
 	
-	local magnitude_scale = starting_scale * vmath.clamp(magnitude, 0.60, 1.33)
+	local magnitude_scale = starting_scale * vmath.clamp(magnitude, 0.60, 0.9)
 	gui.set_scale(node, magnitude_scale)
 	gui.set_rotation(node, vmath.vector3(0, 0, math.random(-random_rotation_range, random_rotation_range)))
 	gui.set_layer(node, "Hud")
@@ -74,22 +90,27 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 	
 end
 
+local function drop_coin(coin)
+
+end
+
 function vfx.drop_money()
-	local coin_nodes = {
-		"coin_1", "coin_2" }
 		local height_to_fly = _G.Enemy_node_position.y + 100
-		local height_to_fall =  _G.Enemy_node_position.y - 200
+		local height_to_fall =  _G.Enemy_node_position.y - 100
+		current_dropped_coin = current_dropped_coin + 1
 
-		for key, value in pairs(coin_nodes) do
-			local current_node = gui.get_node(coin_nodes[1])
-			gui.set_position(current_node, _G.Enemy_node_position)
-			gui.set_color(current_node, vmath.vector4(1,1,1,1))
-
-			gui.animate(current_node, "position.y", height_to_fly, gui.EASING_LINEAR, 0.25, 0, function()
-				gui.animate(current_node, "position.y", height_to_fall, gui.EASING_LINEAR, 0.75)
-			end)
-			
-			gui.animate(current_node, "position.x", _G.Enemy_node_position.x + math.random(-250, 250), gui.EASING_LINEAR, 0.75)
+		if coin_nodes[current_dropped_coin] ~= nil then
+		local current_node = gui.get_node(coin_nodes[current_dropped_coin])
+		gui.set_position(current_node, _G.Enemy_node_position)
+		gui.set_color(current_node, vmath.vector4(1,1,1,1))
+		
+		gui.animate(current_node, "position.y", height_to_fly, gui.EASING_LINEAR, duration_up, 0, function()
+			gui.animate(current_node, "position.y", height_to_fall, gui.EASING_OUTBOUNCE, duration_fall)
+		end)
+		gui.animate(current_node, "position.x", _G.Enemy_node_position.x + math.random(-x_fall_range, x_fall_range), gui.EASING_LINEAR, duration_fall / 2)
+		timer.delay(delay_until_next_coin, false, function() vfx.drop_money()end)
+	else
+		current_dropped_coin = 0
 	end
 end
 

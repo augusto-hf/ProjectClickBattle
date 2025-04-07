@@ -3,6 +3,12 @@ tile_width: 32
 tile_height: 32
 collision_groups: "default"
 animations {
+  id: "coin_sprite"
+  start_tile: 200
+  end_tile: 200
+  playback: PLAYBACK_NONE
+}
+animations {
   id: "resited_damage_icon"
   start_tile: 98
   end_tile: 98

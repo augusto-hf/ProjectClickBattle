@@ -849,154 +849,146 @@ nodes {
 }
 nodes {
   position {
-    x: 1190.0
+    x: 1076.0
     y: 385.0
   }
   scale {
-    x: 0.1216
-    y: 0.1216
-    z: 0.1216
+    x: 1.925665
+    y: 1.858048
+    z: 1.858048
   }
   type: TYPE_BOX
-  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  texture: "Icons/coin_sprite"
   id: "coin_1"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
-  alpha: 0.0
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: 1190.0
+    x: 1076.0
     y: 385.0
   }
   scale {
-    x: 0.1216
-    y: 0.1216
-    z: 0.1216
+    x: 1.925666
+    y: 1.858048
+    z: 1.858048
   }
   type: TYPE_BOX
-  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  texture: "Icons/coin_sprite"
   id: "coin_2"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
-  alpha: 0.0
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: 1190.0
+    x: 1076.0
     y: 385.0
   }
   scale {
-    x: 0.1216
-    y: 0.1216
-    z: 0.1216
+    x: 1.925666
+    y: 1.858048
+    z: 1.858048
   }
   type: TYPE_BOX
-  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  texture: "Icons/coin_sprite"
   id: "coin_3"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
-  alpha: 0.0
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: 1190.0
+    x: 1076.0
     y: 385.0
   }
   scale {
-    x: 0.1216
-    y: 0.1216
-    z: 0.1216
+    x: 1.925666
+    y: 1.858048
+    z: 1.858048
   }
   type: TYPE_BOX
-  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  texture: "Icons/coin_sprite"
   id: "coin_4"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
-  alpha: 0.0
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: 1190.0
+    x: 1076.0
     y: 385.0
   }
   scale {
-    x: 0.1216
-    y: 0.1216
-    z: 0.1216
+    x: 1.925666
+    y: 1.858048
+    z: 1.858048
   }
   type: TYPE_BOX
-  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  texture: "Icons/coin_sprite"
   id: "coin_5"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
-  alpha: 0.0
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: 1190.0
+    x: 1076.0
     y: 385.0
   }
   scale {
-    x: 0.1216
-    y: 0.1216
-    z: 0.1216
+    x: 1.925666
+    y: 1.858048
+    z: 1.858048
   }
   type: TYPE_BOX
-  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  texture: "Icons/coin_sprite"
   id: "coin_6"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
-  alpha: 0.0
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: 1190.0
+    x: 1076.0
     y: 385.0
   }
   scale {
-    x: 0.1216
-    y: 0.1216
-    z: 0.1216
+    x: 1.925666
+    y: 1.858048
+    z: 1.858048
   }
   type: TYPE_BOX
-  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  texture: "Icons/coin_sprite"
   id: "coin_7"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
-  alpha: 0.0
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: 1190.0
+    x: 1076.0
     y: 385.0
   }
   scale {
-    x: 0.1216
-    y: 0.1216
-    z: 0.1216
+    x: 1.925666
+    y: 1.858048
+    z: 1.858048
   }
   type: TYPE_BOX
-  texture: "moeda_teste/istockphoto-1224395181-1024x1024"
+  texture: "Icons/coin_sprite"
   id: "coin_8"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
-  alpha: 0.0
   size_mode: SIZE_MODE_AUTO
 }
 layers {

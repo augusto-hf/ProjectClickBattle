@@ -18,6 +18,7 @@ local cursor = {
 		[15] = "weapon_level4"
 	}
 }
+
 --desgraça
 local WIDTH = tonumber(sys.get_config("display.width")) 
 local HEIGHT = tonumber(sys.get_config("display.height")) 

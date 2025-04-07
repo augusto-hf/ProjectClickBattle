@@ -49,6 +49,8 @@ function init(self)
 end
 
 function update(self, dt)
+	
+	
 	combat_functions.dealDamage()
 	gui.set_text(counter_text, math.floor(_G.Number_of_click))
 
