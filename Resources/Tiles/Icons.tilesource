@@ -3,10 +3,50 @@ tile_width: 32
 tile_height: 32
 collision_groups: "default"
 animations {
+  id: "chest_sprite"
+  start_tile: 188
+  end_tile: 188
+}
+animations {
+  id: "coin_pile_sprite"
+  start_tile: 203
+  end_tile: 203
+}
+animations {
   id: "coin_sprite"
   start_tile: 200
   end_tile: 200
   playback: PLAYBACK_NONE
+}
+animations {
+  id: "diamond_ring_sprite"
+  start_tile: 134
+  end_tile: 134
+}
+animations {
+  id: "diamond_sprite"
+  start_tile: 277
+  end_tile: 277
+}
+animations {
+  id: "gem_scrap_sprite"
+  start_tile: 207
+  end_tile: 207
+}
+animations {
+  id: "gold_bar"
+  start_tile: 276
+  end_tile: 276
+}
+animations {
+  id: "money_bag_sprite"
+  start_tile: 199
+  end_tile: 199
+}
+animations {
+  id: "privaty_property_sprite"
+  start_tile: 220
+  end_tile: 220
 }
 animations {
   id: "resited_damage_icon"
@@ -14,11 +54,21 @@ animations {
   end_tile: 98
 }
 animations {
+  id: "rupie_sprite"
+  start_tile: 208
+  end_tile: 208
+}
+animations {
   id: "skull_enemyPlaceHolder"
   start_tile: 1
   end_tile: 1
   playback: PLAYBACK_NONE
   fps: 1
+}
+animations {
+  id: "treasure_map_sprite"
+  start_tile: 221
+  end_tile: 221
 }
 animations {
   id: "vulnerable_damage_icon"

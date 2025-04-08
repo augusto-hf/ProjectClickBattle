@@ -3,8 +3,10 @@ local vfx = {
 local perlin = require "Resources.ExternalModules.perlin"
 
 -- coins:
-local coin_nodes = {
-	"coin_1", "coin_2", "coin_3", "coin_4", "coin_5", "coin_6", "coin_7", "coin_8" }
+local coin_reference
+local coin_nodes = { }
+local coin_minimum_value 
+local max_coin_quantity = 20
 local duration_up = 0.15
 local duration_fall = 1.5
 local x_fall_range = 170
@@ -90,8 +92,17 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 	
 end
 
-local function drop_coin(coin)
+local coin100 = {}
+local coint50 = {}
+local coin10 = {}
+local coin5 = {}
 
+local function generate_money(quantity_of_coins)
+	local x = 0
+	while x < quantity_of_coins do
+		
+		x = x + 1
+	end
 end
 
 function vfx.drop_money()
@@ -125,6 +136,20 @@ function vfx.trigger_damage_number_on_click(action, damage, type)
 	local damage_magnitude = (damage * 100) / _G.current_enemy.max_hp
 	trigger_enemy_shake(damage_magnitude)
 	damage_number_animation(true, type, vmath.vector3(action.x, action.y, 0), damage, damage_magnitude)
+end
+
+function vfx.setup()
+	coin_reference = gui.get_node("coin")
+end
+
+function vfx.run_on_input_action(action)
+	for _,coin in ipairs(coin_nodes) do
+		if gui.pick_node(coin, action.x, action.y) then
+			print("Money collected", coin)
+			gui.delete_node(coin)
+			break
+		end
+	end
 end
 
 function vfx.run_on_update_effects()

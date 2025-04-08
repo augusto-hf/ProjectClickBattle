@@ -20,6 +20,219 @@ textures {
   texture: "/Resources/Tiles/moeda_teste.atlas"
 }
 nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "coins"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1188.0
+    y: 287.0
+  }
+  scale {
+    x: 1.116886
+    y: 1.077668
+    z: 1.077668
+  }
+  color {
+    x: 0.702
+    y: 0.502
+    z: 0.702
+  }
+  type: TYPE_BOX
+  texture: "Icons/coin_sprite"
+  id: "coin1"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1188.0
+    y: 327.0
+  }
+  scale {
+    x: 1.116886
+    y: 1.077668
+    z: 1.077668
+  }
+  type: TYPE_BOX
+  texture: "Icons/coin_sprite"
+  id: "coin5"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1188.0
+    y: 362.0
+  }
+  scale {
+    x: 1.116886
+    y: 1.077668
+    z: 1.077668
+  }
+  type: TYPE_BOX
+  texture: "Icons/gem_scrap_sprite"
+  id: "coin15"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1188.0
+    y: 413.0
+  }
+  scale {
+    x: 1.463505
+    y: 1.412116
+    z: 1.412116
+  }
+  type: TYPE_BOX
+  texture: "Icons/money_bag_sprite"
+  id: "coin25"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1188.0
+    y: 454.0
+  }
+  scale {
+    x: 0.800829
+    y: 0.77271
+    z: 0.77271
+  }
+  type: TYPE_BOX
+  texture: "Icons/diamond_ring_sprite"
+  id: "coin55"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1188.0
+    y: 501.0
+  }
+  scale {
+    x: 1.925665
+    y: 1.858048
+    z: 1.858048
+  }
+  type: TYPE_BOX
+  texture: "Icons/coin_pile_sprite"
+  id: "coin100"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1188.0
+    y: 567.0
+  }
+  scale {
+    x: 1.925665
+    y: 1.858048
+    z: 1.858048
+  }
+  type: TYPE_BOX
+  texture: "Icons/gold_bar"
+  id: "coin150"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1188.0
+    y: 633.0
+  }
+  scale {
+    x: 1.347965
+    y: 1.300634
+    z: 1.300634
+  }
+  type: TYPE_BOX
+  texture: "Icons/rupie_sprite"
+  id: "coin200"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1188.0
+    y: 685.0
+  }
+  scale {
+    x: 1.347965
+    y: 1.300634
+    z: 1.300634
+  }
+  type: TYPE_BOX
+  texture: "Icons/treasure_map_sprite"
+  id: "coin500"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1188.0
+    y: 735.0
+  }
+  scale {
+    x: 1.347965
+    y: 1.300634
+    z: 1.300634
+  }
+  type: TYPE_BOX
+  texture: "Icons/chest_sprite"
+  id: "coin750"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1188.0
+    y: 792.0
+  }
+  scale {
+    x: 1.925665
+    y: 1.858048
+    z: 1.858048
+  }
+  type: TYPE_BOX
+  texture: "Icons/diamond_sprite"
+  id: "coin1000"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
   position {
     x: 167.0
     y: 324.0
@@ -833,160 +1046,6 @@ nodes {
   type: TYPE_BOX
   texture: "Icons/resited_damage_icon"
   id: "damage_icon"
-  layer: "Game"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_BOX
-  id: "coins"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 1076.0
-    y: 385.0
-  }
-  scale {
-    x: 1.925665
-    y: 1.858048
-    z: 1.858048
-  }
-  type: TYPE_BOX
-  texture: "Icons/coin_sprite"
-  id: "coin_1"
-  parent: "coins"
-  layer: "Game"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 1076.0
-    y: 385.0
-  }
-  scale {
-    x: 1.925666
-    y: 1.858048
-    z: 1.858048
-  }
-  type: TYPE_BOX
-  texture: "Icons/coin_sprite"
-  id: "coin_2"
-  parent: "coins"
-  layer: "Game"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 1076.0
-    y: 385.0
-  }
-  scale {
-    x: 1.925666
-    y: 1.858048
-    z: 1.858048
-  }
-  type: TYPE_BOX
-  texture: "Icons/coin_sprite"
-  id: "coin_3"
-  parent: "coins"
-  layer: "Game"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 1076.0
-    y: 385.0
-  }
-  scale {
-    x: 1.925666
-    y: 1.858048
-    z: 1.858048
-  }
-  type: TYPE_BOX
-  texture: "Icons/coin_sprite"
-  id: "coin_4"
-  parent: "coins"
-  layer: "Game"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 1076.0
-    y: 385.0
-  }
-  scale {
-    x: 1.925666
-    y: 1.858048
-    z: 1.858048
-  }
-  type: TYPE_BOX
-  texture: "Icons/coin_sprite"
-  id: "coin_5"
-  parent: "coins"
-  layer: "Game"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 1076.0
-    y: 385.0
-  }
-  scale {
-    x: 1.925666
-    y: 1.858048
-    z: 1.858048
-  }
-  type: TYPE_BOX
-  texture: "Icons/coin_sprite"
-  id: "coin_6"
-  parent: "coins"
-  layer: "Game"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 1076.0
-    y: 385.0
-  }
-  scale {
-    x: 1.925666
-    y: 1.858048
-    z: 1.858048
-  }
-  type: TYPE_BOX
-  texture: "Icons/coin_sprite"
-  id: "coin_7"
-  parent: "coins"
-  layer: "Game"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 1076.0
-    y: 385.0
-  }
-  scale {
-    x: 1.925666
-    y: 1.858048
-    z: 1.858048
-  }
-  type: TYPE_BOX
-  texture: "Icons/coin_sprite"
-  id: "coin_8"
-  parent: "coins"
   layer: "Game"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
