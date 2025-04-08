@@ -92,16 +92,54 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 	
 end
 
-local coin100 = {}
-local coint50 = {}
-local coin10 = {}
-local coin5 = {}
+local coins = {
+coin1000 = 0,
+coin750 = 0,
+coin500 = 0,
+coin200 = 0,
+coin150 = 0,
+coin100 = 0,
+coin55 = 0,
+coin25 = 0,
+coin15 = 0,
+coin5 = 0,
+coin1 = 0
+}
 
-local function generate_money(quantity_of_coins)
-	local x = 0
-	while x < quantity_of_coins do
-		
-		x = x + 1
+local coin1000_nodes = {}
+local coin750_nodes = {}
+local coin500_nodes = {}
+local coin200_nodes = {}
+local coin150_nodes = {}
+local coin100_nodes = {}
+local coin55_nodes = {}
+local coin25_nodes = {}
+local coin15_nodes = {}
+local coin5_nodes = {}
+local coin1_nodes = {}
+
+local function generate_money(money_amount)
+	local current_money = 0
+	
+	while current_money < money_amount do
+		if money_amount > 1000 and current_money > 1000 then
+			
+		end
+		if money_amount > 750 and current_money > 750 then
+			
+		end
+		if money_amount > 500 and current_money > 500 then
+			
+		end
+		if money_amount > 200 and current_money > 200 then
+			
+		end
+		if money_amount > 150 and current_money > 150 then
+			
+		end
+		if money_amount > 100 and current_money > 100 then
+			
+		end
 	end
 end
 
