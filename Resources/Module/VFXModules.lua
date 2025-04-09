@@ -1,9 +1,11 @@
 local vfx = {
 }
 local perlin = require "Resources.ExternalModules.perlin"
+local coin = require "Resources.Module.CoinModule"
 
 -- coins:
-local coin_reference
+
+local coin_reference_nodes = {}
 local coin_nodes = { }
 local coin_minimum_value 
 local max_coin_quantity = 20
@@ -92,54 +94,52 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 	
 end
 
-local coin_values = {1000, 750, 500, 200, 150, 100, 55, 25, 15, 5, 1}
-
-local coin_reference_nodes = {}
-
 local coin_to_spawn = {}
 
 local function generate_money(money_amount)
 	local current_money = 0
 
 	while money_amount > current_money do
-		for _,values in ipairs(coin_values) do
-			if money_amount > values and money_amount > current_money then
-				if values ~= 1 then
-					if coin_to_spawn[tostring(values)] ~= nil then
-						coin_to_spawn[tostring(values)] = coin_to_spawn[tostring(values)] + 1
-					else
-						coin_to_spawn[tostring(values)] = 1
-					end
-				else
-					if coin_to_spawn[tostring(values)] ~= nil then
-						coin_to_spawn[tostring(values)] = coin_to_spawn[tostring(values)] + 1
-					else
-						coin_to_spawn[tostring(values)] = 1
-					end
-				end
-			end
-		end
+		
 	end
 end
 
-function vfx.drop_money()
-		local height_to_fly = _G.Enemy_node_position.y + 100
-		local height_to_fall =  _G.Enemy_node_position.y - 100
-		current_dropped_coin = current_dropped_coin + 1
-
-		if coin_nodes[current_dropped_coin] ~= nil then
+local function drop_money()
+	local height_to_fly = _G.Enemy_node_position.y + 100
+	local height_to_fall =  _G.Enemy_node_position.y - 100
+	current_dropped_coin = current_dropped_coin + 1
+	
+	
+	if coin_to_spawn[current_dropped_coin] ~= nil then
 		local current_node = gui.get_node(coin_nodes[current_dropped_coin])
 		gui.set_position(current_node, _G.Enemy_node_position)
 		gui.set_color(current_node, vmath.vector4(1,1,1,1))
-		
+
 		gui.animate(current_node, "position.y", height_to_fly, gui.EASING_LINEAR, duration_up, 0, function()
 			gui.animate(current_node, "position.y", height_to_fall, gui.EASING_OUTBOUNCE, duration_fall)
 		end)
 		gui.animate(current_node, "position.x", _G.Enemy_node_position.x + math.random(-x_fall_range, x_fall_range), gui.EASING_LINEAR, duration_fall / 2)
 		timer.delay(delay_until_next_coin, false, function() vfx.drop_money()end)
+		table.remove(coin_to_spawn,current_dropped_coin)
 	else
 		current_dropped_coin = 0
+		coin_to_spawn = {}
 	end
+end
+
+function vfx.spawn_money(money_amount)
+	if coin_to_spawn ~= nil then
+		generate_money(money_amount)
+		
+		for key, values in pairs(coin_values) do
+			while coin_to_spawn[key] > 0 do
+				table.insert(coin_to_spawn , gui.clone(coin_reference_nodes[key]) )
+			end
+		end
+	end
+	
+	drop_money()
+	
 end
 
 function vfx.trigger_damage_number(type, damage)
@@ -156,7 +156,10 @@ function vfx.trigger_damage_number_on_click(action, damage, type)
 end
 
 function vfx.setup()
-	coin_reference = gui.get_node("coin")
+	for key,value in ipairs(coin_values) do
+		local current_node_id = tostring("coin"..value)
+		table.insert(coin_reference_nodes, key, current_node_id) 
+	end
 end
 
 function vfx.run_on_input_action(action)
