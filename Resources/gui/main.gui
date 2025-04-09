@@ -374,7 +374,7 @@ nodes {
 }
 nodes {
   position {
-    x: -99.0
+    x: -502.0
     y: 103.466446
   }
   scale {
@@ -388,6 +388,7 @@ nodes {
   parent: "Shop"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
+  enabled: false
 }
 nodes {
   position {
@@ -501,7 +502,7 @@ nodes {
 nodes {
   position {
     x: -99.0
-    y: 6.466446
+    y: 98.466446
   }
   scale {
     x: 2.405104
