@@ -128,14 +128,11 @@ local function drop_money()
 end
 
 function vfx.spawn_money(money_amount)
-	if coin_to_spawn ~= nil then
-		generate_money(money_amount)
+	local all_coins = coin.generate_all_coins(money_amount)
 		
-		for key, values in pairs(coin_values) do
-			while coin_to_spawn[key] > 0 do
-				table.insert(coin_to_spawn , gui.clone(coin_reference_nodes[key]) )
-			end
-		end
+	for key, values in pairs(all_coins) do
+		local 
+		table.insert(coin_to_spawn , gui.clone(coin_reference_nodes[key]) )
 	end
 	
 	drop_money()
