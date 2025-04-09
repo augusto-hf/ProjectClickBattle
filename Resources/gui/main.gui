@@ -234,6 +234,24 @@ nodes {
 }
 nodes {
   position {
+    x: 1188.0
+    y: 327.0
+  }
+  scale {
+    x: 1.116886
+    y: 1.077668
+    z: 1.077668
+  }
+  type: TYPE_BOX
+  texture: "Icons/coin_sprite"
+  id: "coin"
+  parent: "coins"
+  layer: "Game"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
     x: 167.0
     y: 324.0
   }

@@ -92,17 +92,32 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 	
 end
 
-local coin_values = {1, 5, 15, 25, 55, 100, 150, 200, 500, 750, 1000}
+local coin_values = {1000, 750, 500, 200, 150, 100, 55, 25, 15, 5, 1}
 
 local coin_reference_nodes = {}
+
+local coin_to_spawn = {}
 
 local function generate_money(money_amount)
 	local current_money = 0
 
-
-	for _,values in pairs(coin_values) do
-		if money_amount > values and current_money > values then
-			
+	while money_amount > current_money do
+		for _,values in ipairs(coin_values) do
+			if money_amount > values and money_amount > current_money then
+				if values ~= 1 then
+					if coin_to_spawn[tostring(values)] ~= nil then
+						coin_to_spawn[tostring(values)] = coin_to_spawn[tostring(values)] + 1
+					else
+						coin_to_spawn[tostring(values)] = 1
+					end
+				else
+					if coin_to_spawn[tostring(values)] ~= nil then
+						coin_to_spawn[tostring(values)] = coin_to_spawn[tostring(values)] + 1
+					else
+						coin_to_spawn[tostring(values)] = 1
+					end
+				end
+			end
 		end
 	end
 end
