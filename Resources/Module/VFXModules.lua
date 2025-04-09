@@ -1,7 +1,7 @@
 local vfx = {
 }
 local perlin = require "Resources.ExternalModules.perlin"
-local coin = require "Resources.Module.CoinModule"
+local coin_management = require "Resources.Module.CoinManagementModule"
 
 -- coins:
 
@@ -128,7 +128,7 @@ local function drop_money()
 end
 
 function vfx.spawn_money(money_amount)
-	local all_coins = coin.generate_all_coins(money_amount)
+	local all_coins = coin_management.generate_all_coins(money_amount)
 		
 	for key, values in pairs(all_coins) do
 		local 
