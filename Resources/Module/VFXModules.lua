@@ -97,7 +97,6 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 end
 
 local function collect_coin(i, coin)
-
 		print("Money collected ".. current_generated_coins[i].value .."$")
 		table.remove(coin_nodes, i)
 		table.remove(current_generated_coins, i)
