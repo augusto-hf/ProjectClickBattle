@@ -59,11 +59,12 @@ function enemy.respawner()
 	--print("Respawner called. Current Enemy Index:", _G.Enemy_index)
 	--print("Current Enemy Alive:", _G.current_enemy.is_alive)
 	local enemy_to_spawn
-	if _G.current_enemy == nil then
+	if 	_G.Enemy_index == 0 and _G.Phase == 0 then
 		enemy_to_spawn = enemy.generate_basic_enemy()
 		_G.Enemy_index = _G.Enemy_index + 1
 	else
-		_G.Money = _G.Money + _G.current_enemy.drop
+		--_G.Money = _G.Money + _G.current_enemy.drop
+		_G.vfx.spawn_money(1000)
 		
 		_G.current_enemy.is_alive = false
 		if _G.Enemy_index < 4 then

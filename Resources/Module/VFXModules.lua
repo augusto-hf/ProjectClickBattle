@@ -4,16 +4,14 @@ local perlin = require "Resources.ExternalModules.perlin"
 local coin_management = require "Resources.Module.CoinManagementModule"
 
 -- coins:
-
-local coin_reference_nodes = {}
-local coin_nodes = { }
-local coin_minimum_value 
-local max_coin_quantity = 20
+local current_generated_coins = {}
+local coin_nodes = {}
+local spawned_coins = {}
+local coin_lifetime = 1.0 
 local duration_up = 0.15
 local duration_fall = 1.5
 local x_fall_range = 170
 local delay_until_next_coin = 0.033
-local current_dropped_coin = 0
 
 -- damage number :
 local resisted_damage_color = vmath.vector4(0,0,1,1)
@@ -60,6 +58,10 @@ local function sprite_animation_based_on_resistance(number_node, defense)
 	gui.animate(sprite_node, "scale", final_scale, gui.EASING_INBOUNCE, 1.0 / 3 , 0)
 end
 
+local function coin_number_animation(position, damage)
+
+end
+
 local function damage_number_animation(is_cursor, damage_type, position, damage, magnitude)
 	if is_cursor then
 		position = position
@@ -94,24 +96,30 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 	
 end
 
-local coin_to_spawn = {}
+local function collect_coin(i, coin)
 
-local function generate_money(money_amount)
-	local current_money = 0
+		print("Money collected ".. current_generated_coins[i].value .."$")
+		table.remove(coin_nodes, i)
+		table.remove(current_generated_coins, i)
+		gui.delete_node(coin) -- Em algum momento isso vai ser diferente, pq mic flw q instanciar e deletar é paia
+end
 
-	while money_amount > current_money do
-		
+local function collect_all_money()
+	for i,coin in ipairs(coin_nodes) do
+		collect_coin(i, coin)
 	end
 end
 
-local function drop_money()
+function vfx.drop_money()
 	local height_to_fly = _G.Enemy_node_position.y + 100
 	local height_to_fall =  _G.Enemy_node_position.y - 100
-	current_dropped_coin = current_dropped_coin + 1
+	local i = 1
 	
-	
-	if coin_to_spawn[current_dropped_coin] ~= nil then
-		local current_node = gui.get_node(coin_nodes[current_dropped_coin])
+	print("eu :".. current_generated_coins[i].node_id)
+	while i < table.maxn(current_generated_coins) do
+		print("me tornei :".. current_generated_coins[i].node_id)
+		local current_node = gui.clone( gui.get_node(current_generated_coins[i].node_id) )
+		table.insert(coin_nodes, i, current_node)
 		gui.set_position(current_node, _G.Enemy_node_position)
 		gui.set_color(current_node, vmath.vector4(1,1,1,1))
 
@@ -119,25 +127,25 @@ local function drop_money()
 			gui.animate(current_node, "position.y", height_to_fall, gui.EASING_OUTBOUNCE, duration_fall)
 		end)
 		gui.animate(current_node, "position.x", _G.Enemy_node_position.x + math.random(-x_fall_range, x_fall_range), gui.EASING_LINEAR, duration_fall / 2)
-		timer.delay(delay_until_next_coin, false, function() vfx.drop_money()end)
-		table.remove(coin_to_spawn,current_dropped_coin)
-	else
-		current_dropped_coin = 0
-		coin_to_spawn = {}
+		i = i + 1
 	end
 end
 
 function vfx.spawn_money(money_amount)
-	local all_coins = coin_management.generate_all_coins(money_amount)
-		
-	for key, values in pairs(all_coins) do
-		local 
-		table.insert(coin_to_spawn , gui.clone(coin_reference_nodes[key]) )
+	--print("spawnei buffunfa")
+	collect_all_money()
+while 0 < money_amount do
+	local new_coin = coin_management.look_for_coin(money_amount)
+		if new_coin ~= nil then
+			table.insert(current_generated_coins, new_coin)
+			local id = table.maxn(current_generated_coins)
+			--print("coin number ".. id .. " of name ".. current_generated_coins[id].node_id .."value " .. current_generated_coins[id].value .. "$. was created")
+			money_amount = money_amount - current_generated_coins[id].value
+		end
 	end
-	
-	drop_money()
-	
-end
+	vfx.drop_money()
+end	
+
 
 function vfx.trigger_damage_number(type, damage)
 	local damage_magnitude = (damage * 100) / _G.current_enemy.max_hp
@@ -153,23 +161,33 @@ function vfx.trigger_damage_number_on_click(action, damage, type)
 end
 
 function vfx.setup()
-	for key,value in ipairs(coin_values) do
-		local current_node_id = tostring("coin"..value)
-		table.insert(coin_reference_nodes, key, current_node_id) 
-	end
+	
 end
 
 function vfx.run_on_input_action(action)
-	for _,coin in ipairs(coin_nodes) do
-		if gui.pick_node(coin, action.x, action.y) then
-			print("Money collected", coin)
-			gui.delete_node(coin)
-			break
+	local i = 1 
+	if table.maxn(coin_nodes) == 1 then 
+		if gui.pick_node(coin_nodes[1], action.x, action.y) then
+			--print("e chorei :".. gui.get_id(coin_nodes[1]))
+			collect_coin(1, coin_nodes[1])
+		end 
+	end
+	
+	while i < table.maxn(coin_nodes) do
+		--print("o homem :".. gui.get_id(coin_nodes[i]))
+		if coin_nodes[i] ~= nil then
+			--print("balatro :".. gui.get_id(coin_nodes[i]))
+			if gui.pick_node(coin_nodes[i], action.x, action.y) then
+				--print("e chorei :".. gui.get_id(coin_nodes[i]))
+				collect_coin(i, coin_nodes[i])
+			end
 		end
+		i = i + 1
 	end
 end
 
 function vfx.run_on_update_effects()
+	
 	if shake_timer > 0 then
 		local p = gui.get_position(_G.Enemy_node)
 		local noise = get_noise()

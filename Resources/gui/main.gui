@@ -20,6 +20,23 @@ textures {
   texture: "/Resources/Tiles/moeda_teste.atlas"
 }
 nodes {
+  position {
+    x: 722.0
+    y: 393.0
+  }
+  scale {
+    x: 10.8916
+    y: 10.8916
+    z: 10.8916
+  }
+  type: TYPE_BOX
+  texture: "Icons/skull_enemyPlaceHolder"
+  id: "Enemy"
+  layer: "Game"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
   size {
     x: 200.0
     y: 100.0
@@ -28,16 +45,17 @@ nodes {
   id: "coins"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
+  visible: false
 }
 nodes {
   position {
-    x: 1188.0
+    x: 1175.0
     y: 287.0
   }
   scale {
-    x: 1.116886
-    y: 1.077668
-    z: 1.077668
+    x: 1.675329
+    y: 1.616502
+    z: 1.616502
   }
   color {
     x: 0.702
@@ -54,13 +72,13 @@ nodes {
 }
 nodes {
   position {
-    x: 1188.0
+    x: 1175.0
     y: 327.0
   }
   scale {
-    x: 1.116886
-    y: 1.077668
-    z: 1.077668
+    x: 1.675329
+    y: 1.616502
+    z: 1.616502
   }
   type: TYPE_BOX
   texture: "Icons/coin_sprite"
@@ -72,13 +90,13 @@ nodes {
 }
 nodes {
   position {
-    x: 1188.0
+    x: 1175.0
     y: 362.0
   }
   scale {
-    x: 1.116886
-    y: 1.077668
-    z: 1.077668
+    x: 1.675329
+    y: 1.616502
+    z: 1.616502
   }
   type: TYPE_BOX
   texture: "Icons/gem_scrap_sprite"
@@ -90,13 +108,13 @@ nodes {
 }
 nodes {
   position {
-    x: 1188.0
+    x: 1175.0
     y: 413.0
   }
   scale {
-    x: 1.463505
-    y: 1.412116
-    z: 1.412116
+    x: 2.195258
+    y: 2.118174
+    z: 2.118174
   }
   type: TYPE_BOX
   texture: "Icons/money_bag_sprite"
@@ -108,13 +126,13 @@ nodes {
 }
 nodes {
   position {
-    x: 1188.0
+    x: 1175.0
     y: 454.0
   }
   scale {
-    x: 0.800829
-    y: 0.77271
-    z: 0.77271
+    x: 1.201243
+    y: 1.159065
+    z: 1.159065
   }
   type: TYPE_BOX
   texture: "Icons/diamond_ring_sprite"
@@ -126,13 +144,13 @@ nodes {
 }
 nodes {
   position {
-    x: 1188.0
+    x: 1175.0
     y: 501.0
   }
   scale {
-    x: 1.925665
-    y: 1.858048
-    z: 1.858048
+    x: 2.888498
+    y: 2.787072
+    z: 2.787072
   }
   type: TYPE_BOX
   texture: "Icons/coin_pile_sprite"
@@ -144,13 +162,13 @@ nodes {
 }
 nodes {
   position {
-    x: 1188.0
+    x: 1175.0
     y: 567.0
   }
   scale {
-    x: 1.925665
-    y: 1.858048
-    z: 1.858048
+    x: 2.888498
+    y: 2.787072
+    z: 2.787072
   }
   type: TYPE_BOX
   texture: "Icons/gold_bar"
@@ -162,13 +180,13 @@ nodes {
 }
 nodes {
   position {
-    x: 1188.0
+    x: 1175.0
     y: 633.0
   }
   scale {
-    x: 1.347965
-    y: 1.300634
-    z: 1.300634
+    x: 2.021948
+    y: 1.950951
+    z: 1.950951
   }
   type: TYPE_BOX
   texture: "Icons/rupie_sprite"
@@ -180,13 +198,13 @@ nodes {
 }
 nodes {
   position {
-    x: 1188.0
+    x: 1175.0
     y: 685.0
   }
   scale {
-    x: 1.347965
-    y: 1.300634
-    z: 1.300634
+    x: 2.021948
+    y: 1.950951
+    z: 1.950951
   }
   type: TYPE_BOX
   texture: "Icons/treasure_map_sprite"
@@ -198,13 +216,13 @@ nodes {
 }
 nodes {
   position {
-    x: 1188.0
+    x: 1175.0
     y: 735.0
   }
   scale {
-    x: 1.347965
-    y: 1.300634
-    z: 1.300634
+    x: 2.021948
+    y: 1.950951
+    z: 1.950951
   }
   type: TYPE_BOX
   texture: "Icons/chest_sprite"
@@ -216,13 +234,13 @@ nodes {
 }
 nodes {
   position {
-    x: 1188.0
+    x: 1175.0
     y: 792.0
   }
   scale {
-    x: 1.925665
-    y: 1.858048
-    z: 1.858048
+    x: 2.888498
+    y: 2.787072
+    z: 2.787072
   }
   type: TYPE_BOX
   texture: "Icons/diamond_sprite"
@@ -234,13 +252,13 @@ nodes {
 }
 nodes {
   position {
-    x: 1188.0
+    x: 1175.0
     y: 327.0
   }
   scale {
-    x: 1.116886
-    y: 1.077668
-    z: 1.077668
+    x: 1.675329
+    y: 1.616502
+    z: 1.616502
   }
   type: TYPE_BOX
   texture: "Icons/coin_sprite"
@@ -825,23 +843,6 @@ nodes {
   id: "skill_cooldown_heavy_gloves"
   parent: "click_skill_button_heavy_glove"
   pieFillAngle: 0.0
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 722.0
-    y: 393.0
-  }
-  scale {
-    x: 10.8916
-    y: 10.8916
-    z: 10.8916
-  }
-  type: TYPE_BOX
-  texture: "Icons/skull_enemyPlaceHolder"
-  id: "Enemy"
-  layer: "Game"
-  inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {

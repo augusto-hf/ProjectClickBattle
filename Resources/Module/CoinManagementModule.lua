@@ -3,46 +3,40 @@ local coin_management = {
 
 local coin_info = require "Resources.Module.CoinInfoModule"
 
+local max_coin_quantity = 20
+
 -- preciso ir com tudo, so dessa vez
 local coin_values = {1000, 750, 500, 200, 150, 100, 55, 25, 15, 5, 1}
-local coin_starting_probability = 10
-local coin_probability_increase = 5
 
 local function generate_coin(coin_value)
-	-- sim. eu criei uma função simples dessa simplesmente pra n me perder... 
-	--(mas tbm pq a geração de moeda dps pode virar algo mais complexo)
-	return coin_value
+	--print("Trying to get coin of value ".. coin_value)
+	if coin_info.all_coins[tostring(coin_value)] ~= nil then
+		--print("Coin picked: ".. coin_info.all_coins[tostring(coin_value)].value)
+		return coin_info.all_coins[tostring(coin_value)]
+	else
+		print("There's no coin of that value")
+		return 0
+	end
 end
 
-local function look_for_coin(money_value_to_look_for_coin)
+function coin_management.look_for_coin(money_value_to_look_for_coin)
 	-- peço perdão a quem estiver lendo oq eu fiz aqui... eu não encontrei outra forma...
-	local generated_coin = 0
-	local i = 0
-	while i < table.maxn(coin_values) do
-		local current_probability = math.random(0,100)
-		if money_value_to_look_for_coin > coin_values[i] and current_probability < coin_starting_probability + (coin_probability_increase * math.max(1, i)) then
-			generated_coin = generate_coin(coin_values[i])
+	local generated_coin
+	local coin_limit_value_relative_to_money = 0.5
+	money_value_to_look_for_coin = math.max(1, money_value_to_look_for_coin * coin_limit_value_relative_to_money) 
+	local i = 1
+	while i < (table.maxn(coin_values) + 1) and generated_coin == nil do
+		local current_probability = math.random(1,100)
+		local current_coin =  generate_coin(coin_values[i])
+		if money_value_to_look_for_coin >= coin_values[i] and current_probability < current_coin.probability then
+			--print("Calling for coin of value: ".. coin_values[i])
+			generated_coin = current_coin
 		end
 		i = i + 1
 	end
 	return generated_coin
 end
 
-function coin_management.generate_all_coins(money_value)
-	local current_generated_coins = {}
 
-	local coin_index = 0
-	
-	while 0 < money_value do
-		local new_coin_value = look_for_coin(money_value)
-		table.insert(current_generated_coins, coin_index, new_coin_value)
-		
-		print("coin number ".. table.maxn(current_generated_coins) .. " of value " .. new_coin_value .. "$. was created")
-		
-		money_value = money_value - new_coin_value
-		coin_index = coin_index + 1
-	end
-	return current_generated_coins
-end	
 
 return coin_management

@@ -9,7 +9,7 @@ _G.Money = 0
 -- components
 local counter_text
 -- bool
-
+local is_respawning = false
 
 local seed = require "Resources.Module.SeedModule"
 _G.vfx = require "Resources.Module.VFXModules"
@@ -28,6 +28,7 @@ local active_skills = require "Resources.Module.ActiveSkillsModule"
 _G.current_enemy = enemy.respawner()
 
 function init(self)
+	-- profiler.enable_ui(true)
 	_G.Enemy_node = gui.get_node("Enemy")
 	_G.Enemy_node_position = gui.get_position(_G.Enemy_node)
 	seed.generate_seed()
@@ -59,7 +60,6 @@ function update(self, dt)
 	_G.vfx.run_on_update_effects()
 
 	if _G.current_enemy.hp <= 0 and _G.current_enemy.is_alive then
-		_G.vfx.spawn_money(100)
 		print("Enemy defeated. Current Enemy Index:", _G.Enemy_index)
 		_G.current_enemy = enemy.respawner()
 	end
@@ -69,7 +69,6 @@ function on_input(self, action_id, action)
 	_G.cursor.move_cursor_sprite(action)
 	_G.vfx.run_on_input_action(action)
 	if action_id == hash("touch") and action.pressed then
-		
 		-- In Game
 		if gui.pick_node(_G.Enemy_node, action.x, action.y)then
 			_G.damage.deal("neutral", _G.cursor.click_damage)
