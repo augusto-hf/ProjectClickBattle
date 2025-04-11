@@ -40,15 +40,8 @@ local function trigger_enemy_shake(magnitude)
 	shake_timer = 20
 end 
 
-local function sprite_animation_based_on_resistance(number_node, defense)
+local function sprite_animation_following_number(number_node, sprite)
 	local sprite_node = gui.get_node("damage_icon")
-	gui.set_color(sprite_node, vmath.vector4(1,1,1,1))
-	if defense < 1 then
-		gui.play_flipbook(sprite_node, "resited_damage_icon")
-	else
-		gui.play_flipbook(sprite_node, "vulnerable_damage_icon")
-	end
-	gui.play_flipbook(sprite_node, "resited_damage_icon") -- pra testar se ta aparecendo
 	
 	gui.set_position(sprite_node, gui.get_position(number_node))
 	gui.set_rotation(sprite_node, gui.get_rotation(number_node))
@@ -58,8 +51,24 @@ local function sprite_animation_based_on_resistance(number_node, defense)
 	gui.animate(sprite_node, "scale", final_scale, gui.EASING_INBOUNCE, 1.0 / 3 , 0)
 end
 
-local function coin_number_animation(position, damage)
+local function number_animation(color, size, duration, position, text)
+	local node = gui.new_text_node(position, text)
+	gui.set_color(node, color)
+	gui.set_font(node, "Doom") 
+	
+	local end_alpha = 0.0
+	local end_position = vmath.vector3(position.x, position.y + 100, position.z)
+	
+	gui.set_scale(node, size)
+	gui.set_rotation(node, vmath.vector3(0, 0, math.random(-random_rotation_range, random_rotation_range)))
+	gui.set_layer(node, "Hud")
+	
+	gui.animate(node, "color.w", end_alpha, gui.EASING_LINEAR, duration, 0, function() gui.delete_node(node) end)
+	gui.animate(node, "position", end_position, gui.EASING_INOUTELASTIC, duration, 0)
+	gui.animate(node, "scale", final_scale, gui.EASING_INBOUNCE, duration / 3 , 0)
 
+	sprite_animation_following_number(number_node, sprite)
+	
 end
 
 local function damage_number_animation(is_cursor, damage_type, position, damage, magnitude)
@@ -69,30 +78,21 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 		position.x = position.x + math.random(-random_position_variation_range, random_position_variation_range)
 		position.y = position.y + math.random(-random_position_variation_range, random_position_variation_range)
 	end
-	local node = gui.new_text_node(position, tostring(damage))
-	gui.set_color(node, vmath.vector4(1,1,1,1))
-	gui.set_font(node, "Doom") 
-	
-	local magnitude_scale = starting_scale * vmath.clamp(magnitude, 0.60, 0.9)
-	gui.set_scale(node, magnitude_scale)
-	gui.set_rotation(node, vmath.vector3(0, 0, math.random(-random_rotation_range, random_rotation_range)))
-	gui.set_layer(node, "Hud")
-	
 
+	local color = vmath.vector4(1,1,1,1)
 	local duration = 1.0
-	local start_time = socket.gettime()
-	local start_position = gui.get_position(node)
-	local end_position = vmath.vector3(start_position.x, start_position.y + 100, start_position.z)
-	local end_alpha = 0.0
+	local magnitude_scale = starting_scale * vmath.clamp(magnitude, 0.60, 0.9)
+	
 
-	gui.animate(node, "color.w", end_alpha, gui.EASING_LINEAR, duration, 0, function() gui.delete_node(node) end)
-	gui.animate(node, "position", end_position, gui.EASING_INOUTELASTIC, duration, 0)
-	gui.animate(node, "scale", final_scale, gui.EASING_INBOUNCE, duration / 3 , 0)
+	gui.set_color(sprite_node, vmath.vector4(1,1,1,1))
+	if _G.current_enemy.defense[damage_type] < 1 then
+		gui.play_flipbook(sprite_node, "resited_damage_icon")
+	else
+		gui.play_flipbook(sprite_node, "vulnerable_damage_icon")
+	end
+	gui.play_flipbook(sprite_node, "resited_damage_icon") -- pra testar se ta aparecendo
 	
-	--if _G.current_enemy.defense[damage_type] ~= 1 then
-	sprite_animation_based_on_resistance(node, _G.current_enemy.defense[damage_type])
-	--end
-	
+	number_animation(color, magnitude_scale, duration, position, tostring(damage), sprite)
 	
 end
 
