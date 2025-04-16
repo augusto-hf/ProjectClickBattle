@@ -64,7 +64,7 @@ function enemy.respawner()
 		_G.Enemy_index = _G.Enemy_index + 1
 	else
 		--_G.Money = _G.Money + _G.current_enemy.drop
-		_G.vfx.spawn_money(1000)
+		_G.vfx.spawn_money(100)
 		
 		_G.current_enemy.is_alive = false
 		if _G.Enemy_index < 4 then

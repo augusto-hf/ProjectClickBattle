@@ -1,6 +1,8 @@
 local shop_buttons = {
 }
 
+
+
 function shop_buttons.UpdateShopInfo()
 	gui.set_text(gui.get_node("label_money"), "Money: ".. _G.Money)
 
