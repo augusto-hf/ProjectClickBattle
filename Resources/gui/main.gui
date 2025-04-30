@@ -53,13 +53,13 @@ nodes {
     y: 498.0
   }
   scale {
-    x: 2.195258
-    y: 2.118174
-    z: 2.118174
+    x: 1.944166
+    y: 1.875898
+    z: 1.875898
   }
   type: TYPE_BOX
   texture: "Icons/money_bag_sprite"
-  id: "coin_sack"
+  id: "coin"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
@@ -71,13 +71,13 @@ nodes {
     y: 498.0
   }
   scale {
-    x: 2.195258
-    y: 2.118174
-    z: 2.118174
+    x: 1.944166
+    y: 1.875898
+    z: 1.875898
   }
   type: TYPE_BOX
   texture: "Icons/money_bag_sprite"
-  id: "coin_sack1"
+  id: "coin1"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
@@ -89,13 +89,13 @@ nodes {
     y: 498.0
   }
   scale {
-    x: 2.195258
-    y: 2.118174
-    z: 2.118174
+    x: 1.944166
+    y: 1.875898
+    z: 1.875898
   }
   type: TYPE_BOX
   texture: "Icons/money_bag_sprite"
-  id: "coin_sack2"
+  id: "coin2"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
@@ -107,13 +107,13 @@ nodes {
     y: 498.0
   }
   scale {
-    x: 2.195258
-    y: 2.118174
-    z: 2.118174
+    x: 1.944166
+    y: 1.875898
+    z: 1.875898
   }
   type: TYPE_BOX
   texture: "Icons/money_bag_sprite"
-  id: "coin_sack3"
+  id: "coin3"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
@@ -125,13 +125,13 @@ nodes {
     y: 498.0
   }
   scale {
-    x: 2.195258
-    y: 2.118174
-    z: 2.118174
+    x: 1.944166
+    y: 1.875898
+    z: 1.875898
   }
   type: TYPE_BOX
   texture: "Icons/money_bag_sprite"
-  id: "coin_sack4"
+  id: "coin4"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
@@ -143,13 +143,13 @@ nodes {
     y: 498.0
   }
   scale {
-    x: 2.195258
-    y: 2.118174
-    z: 2.118174
+    x: 1.944166
+    y: 1.875898
+    z: 1.875898
   }
   type: TYPE_BOX
   texture: "Icons/money_bag_sprite"
-  id: "coin_sack5"
+  id: "coin5"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
@@ -161,13 +161,13 @@ nodes {
     y: 498.0
   }
   scale {
-    x: 2.195258
-    y: 2.118174
-    z: 2.118174
+    x: 1.944166
+    y: 1.875898
+    z: 1.875898
   }
   type: TYPE_BOX
   texture: "Icons/money_bag_sprite"
-  id: "coin_sack6"
+  id: "coin6"
   parent: "coins"
   layer: "Game"
   inherit_alpha: true
@@ -179,7 +179,7 @@ nodes {
     y: 85.0
   }
   size {
-    x: 650.0
+    x: 675.0
     y: 125.0
   }
   color {
@@ -191,11 +191,11 @@ nodes {
   id: "Shop"
   layer: "Hud"
   inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
+  clipping_mode: CLIPPING_MODE_STENCIL
 }
 nodes {
   position {
-    x: 103.0
+    x: 43.0
   }
   size {
     x: 1000.0
@@ -205,12 +205,11 @@ nodes {
   id: "Shop_items"
   parent: "Shop"
   inherit_alpha: true
-  clipping_mode: CLIPPING_MODE_STENCIL
-  size_mode: SIZE_MODE_AUTO
+  alpha: 0.0
 }
 nodes {
   position {
-    x: -359.0
+    x: -337.0
   }
   size {
     x: 90.0
@@ -309,7 +308,7 @@ nodes {
 }
 nodes {
   position {
-    x: -259.0
+    x: -237.0
   }
   size {
     x: 90.0
@@ -408,7 +407,7 @@ nodes {
 }
 nodes {
   position {
-    x: -159.0
+    x: -137.0
   }
   size {
     x: 90.0
@@ -507,7 +506,7 @@ nodes {
 }
 nodes {
   position {
-    x: -59.0
+    x: -37.0
   }
   size {
     x: 90.0
@@ -606,7 +605,7 @@ nodes {
 }
 nodes {
   position {
-    x: 41.0
+    x: 63.0
   }
   size {
     x: 90.0
@@ -705,7 +704,7 @@ nodes {
 }
 nodes {
   position {
-    x: 141.0
+    x: 163.0
   }
   size {
     x: 90.0
@@ -804,7 +803,7 @@ nodes {
 }
 nodes {
   position {
-    x: 241.0
+    x: 263.0
   }
   size {
     x: 90.0
@@ -903,7 +902,7 @@ nodes {
 }
 nodes {
   position {
-    x: 341.0
+    x: 363.0
   }
   size {
     x: 90.0

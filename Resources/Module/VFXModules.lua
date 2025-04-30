@@ -3,19 +3,29 @@ local vfx = {
 
 local coin_management = require "Resources.Module.CoinManagementModule"
 local temp_nodes = require "Resources.Module.Animation.TemporaryNodesAnimationsModule"
+local color = require "Resources.ExternalModules.convercolor"
+
+local black_color = color.rgba(0, 0, 0, 1)
 
 -- coins:
 local current_generated_coins = {}
-local spawned_coins = {}
-local coin_lifetime = 1.0 
 local duration_up = 0.15
 local duration_fall = 1.5
 local x_fall_range = 170
-local delay_until_next_coin = 0.033
+local reference_scale = vmath.vector3(2,2,2)
+local money_value_color = color.rgba(245, 206, 66, 1)
 	
 -- damage number :
 local random_position_variation_range = 85
 local starting_scale = vmath.vector3(4, 4, 4)
+local damage_border_colors = {
+	["neutral"] = color.rgba(0, 0, 0, 1),
+	["physical"] = color.rgba(51, 51, 51, 1),
+	["magic"] = color.rgba(167, 73, 214, 1),
+	["elemental"] = color.rgba(73, 214, 160, 1),
+	["explosive"] = color.rgba(255, 119, 15, 1),
+	["espiritual"] = color.rgba(138, 170, 209, 1)
+}
 
 -- shake :
 local shake_timer = 0
@@ -43,7 +53,8 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 		position.y = position.y + math.random(-random_position_variation_range, random_position_variation_range)
 	end
 
-	local color = vmath.vector4(1,1,1,1)
+	local color = color.rgb(255,255,255)
+	local border_color = damage_border_colors[damage_type]
 	local duration = 1.0
 	local magnitude_scale = starting_scale * vmath.clamp(magnitude, 0.60, 0.9)
 	
@@ -56,61 +67,71 @@ local function damage_number_animation(is_cursor, damage_type, position, damage,
 	end
 	damage_icon = "resited_damage_icon"
 	
-	temp_nodes.number_animation_with_sprite(color, magnitude_scale, duration, position, tostring(damage), damage_icon, true)
+	temp_nodes.number_animation_with_sprite(color, border_color, magnitude_scale, duration, position, tostring(damage), damage_icon, true)
 	
 end
 
 local function collect_coin(i, coin)
-	print("Money collected ".. current_generated_coins[i].value .."$ | pos: ".. i)
-		gui.delete_node(current_generated_coins[i].node)
-		table.remove(current_generated_coins, i)
+	print("Money collected ".. coin.coin_value .."$ | N: ".. i)
+	_G.Money = _G.Money + coin.coin_value
+	local number_scale = gui.get_scale(coin.node)
+	local number_pos = gui.get_position(coin.node)
+	temp_nodes.number_animation(money_value_color, black_color, number_scale, 1, number_pos, coin.coin_value, false)
+	
+	gui.set_enabled(coin.node, false) 
+	current_generated_coins[i].is_activated = false
+
 -- Em algum momento isso vai ser diferente, pq mic flw q instanciar e deletar é paia
 end
 
 local function collect_all_money()
 	local i = 1
-	if table.maxn(current_generated_coins) == nil then
-		while i < table.maxn(current_generated_coins[i]) do
-			collect_coin(i, current_generated_coins[i])
-			i = i + 1
+	for key, value in ipairs(current_generated_coins) do
+		if value.is_activated == true then
+			collect_coin(key, value)
+		elseif value.collected == false then
+			_G.Money = _G.Money + value.coin_value
 		end
 	end
+	current_generated_coins = {}
 end
 
-function vfx.drop_money()
-	local height_to_fly = _G.Enemy_node_position.y + 100
-	local height_to_fall =  _G.Enemy_node_position.y - 100
-	local i = 1
-	
-
-	while i < table.maxn(current_generated_coins) do
-		print("spawning: ".. current_generated_coins[i].node_id)
-		local current_node = gui.clone( gui.get_node(current_generated_coins[i].node_id) )
-		current_generated_coins[i].node = current_node
+local function animate_coin_nodes(node_key_to_start)
+	if current_generated_coins[node_key_to_start] ~= nil then
+		local current_node = current_generated_coins[node_key_to_start].node
+		
+		local height_to_fly = _G.Enemy_node_position.y + 100
+		local height_to_fall =  _G.Enemy_node_position.y - 100
+		
+		
+		gui.set_enabled(current_node, true)
+		current_generated_coins[node_key_to_start].is_activated = true
 		gui.set_position(current_node, _G.Enemy_node_position)
-		gui.set_color(current_node, vmath.vector4(1,1,1,1))
+		gui.set_color(current_node, color.rgb(255,255,255))
+		local final_scale = reference_scale * current_generated_coins[node_key_to_start].node_scale
+		gui.set_scale(current_node, final_scale)
 
 		gui.animate(current_node, "position.y", height_to_fly, gui.EASING_LINEAR, duration_up, 0, function()
 			gui.animate(current_node, "position.y", height_to_fall, gui.EASING_OUTBOUNCE, duration_fall)
+			animate_coin_nodes(node_key_to_start + 1)
 		end)
 		gui.animate(current_node, "position.x", _G.Enemy_node_position.x + math.random(-x_fall_range, x_fall_range), gui.EASING_LINEAR, duration_fall / 2)
-		i = i + 1
+	else
+		print("all ".. node_key_to_start-1 .. " coins spawned")
 	end
 end
 
 function vfx.spawn_money(money_amount)
 	--print("spawnei buffunfa")
 	collect_all_money()
-while 0 < money_amount do
-	local new_coin = coin_management.look_for_coin(money_amount)
-	if new_coin ~= nil then
-			table.insert(current_generated_coins, new_coin)
-			local id = table.maxn(current_generated_coins)
-			--print("coin number ".. id .. " of name ".. current_generated_coins[id].node_id .."value " .. current_generated_coins[id].value .. "$. was created")
-			money_amount = money_amount - current_generated_coins[id].value
-		end
+	local new_coins = coin_management.look_for_coin(money_amount)
+	if new_coins ~= nil then
+		current_generated_coins = new_coins
+	else
+		print("error when getting coins")
 	end
-	vfx.drop_money()
+	
+	animate_coin_nodes(1)
 end	
 
 
@@ -133,10 +154,9 @@ end
 
 function vfx.run_on_input_action(action)
 		for key,coin in pairs(current_generated_coins) do
-			if coin ~= nil then
-				print("coin: ".. coin.node_id .." pos: ".. key)
+			if coin.is_activated == true then
 				if gui.pick_node(coin.node, action.x, action.y) then
-					collect_coin(key, coin.node)
+					collect_coin(key, coin)
 				end
 			end
 		end

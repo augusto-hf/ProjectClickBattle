@@ -3,35 +3,38 @@ local coin_management = {
 
 local coin_info = require "Resources.Module.CoinInfoModule"
 
-local max_coin_quantity = 20
-
--- preciso ir com tudo, so dessa vez
-local coin_values = {1000, 750, 500, 200, 150, 100, 55, 25, 15, 5, 1}
-
-local function generate_coin(coin_value)
-	--print("Trying to get coin of value ".. coin_value)
-	if coin_info.all_coins[tostring(coin_value)] ~= nil then
-		--print("Coin picked: ".. coin_info.all_coins[tostring(coin_value)].value)
-		return coin_info.all_coins[tostring(coin_value)]
-	else
-		print("There's no coin of that value")
-		return 0
-	end
-end
+local minimum_coin_value_percentage = 0.25
 
 function coin_management.look_for_coin(money_value_to_look_for_coin)
 	-- peço perdão a quem estiver lendo oq eu fiz aqui... eu não encontrei outra forma...
-	local generated_coin
-	local coin_limit_value_relative_to_money = 0.5
-	money_value_to_look_for_coin = math.max(1, money_value_to_look_for_coin * coin_limit_value_relative_to_money) 
+	local generated_coin = {}
+
 	local i = 1
-	while i < (table.maxn(coin_values) + 1) and generated_coin == nil do
-		local current_probability = math.random(1,100)
-		local current_coin =  generate_coin(coin_values[i])
-		if money_value_to_look_for_coin >= coin_values[i] and current_probability < current_coin.probability then
-			--print("Calling for coin of value: ".. coin_values[i])
-			generated_coin = current_coin
+	local how_many_coins = math.random(1, table.maxn(coin_info.all_coins))
+	local max_coin_value = money_value_to_look_for_coin / how_many_coins
+	local current_looked_value = money_value_to_look_for_coin
+	
+	-- it basically atribute a random monetary value to each coin
+	while i < (how_many_coins + 1) do
+		local current_coin_id = coin_info.all_coins[i]
+		local current_value
+		
+		if i == how_many_coins then
+			current_value = current_looked_value
+		else
+			current_value = math.random(current_looked_value * minimum_coin_value_percentage, max_coin_value)
 		end
+		
+		current_looked_value = current_looked_value - current_value
+		local current_scale = math.min(((current_value / money_value_to_look_for_coin) * 4), 2)
+		
+		generated_coin[i] = {
+			node = gui.get_node(current_coin_id), 
+			node_scale = current_scale, 
+			coin_value = current_value, 
+			is_activated = false,
+			collected = false}
+			
 		i = i + 1
 	end
 	return generated_coin
