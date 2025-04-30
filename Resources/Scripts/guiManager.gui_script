@@ -88,11 +88,6 @@ function on_input(self, action_id, action)
 		
 		-- In Game/skill
 		
-		local click_skill_button_heavy_glove = gui.get_node("click_skill_button_heavy_glove")
-		if gui.pick_node(click_skill_button_heavy_glove, action.x, action.y)then
-			active_skills.UseClickSkill(_G.click_skills.heavy_gloves)
-		end
-		
 		-- Shop
 
 		local warrior_soap_upgrade_button =  gui.get_node("warrior_soap_upgrade_button")

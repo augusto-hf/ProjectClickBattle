@@ -6,6 +6,8 @@ function druid_manager:initialization(gui_self)
 	self.druid = druid.new(gui_self) -- FAVOR NAO MEXER
 	self.ShopScroll = self.druid:new_scroll("Shop", "Shop_items")
 	:set_horizontal_scroll(true)
+
+	self.SkillScroll = self.druid:new_scroll("Skills", "Skills_items")
 end
 
 function druid_manager:update(dt)

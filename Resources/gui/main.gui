@@ -21,7 +21,7 @@ textures {
 }
 nodes {
   position {
-    x: 722.0
+    x: 523.0
     y: 393.0
   }
   scale {
@@ -35,6 +35,48 @@ nodes {
   layer: "Game"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -0.021119
+    y: -11.366045
+  }
+  scale {
+    x: 0.15
+    y: 0.15
+    z: 0.15
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "HP"
+  font: "Doom"
+  id: "label_enemy"
+  parent: "Enemy"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -0.131712
+    y: -13.983368
+  }
+  scale {
+    x: 0.15
+    y: 0.15
+    z: 0.15
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "10"
+  font: "Doom"
+  id: "label_hp_value"
+  parent: "Enemy"
+  inherit_alpha: true
 }
 nodes {
   size {
@@ -1199,23 +1241,41 @@ nodes {
 }
 nodes {
   position {
-    x: 429.0
-    y: 324.0
+    x: 74.0
+    y: 388.0
   }
   size {
-    x: 200.0
-    y: 500.0
+    x: 90.0
+    y: 400.0
+  }
+  color {
+    x: 0.8
+    y: 0.502
+    z: 0.2
   }
   type: TYPE_BOX
-  id: "Skills "
+  id: "Skills"
+  layer: "Hud"
   inherit_alpha: true
-  alpha: 0.0
-  size_mode: SIZE_MODE_AUTO
+  clipping_mode: CLIPPING_MODE_STENCIL
 }
 nodes {
   position {
-    x: -45.0
-    y: 2.46643
+    y: -78.0
+  }
+  size {
+    x: 80.0
+    y: 550.0
+  }
+  type: TYPE_BOX
+  id: "Skills_items"
+  parent: "Skills"
+  inherit_alpha: true
+  alpha: 0.0
+}
+nodes {
+  position {
+    y: 232.46643
   }
   scale {
     x: 2.405104
@@ -1225,7 +1285,7 @@ nodes {
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
   id: "skill_button_warrior_soap"
-  parent: "Skills "
+  parent: "Skills_items"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
 }
@@ -1247,8 +1307,7 @@ nodes {
 }
 nodes {
   position {
-    x: -46.0
-    y: 100.46643
+    y: 155.46643
   }
   scale {
     x: 2.405104
@@ -1257,8 +1316,8 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "click_skill_button_heavy_glove"
-  parent: "Skills "
+  id: "skill_button_warrior_soap1"
+  parent: "Skills_items"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
 }
@@ -1273,14 +1332,174 @@ nodes {
   }
   type: TYPE_PIE
   texture: "testSpritesAtlas/istockphoto-ampulheta"
-  id: "skill_cooldown_heavy_gloves"
-  parent: "click_skill_button_heavy_glove"
+  id: "skill_cooldown_warrior_soap1"
+  parent: "skill_button_warrior_soap1"
   pieFillAngle: 0.0
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
-    x: 716.72455
+    y: 78.46643
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_warrior_soap2"
+  parent: "Skills_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_warrior_soap2"
+  parent: "skill_button_warrior_soap2"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: 1.46643
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_warrior_soap3"
+  parent: "Skills_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_warrior_soap3"
+  parent: "skill_button_warrior_soap3"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -75.53357
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_warrior_soap4"
+  parent: "Skills_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_warrior_soap4"
+  parent: "skill_button_warrior_soap4"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -152.53357
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_warrior_soap5"
+  parent: "Skills_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_warrior_soap5"
+  parent: "skill_button_warrior_soap5"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -229.53357
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_warrior_soap6"
+  parent: "Skills_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_warrior_soap6"
+  parent: "skill_button_warrior_soap6"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 527.72455
     y: 608.37274
   }
   scale {
@@ -1296,6 +1515,27 @@ nodes {
   text: "0"
   font: "Doom"
   id: "counter_text"
+  layer: "Hud"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 527.72455
+    y: 562.37274
+  }
+  scale {
+    x: 2.007612
+    y: 2.007612
+    z: 2.007612
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "label_dps"
   layer: "Hud"
   inherit_alpha: true
 }
@@ -1319,67 +1559,6 @@ nodes {
   layer: "Hud"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 716.72455
-    y: 562.37274
-  }
-  scale {
-    x: 2.007612
-    y: 2.007612
-    z: 2.007612
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "label_dps"
-  layer: "Hud"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 719.2488
-    y: 207.05917
-  }
-  scale {
-    x: 1.947375
-    y: 1.947375
-    z: 1.947375
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "HP"
-  font: "Doom"
-  id: "label_enemy"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 718.03644
-    y: 181.30475
-  }
-  scale {
-    x: 1.947375
-    y: 1.947375
-    z: 1.947375
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "10"
-  font: "Doom"
-  id: "label_hp_value"
-  inherit_alpha: true
 }
 nodes {
   position {
@@ -1442,8 +1621,8 @@ nodes {
 }
 nodes {
   position {
-    x: 126.0
-    y: 525.0
+    x: 797.0
+    y: 245.0
   }
   size {
     x: 200.0
@@ -1454,28 +1633,6 @@ nodes {
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
   visible: false
-}
-nodes {
-  position {
-    x: -0.1217
-    y: 31.80588
-  }
-  scale {
-    x: 1.947375
-    y: 1.947375
-    z: 1.947375
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "label_phase"
-  parent: "debug_info"
-  layer: "Debug"
-  inherit_alpha: true
 }
 nodes {
   position {
@@ -1520,40 +1677,6 @@ nodes {
   parent: "debug_info"
   layer: "Debug"
   inherit_alpha: true
-}
-nodes {
-  position {
-    x: 87.0
-    y: 433.0
-  }
-  size {
-    x: 125.0
-    y: 675.0
-  }
-  color {
-    x: 0.8
-    y: 0.502
-    z: 0.2
-  }
-  type: TYPE_BOX
-  id: "Skills"
-  layer: "Hud"
-  inherit_alpha: true
-  clipping_mode: CLIPPING_MODE_STENCIL
-}
-nodes {
-  position {
-    x: 170.0
-  }
-  size {
-    x: 1000.0
-    y: 100.0
-  }
-  type: TYPE_BOX
-  id: "Skills_items"
-  parent: "Skills"
-  inherit_alpha: true
-  alpha: 0.0
 }
 layers {
   name: "Game"
