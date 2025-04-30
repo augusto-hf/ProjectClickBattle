@@ -5,9 +5,17 @@ local resistences = require("Resources.Module.ResistencesSetsModule")
 enemy_info.basic_first_life = 10
 enemy_info.boss_first_life = 200
 enemy_info.boss_life_upgrade = 100
-enemy_info.money_drop = 10
 
 enemy_info.life_upgrade = 1.2
+enemy_info.boss_life_upgrade = 2.0
+
+enemy_info.enemy_drop_multiplyer = 0.8
+enemy_info.boss_drop_multiplyer = 0.6
+
+
+enemy_info.boss_indexes = { 5, 10, 20, 35, 50 }
+
+enemy_info.boss_max_index = enemy_info.boss_indexes[table.maxn(enemy_info.boss_indexes)]
 
 local boss_set_range = {
 	[0] = {min = 0, max = 0},

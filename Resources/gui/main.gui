@@ -195,7 +195,7 @@ nodes {
 }
 nodes {
   position {
-    x: 43.0
+    x: 170.0
   }
   size {
     x: 1000.0
@@ -209,7 +209,7 @@ nodes {
 }
 nodes {
   position {
-    x: -337.0
+    x: -444.0
   }
   size {
     x: 90.0
@@ -308,7 +308,7 @@ nodes {
 }
 nodes {
   position {
-    x: -237.0
+    x: -344.0
   }
   size {
     x: 90.0
@@ -407,7 +407,7 @@ nodes {
 }
 nodes {
   position {
-    x: -137.0
+    x: -244.0
   }
   size {
     x: 90.0
@@ -506,7 +506,7 @@ nodes {
 }
 nodes {
   position {
-    x: -37.0
+    x: -144.0
   }
   size {
     x: 90.0
@@ -605,7 +605,7 @@ nodes {
 }
 nodes {
   position {
-    x: 63.0
+    x: -44.0
   }
   size {
     x: 90.0
@@ -704,7 +704,7 @@ nodes {
 }
 nodes {
   position {
-    x: 163.0
+    x: 56.0
   }
   size {
     x: 90.0
@@ -803,7 +803,7 @@ nodes {
 }
 nodes {
   position {
-    x: 263.0
+    x: 156.0
   }
   size {
     x: 90.0
@@ -902,7 +902,7 @@ nodes {
 }
 nodes {
   position {
-    x: 363.0
+    x: 256.0
   }
   size {
     x: 90.0
@@ -997,6 +997,204 @@ nodes {
   font: "Doom"
   id: "level_warrior_soap7"
   parent: "warrior_soap_icon7"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 351.0
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.2
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "warrior_soap_upgrade_button8"
+  parent: "Shop_items"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 1.0
+    y: -0.53355
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "warrior_soap_icon8"
+  parent: "warrior_soap_upgrade_button8"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -5.405172
+    y: -16.215515
+  }
+  scale {
+    x: 0.303552
+    y: 0.303552
+    z: 0.303552
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "Doom"
+  id: "label_warrior_soap8"
+  parent: "warrior_soap_icon8"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 15.799732
+  }
+  scale {
+    x: 0.434
+    y: 0.434
+    z: 0.434
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "value_warrior_soap8"
+  parent: "warrior_soap_icon8"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 10.39456
+    y: -16.215515
+  }
+  scale {
+    x: 0.3472
+    y: 0.3472
+    z: 0.3472
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "level_warrior_soap8"
+  parent: "warrior_soap_icon8"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 444.0
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.2
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "warrior_soap_upgrade_button9"
+  parent: "Shop_items"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 1.0
+    y: -0.53355
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "warrior_soap_icon9"
+  parent: "warrior_soap_upgrade_button9"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -5.405172
+    y: -16.215515
+  }
+  scale {
+    x: 0.303552
+    y: 0.303552
+    z: 0.303552
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "Doom"
+  id: "label_warrior_soap9"
+  parent: "warrior_soap_icon9"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 15.799732
+  }
+  scale {
+    x: 0.434
+    y: 0.434
+    z: 0.434
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "value_warrior_soap9"
+  parent: "warrior_soap_icon9"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 10.39456
+    y: -16.215515
+  }
+  scale {
+    x: 0.3472
+    y: 0.3472
+    z: 0.3472
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "level_warrior_soap9"
+  parent: "warrior_soap_icon9"
   inherit_alpha: true
 }
 nodes {
@@ -1322,6 +1520,40 @@ nodes {
   parent: "debug_info"
   layer: "Debug"
   inherit_alpha: true
+}
+nodes {
+  position {
+    x: 87.0
+    y: 433.0
+  }
+  size {
+    x: 125.0
+    y: 675.0
+  }
+  color {
+    x: 0.8
+    y: 0.502
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "Skills"
+  layer: "Hud"
+  inherit_alpha: true
+  clipping_mode: CLIPPING_MODE_STENCIL
+}
+nodes {
+  position {
+    x: 170.0
+  }
+  size {
+    x: 1000.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "Skills_items"
+  parent: "Skills"
+  inherit_alpha: true
+  alpha: 0.0
 }
 layers {
   name: "Game"
