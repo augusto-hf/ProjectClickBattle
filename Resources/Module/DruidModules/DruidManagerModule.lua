@@ -8,6 +8,8 @@ function druid_manager:initialization(gui_self)
 	:set_horizontal_scroll(true)
 
 	self.SkillScroll = self.druid:new_scroll("Skills", "Skills_items")
+	self.MapScroll = self.druid:new_scroll("Maps", "Maps_items")
+	:set_horizontal_scroll(false)
 end
 
 function druid_manager:update(dt)

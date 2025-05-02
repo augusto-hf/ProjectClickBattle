@@ -1499,6 +1499,269 @@ nodes {
 }
 nodes {
   position {
+    x: 895.0
+    y: 388.0
+  }
+  scale {
+    x: 0.7
+    y: 0.7
+    z: 0.7
+  }
+  size {
+    x: 90.0
+    y: 400.0
+  }
+  color {
+    x: 0.8
+    y: 0.502
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "Maps"
+  layer: "Hud"
+  inherit_alpha: true
+  clipping_mode: CLIPPING_MODE_STENCIL
+}
+nodes {
+  position {
+    y: -78.0
+  }
+  size {
+    x: 80.0
+    y: 550.0
+  }
+  type: TYPE_BOX
+  id: "Maps_items"
+  parent: "Maps"
+  inherit_alpha: true
+  alpha: 0.0
+}
+nodes {
+  position {
+    y: 232.46643
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_warrior_soap7"
+  parent: "Maps_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_warrior_soap7"
+  parent: "skill_button_warrior_soap7"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: 155.46643
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_warrior_soap8"
+  parent: "Maps_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_warrior_soap8"
+  parent: "skill_button_warrior_soap8"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: 78.46643
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_warrior_soap9"
+  parent: "Maps_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_warrior_soap9"
+  parent: "skill_button_warrior_soap9"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: 1.46643
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_warrior_soap10"
+  parent: "Maps_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_warrior_soap10"
+  parent: "skill_button_warrior_soap10"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -75.53357
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_warrior_soap11"
+  parent: "Maps_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_warrior_soap11"
+  parent: "skill_button_warrior_soap11"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -152.53357
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_warrior_soap12"
+  parent: "Maps_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_warrior_soap12"
+  parent: "skill_button_warrior_soap12"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -229.53357
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_warrior_soap13"
+  parent: "Maps_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_warrior_soap13"
+  parent: "skill_button_warrior_soap13"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
     x: 527.72455
     y: 608.37274
   }
@@ -1604,7 +1867,7 @@ nodes {
 }
 nodes {
   position {
-    x: 994.0
+    x: 1040.0
     y: 375.0
   }
   scale {
