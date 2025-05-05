@@ -380,7 +380,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "warrior_soap_icon1"
+  id: "shop_icon_circus_mage"
   parent: "circus_mage_upgrade_button"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
@@ -402,8 +402,8 @@ nodes {
   type: TYPE_TEXT
   text: "level:"
   font: "Doom"
-  id: "label_warrior_soap1"
-  parent: "warrior_soap_icon1"
+  id: "label_circus_mage"
+  parent: "shop_icon_circus_mage"
   inherit_alpha: true
 }
 nodes {
@@ -422,8 +422,8 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "value_warrior_soap1"
-  parent: "warrior_soap_icon1"
+  id: "value_circus_mage"
+  parent: "shop_icon_circus_mage"
   inherit_alpha: true
 }
 nodes {
@@ -443,107 +443,8 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "level_warrior_soap1"
-  parent: "warrior_soap_icon1"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 444.0
-  }
-  size {
-    x: 90.0
-    y: 100.0
-  }
-  color {
-    x: 0.4
-    y: 0.2
-    z: 0.4
-  }
-  type: TYPE_BOX
-  id: "warrior_soap_upgrade_button9"
-  parent: "warrior_soap_icon1"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-  visible: false
-}
-nodes {
-  position {
-    x: 1.0
-    y: -0.53355
-  }
-  scale {
-    x: 2.405104
-    y: 2.405104
-    z: 2.405104
-  }
-  type: TYPE_BOX
-  texture: "Icons/weapon_level1"
-  id: "warrior_soap_icon9"
-  parent: "warrior_soap_upgrade_button9"
-  layer: "Hud"
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -5.405172
-    y: -16.215515
-  }
-  scale {
-    x: 0.303552
-    y: 0.303552
-    z: 0.303552
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "level:"
-  font: "Doom"
-  id: "label_warrior_soap9"
-  parent: "warrior_soap_icon9"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    y: 15.799732
-  }
-  scale {
-    x: 0.434
-    y: 0.434
-    z: 0.434
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "value_warrior_soap9"
-  parent: "warrior_soap_icon9"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 10.39456
-    y: -16.215515
-  }
-  scale {
-    x: 0.3472
-    y: 0.3472
-    z: 0.3472
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "level_warrior_soap9"
-  parent: "warrior_soap_icon9"
+  id: "level_circus_mage"
+  parent: "shop_icon_circus_mage"
   inherit_alpha: true
 }
 nodes {
@@ -600,7 +501,7 @@ nodes {
   type: TYPE_TEXT
   text: "level:"
   font: "Doom"
-  id: "label_warrior_soap2"
+  id: "label_guardian_twig"
   parent: "shop_icon_guardian_twig"
   inherit_alpha: true
 }
@@ -620,7 +521,7 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "value_warrior_soap2"
+  id: "value_guardian_twig"
   parent: "shop_icon_guardian_twig"
   inherit_alpha: true
 }
@@ -659,7 +560,7 @@ nodes {
     z: 0.4
   }
   type: TYPE_BOX
-  id: "warrior_soap_upgrade_button3"
+  id: "snapper_upgrade_button"
   parent: "Shop_items"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
@@ -677,8 +578,8 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "warrior_soap_icon3"
-  parent: "warrior_soap_upgrade_button3"
+  id: "shop_icon_snapper"
+  parent: "snapper_upgrade_button"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
 }
@@ -699,8 +600,8 @@ nodes {
   type: TYPE_TEXT
   text: "level:"
   font: "Doom"
-  id: "label_warrior_soap3"
-  parent: "warrior_soap_icon3"
+  id: "label_snapper"
+  parent: "shop_icon_snapper"
   inherit_alpha: true
 }
 nodes {
@@ -719,8 +620,8 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "value_warrior_soap3"
-  parent: "warrior_soap_icon3"
+  id: "value_snapper"
+  parent: "shop_icon_snapper"
   inherit_alpha: true
 }
 nodes {
@@ -740,8 +641,8 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "level_warrior_soap3"
-  parent: "warrior_soap_icon3"
+  id: "level_snapper"
+  parent: "shop_icon_snapper"
   inherit_alpha: true
 }
 nodes {
@@ -758,7 +659,7 @@ nodes {
     z: 0.4
   }
   type: TYPE_BOX
-  id: "warrior_soap_upgrade_button4"
+  id: "gravedigger_upgrade_button"
   parent: "Shop_items"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
@@ -776,8 +677,8 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "warrior_soap_icon4"
-  parent: "warrior_soap_upgrade_button4"
+  id: "shop_icon_gravedigger"
+  parent: "gravedigger_upgrade_button"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
 }
@@ -798,8 +699,8 @@ nodes {
   type: TYPE_TEXT
   text: "level:"
   font: "Doom"
-  id: "label_warrior_soap4"
-  parent: "warrior_soap_icon4"
+  id: "label_gravedigger"
+  parent: "shop_icon_gravedigger"
   inherit_alpha: true
 }
 nodes {
@@ -818,8 +719,8 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "value_warrior_soap4"
-  parent: "warrior_soap_icon4"
+  id: "value_gravedigger"
+  parent: "shop_icon_gravedigger"
   inherit_alpha: true
 }
 nodes {
@@ -839,8 +740,8 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "level_warrior_soap4"
-  parent: "warrior_soap_icon4"
+  id: "level_gravedigger"
+  parent: "shop_icon_gravedigger"
   inherit_alpha: true
 }
 nodes {
@@ -857,7 +758,7 @@ nodes {
     z: 0.4
   }
   type: TYPE_BOX
-  id: "warrior_soap_upgrade_button5"
+  id: "samurai_upgrade_button"
   parent: "Shop_items"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
@@ -875,8 +776,8 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "warrior_soap_icon5"
-  parent: "warrior_soap_upgrade_button5"
+  id: "shop_icon_samurai"
+  parent: "samurai_upgrade_button"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
 }
@@ -897,8 +798,8 @@ nodes {
   type: TYPE_TEXT
   text: "level:"
   font: "Doom"
-  id: "label_warrior_soap5"
-  parent: "warrior_soap_icon5"
+  id: "label_samurai"
+  parent: "shop_icon_samurai"
   inherit_alpha: true
 }
 nodes {
@@ -917,8 +818,8 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "value_warrior_soap5"
-  parent: "warrior_soap_icon5"
+  id: "value_samurai"
+  parent: "shop_icon_samurai"
   inherit_alpha: true
 }
 nodes {
@@ -938,8 +839,8 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "level_warrior_soap5"
-  parent: "warrior_soap_icon5"
+  id: "level_samurai"
+  parent: "shop_icon_samurai"
   inherit_alpha: true
 }
 nodes {
@@ -956,7 +857,7 @@ nodes {
     z: 0.4
   }
   type: TYPE_BOX
-  id: "warrior_soap_upgrade_button6"
+  id: "detonator_upgrade_button"
   parent: "Shop_items"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
@@ -974,8 +875,8 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "warrior_soap_icon6"
-  parent: "warrior_soap_upgrade_button6"
+  id: "shop_icon_detonator"
+  parent: "detonator_upgrade_button"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
 }
@@ -996,8 +897,8 @@ nodes {
   type: TYPE_TEXT
   text: "level:"
   font: "Doom"
-  id: "label_warrior_soap6"
-  parent: "warrior_soap_icon6"
+  id: "label_detonador"
+  parent: "shop_icon_detonator"
   inherit_alpha: true
 }
 nodes {
@@ -1016,8 +917,8 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "value_warrior_soap6"
-  parent: "warrior_soap_icon6"
+  id: "value_detonador"
+  parent: "shop_icon_detonator"
   inherit_alpha: true
 }
 nodes {
@@ -1037,8 +938,8 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "level_warrior_soap6"
-  parent: "warrior_soap_icon6"
+  id: "level_detonador"
+  parent: "shop_icon_detonator"
   inherit_alpha: true
 }
 nodes {
@@ -1055,7 +956,7 @@ nodes {
     z: 0.4
   }
   type: TYPE_BOX
-  id: "warrior_soap_upgrade_button7"
+  id: "apprentice_mage_upgrade_button"
   parent: "Shop_items"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
@@ -1073,8 +974,8 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "warrior_soap_icon7"
-  parent: "warrior_soap_upgrade_button7"
+  id: "shop_icon_apprentice_mage"
+  parent: "apprentice_mage_upgrade_button"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
 }
@@ -1095,8 +996,8 @@ nodes {
   type: TYPE_TEXT
   text: "level:"
   font: "Doom"
-  id: "label_warrior_soap7"
-  parent: "warrior_soap_icon7"
+  id: "label_apprentice_mage"
+  parent: "shop_icon_apprentice_mage"
   inherit_alpha: true
 }
 nodes {
@@ -1115,8 +1016,8 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "value_warrior_soap7"
-  parent: "warrior_soap_icon7"
+  id: "value_apprentice_mage"
+  parent: "shop_icon_apprentice_mage"
   inherit_alpha: true
 }
 nodes {
@@ -1136,8 +1037,8 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "level_warrior_soap7"
-  parent: "warrior_soap_icon7"
+  id: "level_apprentice_mage"
+  parent: "shop_icon_apprentice_mage"
   inherit_alpha: true
 }
 nodes {
@@ -1154,7 +1055,7 @@ nodes {
     z: 0.4
   }
   type: TYPE_BOX
-  id: "warrior_soap_upgrade_button8"
+  id: "young_necromancer_upgrade_button"
   parent: "Shop_items"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
@@ -1172,8 +1073,8 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "warrior_soap_icon8"
-  parent: "warrior_soap_upgrade_button8"
+  id: "shop_icon_young_necromancer"
+  parent: "young_necromancer_upgrade_button"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
 }
@@ -1194,8 +1095,8 @@ nodes {
   type: TYPE_TEXT
   text: "level:"
   font: "Doom"
-  id: "label_warrior_soap8"
-  parent: "warrior_soap_icon8"
+  id: "label_young_necromancer"
+  parent: "shop_icon_young_necromancer"
   inherit_alpha: true
 }
 nodes {
@@ -1214,8 +1115,8 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "value_warrior_soap8"
-  parent: "warrior_soap_icon8"
+  id: "value_young_necromancer"
+  parent: "shop_icon_young_necromancer"
   inherit_alpha: true
 }
 nodes {
@@ -1235,8 +1136,107 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "level_warrior_soap8"
-  parent: "warrior_soap_icon8"
+  id: "level_young_necromancer"
+  parent: "shop_icon_young_necromancer"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 351.0
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.2
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "magma_upgrade_button"
+  parent: "Shop_items"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 1.0
+    y: -0.53355
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "shop_icon_magma"
+  parent: "magma_upgrade_button"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -5.405172
+    y: -16.215515
+  }
+  scale {
+    x: 0.303552
+    y: 0.303552
+    z: 0.303552
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "Doom"
+  id: "label_magma"
+  parent: "shop_icon_magma"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 15.799732
+  }
+  scale {
+    x: 0.434
+    y: 0.434
+    z: 0.434
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "value_magma"
+  parent: "shop_icon_magma"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 10.39456
+    y: -16.215515
+  }
+  scale {
+    x: 0.3472
+    y: 0.3472
+    z: 0.3472
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "level_magma"
+  parent: "shop_icon_magma"
   inherit_alpha: true
 }
 nodes {
@@ -1316,7 +1316,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "skill_button_warrior_soap1"
+  id: "skill_button_circus_mage"
   parent: "Skills_items"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
@@ -1332,8 +1332,8 @@ nodes {
   }
   type: TYPE_PIE
   texture: "testSpritesAtlas/istockphoto-ampulheta"
-  id: "skill_cooldown_warrior_soap1"
-  parent: "skill_button_warrior_soap1"
+  id: "skill_cooldown_circus_mage"
+  parent: "skill_button_circus_mage"
   pieFillAngle: 0.0
   size_mode: SIZE_MODE_AUTO
 }
@@ -1348,7 +1348,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "skill_button_warrior_soap2"
+  id: "skill_button_guardian_twig"
   parent: "Skills_items"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
@@ -1364,8 +1364,8 @@ nodes {
   }
   type: TYPE_PIE
   texture: "testSpritesAtlas/istockphoto-ampulheta"
-  id: "skill_cooldown_warrior_soap2"
-  parent: "skill_button_warrior_soap2"
+  id: "skill_cooldown_guardian_twig"
+  parent: "skill_button_guardian_twig"
   pieFillAngle: 0.0
   size_mode: SIZE_MODE_AUTO
 }
@@ -1380,7 +1380,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "skill_button_warrior_soap3"
+  id: "skill_button_snapper"
   parent: "Skills_items"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
@@ -1396,8 +1396,8 @@ nodes {
   }
   type: TYPE_PIE
   texture: "testSpritesAtlas/istockphoto-ampulheta"
-  id: "skill_cooldown_warrior_soap3"
-  parent: "skill_button_warrior_soap3"
+  id: "skill_cooldown_snapper"
+  parent: "skill_button_snapper"
   pieFillAngle: 0.0
   size_mode: SIZE_MODE_AUTO
 }
@@ -1412,7 +1412,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "skill_button_warrior_soap4"
+  id: "skill_button_gravedigger"
   parent: "Skills_items"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
@@ -1428,8 +1428,8 @@ nodes {
   }
   type: TYPE_PIE
   texture: "testSpritesAtlas/istockphoto-ampulheta"
-  id: "skill_cooldown_warrior_soap4"
-  parent: "skill_button_warrior_soap4"
+  id: "skill_cooldown_gravedigger"
+  parent: "skill_button_gravedigger"
   pieFillAngle: 0.0
   size_mode: SIZE_MODE_AUTO
 }
@@ -1444,7 +1444,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "skill_button_warrior_soap5"
+  id: "skill_button_samurai"
   parent: "Skills_items"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
@@ -1460,8 +1460,8 @@ nodes {
   }
   type: TYPE_PIE
   texture: "testSpritesAtlas/istockphoto-ampulheta"
-  id: "skill_cooldown_warrior_soap5"
-  parent: "skill_button_warrior_soap5"
+  id: "skill_cooldown_samurai"
+  parent: "skill_button_samurai"
   pieFillAngle: 0.0
   size_mode: SIZE_MODE_AUTO
 }
@@ -1476,7 +1476,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "skill_button_warrior_soap6"
+  id: "skill_button_detonator"
   parent: "Skills_items"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
@@ -1492,8 +1492,104 @@ nodes {
   }
   type: TYPE_PIE
   texture: "testSpritesAtlas/istockphoto-ampulheta"
-  id: "skill_cooldown_warrior_soap6"
-  parent: "skill_button_warrior_soap6"
+  id: "skill_cooldown_detonator"
+  parent: "skill_button_detonator"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -229.53357
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_apprentice_mage"
+  parent: "Skills_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_apprentice_mage"
+  parent: "skill_button_apprentice_mage"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -229.53357
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_young_necromancer"
+  parent: "Skills_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_young_necromancer"
+  parent: "skill_button_young_necromancer"
+  pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -229.53357
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "skill_button_magma"
+  parent: "Skills_items"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: -1.663129
+  }
+  scale {
+    x: 0.0312
+    y: 0.0312
+    z: 0.0312
+  }
+  type: TYPE_PIE
+  texture: "testSpritesAtlas/istockphoto-ampulheta"
+  id: "skill_cooldown_magma"
+  parent: "skill_button_magma"
   pieFillAngle: 0.0
   size_mode: SIZE_MODE_AUTO
 }
