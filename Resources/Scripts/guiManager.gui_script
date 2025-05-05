@@ -88,19 +88,15 @@ function on_input(self, action_id, action)
 		
 		-- In Game/skill
 		
+		
 		-- Shop
 
 		local warrior_soap_upgrade_button =  gui.get_node("warrior_soap_upgrade_button")
 		if gui.pick_node(warrior_soap_upgrade_button, action.x, action.y)then
 			shop_buttons.SkillUpgrade(_G.skills.warrior_soap)
 			passive_skills_functions.update_tick_damage()
+			
 		end
-
-		-- Shop -- Cursor Passives
-		--local heavy_glove_upgrade_button = gui.get_node("heavy_glove_upgrade_button")
-		--if gui.pick_node(heavy_glove_upgrade_button, action.x, action.y)then
-			--shop_buttons.PassiveUpgrade(_G.click_skills.heavy_gloves)
-		--end
 		
 	end
 	return druid_manager.druid:on_input(action_id, action) -- FAVOR NAO MEXER

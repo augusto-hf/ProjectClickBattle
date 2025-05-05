@@ -362,7 +362,7 @@ nodes {
     z: 0.4
   }
   type: TYPE_BOX
-  id: "warrior_soap_upgrade_button1"
+  id: "circus_mage_upgrade_button"
   parent: "Shop_items"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
@@ -381,7 +381,7 @@ nodes {
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
   id: "warrior_soap_icon1"
-  parent: "warrior_soap_upgrade_button1"
+  parent: "circus_mage_upgrade_button"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
 }
