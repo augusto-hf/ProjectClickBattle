@@ -1,71 +1,43 @@
 local click_skills = {
 }
 
-click_skills.heavy_gloves = {
-	upgrade_level = 0,
-	upgrade_bonus = 1.00,
-	damage_value = 3,
-	damage_type = "neutral",
-	duration = 15,
-}
-
 click_skills.bolder = {
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
-	starting_price = 250,
-	price_bonus = 1.50,
-	damage_value = 15,
+	damage_value = 100,
 	damage_type = "elemental",
-	is_in_cooldown = false,
-	cooldown = 30,
 	duration = 15
 }
 
 click_skills.shiny_staff = {
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
-	starting_price = 1000,
-	price_bonus = 1.50,
-	damage_value = 80,
+	damage_value = 25,
 	damage_type = "magic",
-	is_in_cooldown = false,
-	cooldown = 30,
 	duration = 15
 }
 
 click_skills.bomb = {
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
-	starting_price = 8000,
-	price_bonus = 1.50,
-	damage_value = 250,
+	damage_value = 400,
 	damage_type = "explosive",
-	is_in_cooldown = false,
-	cooldown = 30,
 	duration = 15
 }
 
 click_skills.grave_dirt = {
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
-	starting_price = 85000,
-	price_bonus = 1.50,
-	damage_value = 1000,
+	damage_value = 1250,
 	damage_type = "spiritual",
-	is_in_cooldown = false,
-	cooldown = 30,
 	duration = 15
 }
 
 click_skills.club = {
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
-	starting_price = 400000,
-	price_bonus = 1.50,
-	damage_value = 50000,
+	damage_value = 5,
 	damage_type = "physical",
-	is_in_cooldown = false,
-	cooldown = 30,
 	duration = 15
 }
 
