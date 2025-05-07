@@ -59,12 +59,13 @@ function update(self, dt)
 	
 	combat_functions.dealDamage()
 	gui.set_text(counter_text, math.floor(_G.Number_of_click))
-
+	
 	shop_buttons.UpdateShopInfo()
 	enemy.show_hp()
 	debug.show_debug_info()
 	_G.vfx.run_on_update_effects()
-
+	
+	
 	if _G.current_enemy.hp <= 0 and _G.current_enemy.is_alive then
 		print("Enemy defeated. Current Enemy Index:", _G.Enemy_index)
 		_G.current_enemy = enemy.respawner()
@@ -86,17 +87,22 @@ function on_input(self, action_id, action)
 			end
 		end
 		
-		-- In Game/skill
 		
-		
-		-- Shop
+		for _, skill in ipairs(_G.skills.all_skills_passive_damage) do
 
-		local warrior_soap_upgrade_button =  gui.get_node("warrior_soap_upgrade_button")
-		if gui.pick_node(warrior_soap_upgrade_button, action.x, action.y)then
-			shop_buttons.SkillUpgrade(_G.skills.warrior_soap)
-			passive_skills_functions.update_tick_damage()
+			-- shop
+			if gui.pick_node(gui.get_node(hash(skill.shop_button)), action.x, action.y)then
+				shop_buttons.SkillUpgrade(skill)
+				passive_skills_functions.update_tick_damage()
+			end
+
+			if gui.pick_node(gui.get_node(hash(skill.shop_button)), action.x, action.y)then
+			active_skills.UseSkill(skill)
+			
 			
 		end
+		
+
 		
 	end
 	return druid_manager.druid:on_input(action_id, action) -- FAVOR NAO MEXER
