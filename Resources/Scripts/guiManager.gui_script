@@ -96,10 +96,10 @@ function on_input(self, action_id, action)
 				passive_skills_functions.update_tick_damage()
 			end
 
-			if gui.pick_node(gui.get_node(hash(skill.shop_button)), action.x, action.y)then
+			-- skill
+			if gui.pick_node(gui.get_node(hash(skill.skill_button)), action.x, action.y)then
 			active_skills.UseSkill(skill)
-			
-			
+			end
 		end
 		
 

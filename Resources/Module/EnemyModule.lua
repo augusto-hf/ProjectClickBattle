@@ -56,7 +56,7 @@ function enemy.respawner()
 				shoud_spawn_boss = true
 			end
 		end
-		print("is spawning boss? ".. shoud_spawn_boss)
+
 		_G.Enemy_index = _G.Enemy_index + 1
 		if shoud_spawn_boss then 
 			enemy_to_spawn = enemy.generate_boss_enemy()

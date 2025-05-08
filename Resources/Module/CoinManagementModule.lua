@@ -22,7 +22,7 @@ function coin_management.look_for_coin(money_value_to_look_for_coin)
 		if i == how_many_coins then
 			current_value = current_looked_value
 		else
-			current_value = math.random(current_looked_value * minimum_coin_value_percentage, max_coin_value)
+			current_value = math.random( (current_looked_value * minimum_coin_value_percentage) , max_coin_value)
 		end
 		
 		current_looked_value = current_looked_value - current_value
