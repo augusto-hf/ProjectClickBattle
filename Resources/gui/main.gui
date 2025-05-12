@@ -897,7 +897,7 @@ nodes {
   type: TYPE_TEXT
   text: "level:"
   font: "Doom"
-  id: "label_detonador"
+  id: "label_detonator"
   parent: "shop_icon_detonator"
   inherit_alpha: true
 }
@@ -917,7 +917,7 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "value_detonador"
+  id: "value_detonator"
   parent: "shop_icon_detonator"
   inherit_alpha: true
 }
@@ -938,7 +938,7 @@ nodes {
   type: TYPE_TEXT
   text: "0"
   font: "Doom"
-  id: "level_detonador"
+  id: "level_detonator"
   parent: "shop_icon_detonator"
   inherit_alpha: true
 }
@@ -1996,7 +1996,7 @@ nodes {
 nodes {
   position {
     x: 0.8783
-    y: -1.15208
+    y: -28.15208
   }
   scale {
     x: 1.947375
@@ -2018,7 +2018,7 @@ nodes {
 nodes {
   position {
     x: 0.8783
-    y: -38.2837
+    y: -65.2837
   }
   scale {
     x: 1.947375
@@ -2035,6 +2035,169 @@ nodes {
   id: "label_enemy_resistance_counter"
   parent: "debug_info"
   layer: "Debug"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -723.1317
+    y: 366.01663
+  }
+  scale {
+    x: 2.595
+    y: 2.595
+    z: 2.595
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "skills"
+  font: "Doom"
+  id: "label_skills"
+  parent: "debug_info"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -601.1317
+    y: -70.98337
+  }
+  scale {
+    x: 2.595
+    y: 2.595
+    z: 2.595
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "shop"
+  font: "Doom"
+  id: "label_shop"
+  parent: "debug_info"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 2.868288
+    y: 362.01663
+  }
+  scale {
+    x: 1.4532
+    y: 1.4532
+    z: 1.4532
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "cursor\n"
+  "upgrade"
+  font: "Doom"
+  id: "label_cursor_upgrade"
+  parent: "debug_info"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 803.0
+    y: 527.0
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.2
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "cursor_upgrade_button"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 1.0
+    y: -0.53355
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "cursor_icon"
+  parent: "cursor_upgrade_button"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -5.405172
+    y: -16.215515
+  }
+  scale {
+    x: 0.303552
+    y: 0.303552
+    z: 0.303552
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "Doom"
+  id: "label_cursor"
+  parent: "cursor_icon"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 15.799732
+  }
+  scale {
+    x: 0.434
+    y: 0.434
+    z: 0.434
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "value_cursor"
+  parent: "cursor_icon"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 10.39456
+    y: -16.215515
+  }
+  scale {
+    x: 0.3472
+    y: 0.3472
+    z: 0.3472
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "level_cursor"
+  parent: "cursor_icon"
   inherit_alpha: true
 }
 layers {

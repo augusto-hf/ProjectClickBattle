@@ -12,23 +12,22 @@ local counter_text
 local is_respawning = false
 
 _G.perlin = require "Resources.ExternalModules.perlin"
-local seed = require "Resources.Module.SeedModule"
-_G.vfx = require "Resources.Module.VFXModules"
-_G.skills = require "Resources.Module.SkillsInfoModule"
-_G.click_skills = require "Resources.Module.ClickSkillsInfoModule" 
-_G.damage = require "Resources.Module.DamageModule"
+local seed = require "Resources.Module.InternalModules.SeedModule"
+_G.vfx = require "Resources.Module.VisualModules.VFXModules"
+_G.skills = require "Resources.Module.InfoModules.SkillsInfoModule"
+_G.damage = require "Resources.Module.InternalModules.DamageModule"
 _G.cursor = require "Resources.Module.CursorModule"
-_G.counter_functions = require "Resources.Module.ClickCounterModule"
-local enemy = require "Resources.Module.EnemyModule"
+_G.counter_functions = require "Resources.Module.VisualModules.ClickCounterModule"
+local enemy = require "Resources.Module.InternalModules.EnemyModule"
 local debug = require "Resources.Module.DebugModule"
-local combat_functions = require "Resources.Module.CombatModule"
-local shop_buttons = require "Resources.Module.ShopButtonsLib"
-local passive_skills_functions = require "Resources.Module.PassiveSkillsModule"
-local active_skills = require "Resources.Module.ActiveSkillsModule"
-local druid_manager = require "Resources.Module.DruidModules.DruidManagerModule"
-
+local combat_functions = require "Resources.Module.InternalModules.CombatModule"
+local shop_buttons = require "Resources.Module.ButtonsModules.ShopButtonsLib"
+local passive_skills_functions = require "Resources.Module.ButtonsModules.PassiveSkillsModule"
+local active_skills = require "Resources.Module.ButtonsModules.ActiveSkillsModule"
+local druid_manager = require "Resources.Module.InternalModules.DruidModules.DruidManagerModule"
 
 _G.current_enemy = enemy.respawner()
+
 function init(self)
 	druid_manager:initialization(self)
 	
@@ -52,6 +51,15 @@ function init(self)
 		_G.damage.deal("neutral", _G.Clicks_per_second * 0.1)
 		_G.counter_functions.SmoothAddClicksFromPassiveDamage()
 	end)
+
+	gui.set_text(gui.get_node(_G.cursor.price_text), math.max(_G.cursor.starting_price, _G.cursor.upgrade_level * _G.cursor.starting_price))
+	
+	for _, skill in ipairs(_G.skills.all_skills_passive_damage) do
+		-- set prices
+		local price_text_node = gui.get_node(hash(skill.price_text))
+		gui.set_text(price_text_node, skill.starting_price)
+	end
+
 end
 
 function update(self, dt)
@@ -62,7 +70,7 @@ function update(self, dt)
 	
 	shop_buttons.UpdateShopInfo()
 	enemy.show_hp()
-	debug.show_debug_info()
+	debug.manage_debug_info()
 	_G.vfx.run_on_update_effects()
 	
 	
@@ -73,8 +81,10 @@ function update(self, dt)
 end
 
 function on_input(self, action_id, action)
+	debug.toggle_debug_visibility(action_id, action)
 	
 	_G.cursor.move_cursor_sprite(action)
+	
 	_G.vfx.run_on_input_action(action)
 	if action_id == hash("touch") and action.pressed then
 		-- In Game
@@ -86,13 +96,15 @@ function on_input(self, action_id, action)
 				_G.vfx.trigger_damage_number("neutral", _G.cursor.extra_damage_value["neutral"])
 			end
 		end
-		
+
+		if gui.pick_node(gui.get_node(hash("cursor_upgrade_button")), action.x, action.y)then
+			shop_buttons.SkillUpgrade(_G.cursor, false, _G.cursor.price_bonus)
+		end
 		
 		for _, skill in ipairs(_G.skills.all_skills_passive_damage) do
-
 			-- shop
 			if gui.pick_node(gui.get_node(hash(skill.shop_button)), action.x, action.y)then
-				shop_buttons.SkillUpgrade(skill)
+				shop_buttons.SkillUpgrade(skill, true, 1.0)
 				passive_skills_functions.update_tick_damage()
 			end
 
