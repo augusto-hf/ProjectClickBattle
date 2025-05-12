@@ -3,7 +3,7 @@ _G.Numbers_update_speed = 0.1
 _G.Clicks_per_second = 0
 _G.Number_of_click = 0
 _G.Enemy_index = 0
-_G.Money = 1000
+_G.Money = 0
 _G.Highest_money = 0
 -- float
 -- components
