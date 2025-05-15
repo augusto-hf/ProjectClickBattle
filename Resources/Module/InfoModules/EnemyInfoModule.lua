@@ -9,8 +9,8 @@ enemy_info.boss_life_upgrade = 100
 enemy_info.life_upgrade = 1.2
 enemy_info.boss_life_upgrade = 2.0
 
-enemy_info.enemy_drop_multiplyer = 0.8
-enemy_info.boss_drop_multiplyer = 0.6
+enemy_info.enemy_drop_multiplyer = 0.1
+enemy_info.boss_drop_multiplyer = 0.3
 
 
 enemy_info.boss_indexes = { 5, 10, 20, 35, 50 }
