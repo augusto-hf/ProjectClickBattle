@@ -22,7 +22,7 @@ textures {
 nodes {
   position {
     x: 523.0
-    y: 393.0
+    y: 355.0
   }
   scale {
     x: 10.8916
@@ -237,7 +237,7 @@ nodes {
 }
 nodes {
   position {
-    x: 170.0
+    x: 166.0
   }
   size {
     x: 1000.0
@@ -1142,7 +1142,7 @@ nodes {
 }
 nodes {
   position {
-    x: 351.0
+    x: 438.0
   }
   size {
     x: 90.0
@@ -1976,6 +1976,7 @@ nodes {
   id: "damage_icon"
   layer: "Game"
   inherit_alpha: true
+  alpha: 0.0
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
@@ -2098,6 +2099,27 @@ nodes {
   "upgrade"
   font: "Doom"
   id: "label_cursor_upgrade"
+  parent: "debug_info"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -269.1317
+    y: 272.01663
+  }
+  scale {
+    x: 2.595
+    y: 2.595
+    z: 2.595
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "label_update_speed"
   parent: "debug_info"
   inherit_alpha: true
 }
