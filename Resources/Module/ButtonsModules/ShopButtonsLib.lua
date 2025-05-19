@@ -27,7 +27,7 @@ local function PassiveUpgrade(click_skill)
 end
 
 function shop_buttons.SkillUpgrade(skill, has_a_passive, price_increase)
-	local price = math.max(skill.starting_price, (((skill.upgrade_level * skill.starting_price)) * price_increase))
+	local price = ((((skill.upgrade_level + 1) * skill.starting_price)) * price_increase)
 	if _G.Money > price or _G.Money == price then
 		_G.Money = _G.Money - price
 		
@@ -38,7 +38,9 @@ function shop_buttons.SkillUpgrade(skill, has_a_passive, price_increase)
 		local new_level = skill.upgrade_level + 1
 		skill.upgrade_level = new_level
 		gui.set_text(gui.get_node(skill.level_text), new_level)
-		gui.set_text(gui.get_node(skill.price_text), price)
+
+		local new_price = ((((skill.upgrade_level + 1) * skill.starting_price)) * price_increase)
+		gui.set_text(gui.get_node(skill.price_text), new_price)
 
 		if skill.icon_sprites[new_level] ~= nil then
 			gui.play_flipbook(gui.get_node(skill.shop_icon), skill.icon_sprites[new_level])

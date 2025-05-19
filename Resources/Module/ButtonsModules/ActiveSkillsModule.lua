@@ -14,8 +14,13 @@ function active_skills.UseSkill(skill)
 		
 		gui.set_fill_angle(cooldown_icon_node, 360)
 		skill.is_in_cooldown = true
-
-		_G.damage.deal(skill.active_type, damage)
+		
+		if skill.active_is_dot then
+			_G.damage.deal(skill.active_type, damage)
+		else
+			_G.damage.deal(skill.active_type, damage)
+		end
+		
 		gui.animate(cooldown_icon_node, "fill_angle", vmath.vector4(360,0,1,0), gui.EASING_INOUTQUAD, skill.active_cooldown , 0, function() cooldown_ended(skill) end)
 	end
 end

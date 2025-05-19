@@ -7,7 +7,7 @@ function debug.manage_debug_info()
 
 	gui.set_text(gui.get_node("label_seed"),"Seed: ".. _G.current_seed)
 
-	gui.set_text(gui.get_node("label_update_speed") , "Passive damage speed: ".. _G.Numbers_update_speed)
+	gui.set_text(gui.get_node("label_update_speed") , "Game speed: ".. _G.Numbers_update_speed)
 	if _G.current_enemy and _G.current_enemy.defense then
 		gui.set_text(gui.get_node("label_enemy_resistance_counter"),"Defense set:".. _G.current_enemy.defense.id)
 		
@@ -21,7 +21,7 @@ function debug.manage_debug_info()
 	end
 end
 
-function debug.toggle_debug_visibility(input_id, input_action)
+local function toggle_debug_visibility(input_id, input_action)
 	if  input_id == hash("key_f4") and input_action.pressed then
 		if isDebugVisible == true then 
 			gui.set_alpha(gui.get_node("debug_info"), 0 )
@@ -33,7 +33,7 @@ function debug.toggle_debug_visibility(input_id, input_action)
 	end
 end
 
-function debug.change_speed(input_id, input_action)
+local function change_speed(input_id, input_action)
 	local change_ratio = 0.1
 	
 	if isDebugVisible == true then
@@ -43,7 +43,11 @@ function debug.change_speed(input_id, input_action)
 			_G.Numbers_update_speed = _G.Numbers_update_speed + change_ratio
 		end
 	end
+end
 
+function debug.on_input(input_id, input_action)
+	toggle_debug_visibility(input_id, input_action)
+	change_speed(input_id, input_action)
 end
 
 return debug
