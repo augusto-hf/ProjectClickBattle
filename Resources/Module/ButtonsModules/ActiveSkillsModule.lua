@@ -16,7 +16,7 @@ function active_skills.UseSkill(skill)
 		skill.is_in_cooldown = true
 		
 		if skill.active_is_dot then
-			_G.damage.deal(skill.active_type, damage)
+			_G.damage.deal_over_time(skill.active_type, damage, skill.active_dot_time)
 		else
 			_G.damage.deal(skill.active_type, damage)
 		end

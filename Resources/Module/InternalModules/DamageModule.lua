@@ -10,6 +10,8 @@ local damage_value = {
 	["espiritual"] = 0
 }
 
+
+
 function damage.add(damage_type, value)
 	if damage_value[damage_type] ~= nil then
 		if damage_value[damage_type] < value then
@@ -36,6 +38,16 @@ function damage.deal_multiple(all_damage_values)
 			damage_value[key] = damage_value[key] + all_damage_values[key]
 		end
 	end
+end
+
+function damage.deal_over_time(damage_type, value, time)
+	local dot = timer.delay(_G.Numbers_update_speed * 0.6, true, function()
+		_G.damage.deal(damage_type, value * 0.1)
+	end)
+
+	timer.delay(time, false, function() 
+		timer.cancel(dot)
+	end)
 end
 
 function damage.reset()

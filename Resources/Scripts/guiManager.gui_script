@@ -1,5 +1,5 @@
 -- integer
-_G.Numbers_update_speed = 0.1
+_G.Numbers_update_speed = 1
 _G.Clicks_per_second = 0
 _G.Number_of_click = 0
 _G.Enemy_index = 0
@@ -47,7 +47,7 @@ function init(self)
 	
 	passive_skills_functions.update_tick_damage()
 	
-	timer.delay(_G.Numbers_update_speed / 10, true, function()
+	timer.delay(_G.Numbers_update_speed * 0.6, true, function()
 		_G.damage.deal("neutral", _G.Clicks_per_second * 0.1)
 		_G.counter_functions.SmoothAddClicksFromPassiveDamage()
 	end)
