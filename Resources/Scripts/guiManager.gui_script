@@ -47,14 +47,17 @@ function init(self)
 	
 	passive_skills_functions.update_tick_damage()
 	
-	timer.delay(_G.Numbers_update_speed * 1, true, function()
-		_G.damage.deal("neutral", _G.Clicks_per_second * 0.1)
+	timer.delay(_G.Numbers_update_speed, true, function()
+		
+		_G.damage.deal("neutral", _G.Clicks_per_second)
 	end)
 
-	timer.delay( 1, true, function()
-		_G.counter_functions.SmoothAddClicksFromPassiveDamage()
+	timer.delay(0.1, true, function()
+		_G.counter_functions.SmoothAddClicksFromPassiveDamage(0.1)
 	end)
-
+	
+	
+	
 	gui.set_text(gui.get_node(_G.cursor.price_text), math.max(_G.cursor.starting_price, _G.cursor.upgrade_level * _G.cursor.starting_price))
 	
 	for _, skill in ipairs(_G.skills.all_skills_passive_damage) do
