@@ -1,8 +1,6 @@
 local shop_buttons = {
 }
 
-
-
 function shop_buttons.UpdateShopInfo()
 	gui.set_text(gui.get_node("label_money"), "Money: ".. _G.Money)
 
@@ -51,7 +49,12 @@ function shop_buttons.SkillUpgrade(skill, has_a_passive, price_increase)
 	end
 end
 
+function shop_buttons.lock_skill(skill)
 
+end
 
+function shop_buttons.unlock_skill(skill)
+	
+end
 
 return shop_buttons

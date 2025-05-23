@@ -41,11 +41,11 @@ function damage.deal_multiple(all_damage_values)
 end
 
 function damage.deal_over_time(damage_type, value, time)
-	local dot = timer.delay(_G.Numbers_update_speed * 0.6, true, function()
+	local dot = timer.delay(_G.Numbers_update_speed * 1, true, function()
 		_G.damage.deal(damage_type, value * 0.1)
 	end)
 
-	timer.delay(time, false, function() 
+	timer.delay(time + 0.1, false, function() 
 		timer.cancel(dot)
 	end)
 end

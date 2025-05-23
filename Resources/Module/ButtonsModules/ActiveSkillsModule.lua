@@ -25,4 +25,12 @@ function active_skills.UseSkill(skill)
 	end
 end
 
+function active_skills.lock_skill(skill)
+
+end
+
+function active_skills.unlock_skill(skill)
+	
+end
+
 return active_skills
