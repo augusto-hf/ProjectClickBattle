@@ -34,7 +34,7 @@ local function toggle_debug_visibility(input_id, input_action)
 end
 
 local function change_speed(input_id, input_action)
-	local change_ratio = 0.1
+	local change_ratio = 0.5
 	
 	if isDebugVisible == true then
 		if  input_id == hash("key_f8") and input_action.pressed then
