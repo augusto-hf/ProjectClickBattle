@@ -67,6 +67,7 @@ function init(self)
 
 		--lock heroes
 		shop_buttons.lock_skill(skill)
+		active_skills.lock_skill(skill)
 	end
 
 end
@@ -116,9 +117,9 @@ function on_input(self, action_id, action)
 				shop_buttons.SkillUpgrade(skill, true, 1.0)
 				passive_skills_functions.update_tick_damage()
 			end
-
+			
 			-- skill
-			if gui.pick_node(gui.get_node(hash(skill.skill_button)), action.x, action.y)then
+			if gui.pick_node(gui.get_node(hash(skill.skill_button)), action.x, action.y) then
 			active_skills.UseSkill(skill)
 			end
 		end

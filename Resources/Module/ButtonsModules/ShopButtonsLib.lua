@@ -7,7 +7,7 @@ local function lock_skill(skill)
 
 	if skill_to_lock == nil then print("no Skill to lock") return end
 
-	--skill_to_unlock.isActive = false
+	skill_to_lock.isActive = false
 	gui.set_alpha(gui.get_node(skill_to_lock.shop_icon), 0.5)
 	gui.set_inherit_alpha(gui.get_node(skill_to_lock.price_text), false)
 end
@@ -17,7 +17,7 @@ local function unlock_skill(skill)
 
 	if skill_to_unlock == nil then print("no Skill to unlock") return end
 
-	--skill_to_unlock.isActive = true
+	skill_to_unlock.isActive = true
 	gui.set_alpha(gui.get_node(skill_to_unlock.shop_icon), 1)
 	gui.set_inherit_alpha(gui.get_node(skill_to_unlock.price_text), true)
 end

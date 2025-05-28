@@ -10,7 +10,7 @@ function active_skills.lock_skill(skill)
 end
 
 function active_skills.unlock_skill(skill)
-	local skill_to_unlock =  skill
+	local skill_to_unlock = skill
 
 	if skill_to_unlock == nil then print("no Skill to unlock") return end
 
