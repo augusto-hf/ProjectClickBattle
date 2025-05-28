@@ -64,6 +64,9 @@ function init(self)
 		-- set prices
 		local price_text_node = gui.get_node(hash(skill.price_text))
 		gui.set_text(price_text_node, skill.starting_price)
+
+		--lock heroes
+		shop_buttons.lock_skill(skill)
 	end
 
 end

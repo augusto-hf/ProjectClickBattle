@@ -1,12 +1,29 @@
 local active_skills = {
 }
 
+function active_skills.lock_skill(skill)
+	local skill_to_lock =  skill
+
+	if skill_to_lock == nil then print("no Skill to lock") return end
+
+	gui.set_alpha(gui.get_node(skill_to_lock.skill_icon), 0.5)
+end
+
+function active_skills.unlock_skill(skill)
+	local skill_to_unlock =  skill
+
+	if skill_to_unlock == nil then print("no Skill to unlock") return end
+
+	gui.set_alpha(gui.get_node(skill_to_unlock.skill_icon), 1)
+end
+
 local function cooldown_ended(skill)
 	skill.is_in_cooldown = false
 end
 
 function active_skills.UseSkill(skill)
-	if not skill.is_in_cooldown then
+	-- unfortnely the verifier of skill usability is yet hardcoded
+	if not skill.is_in_cooldown and skill.isActive and skill.upgrade_level >= 3 then
 		_G.cursor.add_click(skill.passive_skill)
 		
 		local damage = skill.active_damage * skill.upgrade_level
@@ -25,12 +42,6 @@ function active_skills.UseSkill(skill)
 	end
 end
 
-function active_skills.lock_skill(skill)
 
-end
-
-function active_skills.unlock_skill(skill)
-	
-end
 
 return active_skills
