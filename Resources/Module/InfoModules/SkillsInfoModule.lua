@@ -5,6 +5,7 @@ local click_skills = require "Resources.Module.InfoModules.ClickSkillsInfoModule
 
 
 skills.warrior_soap = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
 	starting_price = 10,
@@ -35,6 +36,7 @@ skills.warrior_soap = {
 
 
 skills.circus_mage = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
 	starting_price = 100,
@@ -64,6 +66,7 @@ skills.circus_mage = {
 }
 
 skills.guardian_twig = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
 	starting_price = 260,
@@ -93,6 +96,7 @@ skills.guardian_twig = {
 }
 
 skills.snapper = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
 	starting_price = 980,
@@ -122,6 +126,7 @@ skills.snapper = {
 }
 
 skills.gravedigger = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
 	starting_price = 4050,
@@ -151,6 +156,7 @@ skills.gravedigger = {
 }
 
 skills.samurai = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
 	starting_price = 19000,
@@ -180,6 +186,7 @@ skills.samurai = {
 }
 
 skills.detonator = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
 	starting_price = 100000,
@@ -209,6 +216,7 @@ skills.detonator = {
 }
 
 skills.apprentice_mage = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
 	starting_price = 400000,
@@ -238,6 +246,7 @@ skills.apprentice_mage = {
 }
 
 skills.young_necromancer = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
 	starting_price = 2250000,
@@ -267,6 +276,7 @@ skills.young_necromancer = {
 }
 
 skills.magma = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
 	starting_price = 15000000,
