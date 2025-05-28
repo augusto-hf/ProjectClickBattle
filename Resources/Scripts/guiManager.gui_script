@@ -99,7 +99,8 @@ function on_input(self, action_id, action)
 	if action_id == hash("touch") and action.pressed then
 		-- In Game
 		if gui.pick_node(_G.Enemy_node, action.x, action.y)then
-			_G.damage.deal("neutral", _G.cursor.click_damage)
+			local final_click_dmg = _G.cursor.click_damage * (_G.cursor.damage_multiplier_per_level * _G.cursor.upgrade_level)
+			_G.damage.deal("neutral", final_click_dmg )
 			_G.vfx.trigger_damage_number_on_click(action, _G.cursor.click_damage, "neutral")
 			_G.damage.deal_multiple(_G.cursor.extra_damage_value)
 			if _G.cursor.extra_damage_value["neutral"] > 0 then

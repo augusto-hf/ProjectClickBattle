@@ -45,9 +45,17 @@ local function change_speed(input_id, input_action)
 	end
 end
 
+local function add_money(input_id, input_action)
+	local amount_to_add = 1000
+	
+	if  input_id == hash("key_G") and input_action.pressed then
+		_G.Money = _G.Money + amount_to_add
+	end
+end
 function debug.on_input(input_id, input_action)
 	toggle_debug_visibility(input_id, input_action)
 	change_speed(input_id, input_action)
+	add_money(input_id, input_action)
 end
 
 return debug
