@@ -63,4 +63,16 @@ function cursor.reset_click()
 	end
 end
 
+function cursor.get_neutral_damage()
+	local final_click_dmg
+	if cursor.upgrade_level <= 1 then
+		final_click_dmg = _G.cursor.click_damage
+	else
+		local damage_multiplyer = _G.cursor.damage_multiplier_per_level * (_G.cursor.upgrade_level - 1)
+		final_click_dmg = _G.cursor.click_damage * damage_multiplyer
+	end
+
+	return final_click_dmg
+end
+
 return cursor

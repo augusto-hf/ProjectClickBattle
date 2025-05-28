@@ -26,7 +26,7 @@ function active_skills.UseSkill(skill)
 	if not skill.is_in_cooldown and skill.isActive and skill.upgrade_level >= 3 then
 		_G.cursor.add_click(skill.passive_skill)
 		
-		local damage = skill.active_damage * skill.upgrade_level
+		local damage = skill.active_damage * (skill.upgrade_level - 3)
 		local cooldown_icon_node = gui.get_node(skill.cooldown_icon)
 		
 		gui.set_fill_angle(cooldown_icon_node, 360)

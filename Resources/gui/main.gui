@@ -2158,7 +2158,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "Icons/weapon_level1"
-  id: "cursor_icon"
+  id: "shop_icon_cursor"
   parent: "cursor_upgrade_button"
   layer: "Hud"
   size_mode: SIZE_MODE_AUTO
@@ -2181,7 +2181,7 @@ nodes {
   text: "level:"
   font: "Doom"
   id: "label_cursor"
-  parent: "cursor_icon"
+  parent: "shop_icon_cursor"
   inherit_alpha: true
 }
 nodes {
@@ -2201,7 +2201,7 @@ nodes {
   text: "0"
   font: "Doom"
   id: "value_cursor"
-  parent: "cursor_icon"
+  parent: "shop_icon_cursor"
   inherit_alpha: true
 }
 nodes {
@@ -2219,10 +2219,10 @@ nodes {
     y: 100.0
   }
   type: TYPE_TEXT
-  text: "0"
+  text: "1"
   font: "Doom"
   id: "level_cursor"
-  parent: "cursor_icon"
+  parent: "shop_icon_cursor"
   inherit_alpha: true
 }
 layers {

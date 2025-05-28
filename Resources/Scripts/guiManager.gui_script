@@ -99,23 +99,24 @@ function on_input(self, action_id, action)
 	if action_id == hash("touch") and action.pressed then
 		-- In Game
 		if gui.pick_node(_G.Enemy_node, action.x, action.y)then
-			local final_click_dmg = _G.cursor.click_damage * (_G.cursor.damage_multiplier_per_level * _G.cursor.upgrade_level)
-			_G.damage.deal("neutral", final_click_dmg )
-			_G.vfx.trigger_damage_number_on_click(action, _G.cursor.click_damage, "neutral")
+			
+			_G.damage.deal("neutral", _G.cursor.get_neutral_damage() )
+			_G.vfx.trigger_damage_number_on_click(action, _G.cursor.get_neutral_damage(), "neutral")
 			_G.damage.deal_multiple(_G.cursor.extra_damage_value)
+			
 			if _G.cursor.extra_damage_value["neutral"] > 0 then
 				_G.vfx.trigger_damage_number("neutral", _G.cursor.extra_damage_value["neutral"])
 			end
 		end
 
 		if gui.pick_node(gui.get_node(hash("cursor_upgrade_button")), action.x, action.y)then
-			shop_buttons.SkillUpgrade(_G.cursor, false, _G.cursor.price_bonus)
+			shop_buttons.SkillUpgrade(_G.cursor, false, _G.cursor.price_bonus, true)
 		end
 		
 		for _, skill in ipairs(_G.skills.all_skills_passive_damage) do
 			-- shop
 			if gui.pick_node(gui.get_node(hash(skill.shop_button)), action.x, action.y)then
-				shop_buttons.SkillUpgrade(skill, true, 1.0)
+				shop_buttons.SkillUpgrade(skill, true, 1.0, false)
 				passive_skills_functions.update_tick_damage()
 			end
 			

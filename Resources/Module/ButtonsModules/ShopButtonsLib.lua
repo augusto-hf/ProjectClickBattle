@@ -53,7 +53,7 @@ function shop_buttons.CursorUpgrade(cursor)
 	end
 end
 
-function shop_buttons.SkillUpgrade(skill, has_a_passive, price_increase)
+function shop_buttons.SkillUpgrade(skill, has_a_passive, price_increase, is_cursor)
 	local price = ((((skill.upgrade_level + 1) * skill.starting_price)) * price_increase)
 	
 	
@@ -61,13 +61,17 @@ function shop_buttons.SkillUpgrade(skill, has_a_passive, price_increase)
 		_G.Money = _G.Money - price
 		local new_level = skill.upgrade_level + 1
 		
+		if not is_cursor then
+			--unlock itself
+			if skill.isActive == false then unlock_skill(skill) end
 		
-		if skill.isActive == false then unlock_skill(skill) end
+			--unlock active skill here 
+			if new_level == 3 then active_skills.unlock_skill(skill) end
+			
+			--upgrade passive
+			if has_a_passive == true and skill.passive_skill ~= false then PassiveUpgrade(skill.passive_skill) end
+		end 
 		
-		--unlock active skill here 
-		if new_level == 3 then active_skills.unlock_skill(skill) end
-		
-		if has_a_passive == true and skill.passive_skill ~= false then PassiveUpgrade(skill.passive_skill) end
 		
 		
 		skill.upgrade_level = new_level
