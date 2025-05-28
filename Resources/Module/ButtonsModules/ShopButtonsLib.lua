@@ -62,7 +62,7 @@ function shop_buttons.SkillUpgrade(skill, has_a_passive, price_increase)
 		local new_level = skill.upgrade_level + 1
 		
 		
-		if skill.isActive == false then unlock_skill(skill) return end
+		if skill.isActive == false then unlock_skill(skill) end
 		
 		--unlock active skill here 
 		if new_level == 3 then active_skills.unlock_skill(skill) end
