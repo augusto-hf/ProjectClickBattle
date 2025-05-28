@@ -5,71 +5,74 @@ local click_skills = require "Resources.Module.InfoModules.ClickSkillsInfoModule
 
 
 skills.warrior_soap = {
-upgrade_level = 0,
-upgrade_bonus = 1.00,
-starting_price = 5,
-price_bonus = 1.00,
-passive_damage = 1,
-passive_skill = click_skills.bolder,
-active_damage = 10,
-active_upgrade_bonus = 0.50,
-active_type = "physical",
-active_is_dot = true,
-active_dot_time = 10,
-is_in_cooldown = false,
-active_cooldown = 30,
-shop_button = "warrior_soap_upgrade_button",
-skill_button = "skill_button_warrior_soap",
-level_text = "level_warrior_soap",
-shop_icon = "warrior_soap_icon",
-price_text = "value_warrior_soap",
-skill_icon = "skill_button_warrior_soap",
-cooldown_icon = "skill_cooldown_warrior_soap",
-icon_sprites = {
-	[5] = "weapon_level2",
-	[10] = "weapon_level3",
-	[15] = "weapon_level4"
-},
-skill_description = "Um guerreiro fraco, iniciante que dá dano utilizando espada."
+	isActive = true,
+	upgrade_level = 0,
+	upgrade_bonus = 1.00,
+	starting_price = 10,
+	price_bonus = 1.00,
+	passive_damage = 0.2,
+	passive_skill = click_skills.club,
+	active_damage = 10,
+	active_upgrade_bonus = 0.50,
+	active_type = "physical",
+	active_is_dot = true,
+	active_dot_time = 10,
+	is_in_cooldown = false,
+	active_cooldown = 30,
+	shop_button = "warrior_soap_upgrade_button",
+	skill_button = "skill_button_warrior_soap",
+	level_text = "level_warrior_soap",
+	shop_icon = "warrior_soap_icon",
+	price_text = "value_warrior_soap",
+	skill_icon = "skill_button_warrior_soap",
+	cooldown_icon = "skill_cooldown_warrior_soap",
+	icon_sprites = {
+		[5] = "weapon_level2",
+		[10] = "weapon_level3",
+		[15] = "weapon_level4"
+	},
+	skill_description = "Um guerreiro fraco, iniciante que dá dano utilizando espada."
 }
 
 
 skills.circus_mage = {
-upgrade_level = 0,
-upgrade_bonus = 1.00,
-starting_price = 5,
-price_bonus = 1.00,
-passive_damage = 5,
-passive_skill = click_skills.shiny_staff,
-active_damage = 10,
-active_upgrade_bonus = 0.75,
-active_type = "magic",
-active_is_dot = false,
-active_dot_time = 100,
-is_in_cooldown = false,
-active_cooldown = 60,
-shop_button = "circus_mage_upgrade_button",
-skill_button = "skill_button_circus_mage",
-level_text = "level_circus_mage",
-shop_icon = "shop_icon_circus_mage",
-price_text = "value_circus_mage",
-skill_icon = "skill_button_circus_mage",
-cooldown_icon = "skill_cooldown_circus_mage",
-icon_sprites = {
-	[5] = "weapon_level2",
-	[10] = "weapon_level3",
-	[15] = "weapon_level4"
-},
-skill_description = "Um mágico iniciante, utiliza cartolas e apetrechos de mágicos baratos."
+	isActive = true,
+	upgrade_level = 0,
+	upgrade_bonus = 1.00,
+	starting_price = 100,
+	price_bonus = 1.00,
+	passive_damage = 2,
+	passive_skill = click_skills.shiny_staff,
+	active_damage = 10,
+	active_upgrade_bonus = 0.75,
+	active_type = "magic",
+	active_is_dot = false,
+	active_dot_time = 100,
+	is_in_cooldown = false,
+	active_cooldown = 60,
+	shop_button = "circus_mage_upgrade_button",
+	skill_button = "skill_button_circus_mage",
+	level_text = "level_circus_mage",
+	shop_icon = "shop_icon_circus_mage",
+	price_text = "value_circus_mage",
+	skill_icon = "skill_button_circus_mage",
+	cooldown_icon = "skill_cooldown_circus_mage",
+	icon_sprites = {
+		[5] = "weapon_level2",
+		[10] = "weapon_level3",
+		[15] = "weapon_level4"
+	},
+	skill_description = "Um mágico iniciante, utiliza cartolas e apetrechos de mágicos baratos."
 }
 
 skills.guardian_twig = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
-	starting_price = 20,
+	starting_price = 260,
 	price_bonus = 1.00,
-	passive_damage = 20,
-	passive_skill = false,
+	passive_damage = 8,
+	passive_skill = click_skills.bolder,
 	active_damage = 50,
 	active_upgrade_bonus = 0.80,
 	active_type = "elemental",
@@ -93,11 +96,12 @@ skills.guardian_twig = {
 }
 
 skills.snapper = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
-	starting_price = 80,
+	starting_price = 980,
 	price_bonus = 1.00,
-	passive_damage = 80,
+	passive_damage = 25,
 	passive_skill = click_skills.bomb,
 	active_damage = 1000,
 	active_upgrade_bonus = 1.00,
@@ -122,11 +126,12 @@ skills.snapper = {
 }
 
 skills.gravedigger = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
-	starting_price = 250,
+	starting_price = 4050,
 	price_bonus = 1.00,
-	passive_damage = 250,
+	passive_damage = 43,
 	passive_skill = click_skills.grave_dirt,
 	active_damage = 3000,
 	active_upgrade_bonus = 1.00,
@@ -151,9 +156,10 @@ skills.gravedigger = {
 }
 
 skills.samurai = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
-	starting_price = 950,
+	starting_price = 19000,
 	price_bonus = 1.00,
 	passive_damage = 950,
 	passive_skill = click_skills.club,
@@ -180,12 +186,13 @@ skills.samurai = {
 }
 
 skills.detonator = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
-	starting_price = 3700,
+	starting_price = 100000,
 	price_bonus = 1.00,
 	passive_damage = 3700,
-	passive_skill = false,
+	passive_skill = click_skills.bomb,
 	active_damage = 13000,
 	active_upgrade_bonus = 1.25,
 	active_type = "explosive",
@@ -209,12 +216,13 @@ skills.detonator = {
 }
 
 skills.apprentice_mage = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
-	starting_price = 10500,
+	starting_price = 400000,
 	price_bonus = 1.00,
 	passive_damage = 10500,
-	passive_skill = false,
+	passive_skill = click_skills.shiny_staff,
 	active_damage = 30000,
 	active_upgrade_bonus = 1.45,
 	active_type = "magic",
@@ -238,12 +246,13 @@ skills.apprentice_mage = {
 }
 
 skills.young_necromancer = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
-	starting_price = 50000,
+	starting_price = 2250000,
 	price_bonus = 1.00,
 	passive_damage = 50000,
-	passive_skill = false,
+	passive_skill = click_skills.grave_dirt,
 	active_damage = 200000,
 	active_upgrade_bonus = 1.95,
 	active_type = "spiritual",
@@ -267,12 +276,13 @@ skills.young_necromancer = {
 }
 
 skills.magma = {
+	isActive = true,
 	upgrade_level = 0,
 	upgrade_bonus = 1.00,
-	starting_price = 195000,
+	starting_price = 15000000,
 	price_bonus = 1.00,
 	passive_damage = 195000,
-	passive_skill = false,
+	passive_skill = click_skills.bolder,
 	active_damage = 1000000,
 	active_upgrade_bonus = 2.50,
 	active_type = "elemental",
