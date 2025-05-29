@@ -1,5 +1,5 @@
 local cursor = {
-	upgrade_level = 1,
+	upgrade_level = 0,
 	damage_multiplier_per_level = 3.2,
 	click_damage = 1,
 
@@ -65,11 +65,12 @@ end
 
 function cursor.get_neutral_damage()
 	local final_click_dmg
-	if cursor.upgrade_level <= 1 then
-		final_click_dmg = _G.cursor.click_damage
-	else
-		local damage_multiplyer = _G.cursor.damage_multiplier_per_level * (_G.cursor.upgrade_level - 1)
+	if cursor.upgrade_level > 0 then
+		local damage_multiplyer = _G.cursor.damage_multiplier_per_level * (_G.cursor.upgrade_level)
 		final_click_dmg = _G.cursor.click_damage * damage_multiplyer
+	else
+		final_click_dmg = _G.cursor.click_damage
+		
 	end
 
 	return final_click_dmg

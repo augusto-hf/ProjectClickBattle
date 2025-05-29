@@ -54,7 +54,13 @@ function shop_buttons.CursorUpgrade(cursor)
 end
 
 function shop_buttons.SkillUpgrade(skill, has_a_passive, price_increase, is_cursor)
-	local price = ((((skill.upgrade_level + 1) * skill.starting_price)) * price_increase)
+	local price
+
+	if skill.upgrade_level > 0 then 
+		price = ((((skill.upgrade_level + 1) * skill.starting_price)) * price_increase)
+	else
+		price = skill.starting_price
+	end
 	
 	
 	if _G.Money > price or _G.Money == price then
