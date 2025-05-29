@@ -19,18 +19,22 @@ textures {
   name: "moeda_teste"
   texture: "/Resources/Tiles/moeda_teste.atlas"
 }
+textures {
+  name: "SlimeEnemy"
+  texture: "/Resources/Tiles/SlimeEnemy.atlas"
+}
 nodes {
   position {
     x: 523.0
-    y: 355.0
+    y: 392.0
   }
   scale {
-    x: 10.8916
-    y: 10.8916
-    z: 10.8916
+    x: 0.575077
+    y: 0.575077
+    z: 0.575077
   }
   type: TYPE_BOX
-  texture: "Icons/skull_enemyPlaceHolder"
+  texture: "SlimeEnemy/Green-Slime"
   id: "Enemy"
   layer: "Game"
   inherit_alpha: true
@@ -39,12 +43,12 @@ nodes {
 nodes {
   position {
     x: -0.021119
-    y: -11.366045
+    y: -289.58966
   }
   scale {
-    x: 0.15
-    y: 0.15
-    z: 0.15
+    x: 2.358
+    y: 2.358
+    z: 2.358
   }
   size {
     x: 300.0
@@ -60,12 +64,12 @@ nodes {
 nodes {
   position {
     x: -0.131712
-    y: -13.983368
+    y: -326.98492
   }
   scale {
-    x: 0.15
-    y: 0.15
-    z: 0.15
+    x: 2.328
+    y: 2.328
+    z: 2.328
   }
   size {
     x: 200.0

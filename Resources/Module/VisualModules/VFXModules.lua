@@ -1,6 +1,8 @@
 local vfx = {
 }
 
+local taking_damage_handle
+
 local coin_management = require "Resources.Module.VisualModules.CoinManagementModule"
 local temp_nodes = require "Resources.Module.VisualModules.Animation.TemporaryNodesAnimationsModule"
 local color = require "Resources.ExternalModules.convercolor"
@@ -43,7 +45,18 @@ local function trigger_enemy_shake(magnitude)
 	shake_timer = 20
 end 
 
+local function trigger_enemy_damage_sprite()
+	local time_on_damage_sprite = 0.33
+	
+	if taking_damage_handle ~= nil then timer.cancel(taking_damage_handle) end
 
+	gui.play_flipbook(_G.Enemy_node, hash("Green-Slime-HIT"))
+		
+	taking_damage_handle = timer.delay(time_on_damage_sprite, false, function()
+		gui.play_flipbook(_G.Enemy_node, hash("Green-Slime"))
+	end)
+		
+end
 
 local function damage_number_animation(is_cursor, damage_type, position, damage, magnitude)
 	if is_cursor then
@@ -144,6 +157,7 @@ end
 
 function vfx.trigger_damage_number_on_click(action, damage, type)
 	local damage_magnitude = (damage * 100) / _G.current_enemy.max_hp
+	trigger_enemy_damage_sprite()
 	trigger_enemy_shake(damage_magnitude)
 	damage_number_animation(true, type, vmath.vector3(action.x, action.y, 0), damage, damage_magnitude)
 end

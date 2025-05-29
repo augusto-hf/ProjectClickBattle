@@ -1,0 +1,7 @@
+images {
+  image: "/Resources/Sprites/Green-Slime.png"
+}
+images {
+  image: "/Resources/Sprites/Green-Slime-HIT.png"
+}
+extrude_borders: 2
