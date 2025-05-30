@@ -46,7 +46,7 @@ local function change_speed(input_id, input_action)
 end
 
 local function add_money(input_id, input_action)
-	local amount_to_add = 1000
+	local amount_to_add = 10000
 	
 	if  input_id == hash("key_g") and input_action.pressed then
 		_G.Money = _G.Money + amount_to_add

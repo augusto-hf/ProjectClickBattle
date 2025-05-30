@@ -2223,7 +2223,8 @@ nodes {
     y: 100.0
   }
   type: TYPE_TEXT
-  text: "1"
+  text: "0\n"
+  ""
   font: "Doom"
   id: "level_cursor"
   parent: "shop_icon_cursor"

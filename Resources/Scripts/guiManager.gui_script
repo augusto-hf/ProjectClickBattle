@@ -48,7 +48,7 @@ function init(self)
 	passive_skills_functions.update_tick_damage()
 	
 	timer.delay(_G.Numbers_update_speed, true, function()
-		
+		print("desgraça")
 		_G.damage.deal("neutral", _G.Clicks_per_second)
 	end)
 
