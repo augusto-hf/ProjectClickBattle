@@ -18,6 +18,7 @@ end
 function temp_nodes.number_animation_with_sprite(color, border_color, size, duration, position, text, sprite, isRotationRandom)
 	--print("position: ".. position)
 	local node = gui.new_text_node(position, text)
+	_G.num_format.set_gui_formatted_number(node, "", text)
 	gui.set_color(node, color)
 	gui.set_font(node, "Doom")
 	gui.set(node, "outline", border_color)
@@ -41,6 +42,7 @@ end
 
 function temp_nodes.number_animation(color, border_color, size, duration, position, text, isRotationRandom)
 	local node = gui.new_text_node(position, text)
+	_G.num_format.set_gui_formatted_number(node, "", text)
 	gui.set_color(node, color)
 	gui.set_font(node, "Doom")
 	gui.set(node, "outline", border_color)

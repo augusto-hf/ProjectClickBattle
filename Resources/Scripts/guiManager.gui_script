@@ -13,6 +13,7 @@ local is_respawning = false
 
 _G.perlin = require "Resources.ExternalModules.perlin"
 local seed = require "Resources.Module.InternalModules.SeedModule"
+_G.num_format = require "Resources.Module.VisualModules.NumberFormattingModule"
 _G.vfx = require "Resources.Module.VisualModules.VFXModules"
 _G.skills = require "Resources.Module.InfoModules.SkillsInfoModule"
 _G.damage = require "Resources.Module.InternalModules.DamageModule"
@@ -24,6 +25,7 @@ local combat_functions = require "Resources.Module.InternalModules.CombatModule"
 local shop_buttons = require "Resources.Module.ButtonsModules.ShopButtonsLib"
 local passive_skills_functions = require "Resources.Module.ButtonsModules.PassiveSkillsModule"
 local active_skills = require "Resources.Module.ButtonsModules.ActiveSkillsModule"
+
 local druid_manager = require "Resources.Module.InternalModules.DruidModules.DruidManagerModule"
 
 _G.current_enemy = enemy.respawner()
@@ -76,7 +78,7 @@ function update(self, dt)
 	druid_manager:update(dt)
 	
 	combat_functions.dealDamage()
-	gui.set_text(counter_text, math.floor(_G.Number_of_click))
+	_G.num_format.set_gui_formatted_number(counter_text, "", _G.Number_of_click)
 	
 	shop_buttons.UpdateShopInfo()
 	enemy.show_hp()

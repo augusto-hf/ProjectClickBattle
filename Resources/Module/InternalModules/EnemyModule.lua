@@ -72,7 +72,7 @@ end
 
 function enemy.show_hp()
 	local hp_value = gui.get_node("label_hp_value")
-	gui.set_text(hp_value, math.floor(_G.current_enemy.hp))
+	_G.num_format.set_gui_formatted_number(hp_value, "", _G.current_enemy.hp)
 end
 
 return enemy

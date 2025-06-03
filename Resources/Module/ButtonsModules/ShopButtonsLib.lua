@@ -31,7 +31,7 @@ function shop_buttons.unlock_skill(skill)
 end
 
 function shop_buttons.UpdateShopInfo()
-	gui.set_text(gui.get_node("label_money"), "Money: ".. _G.Money)
+	_G.num_format.set_gui_formatted_number(gui.get_node("label_money"),  "Money: ", _G.Money)
 
 	
 end
@@ -84,7 +84,7 @@ function shop_buttons.SkillUpgrade(skill, has_a_passive, price_increase, is_curs
 		gui.set_text(gui.get_node(skill.level_text), new_level)
 
 		local new_price = ((((skill.upgrade_level + 1) * skill.starting_price)) * price_increase)
-		gui.set_text(gui.get_node(skill.price_text), new_price)
+		_G.num_format.set_gui_formatted_number(gui.get_node(skill.price_text), "", new_price)
 
 		if skill.icon_sprites[new_level] ~= nil then
 			gui.play_flipbook(gui.get_node(skill.shop_icon), skill.icon_sprites[new_level])
