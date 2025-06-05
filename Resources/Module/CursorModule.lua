@@ -25,7 +25,6 @@ local cursor = {
 	}
 }
 
---desgraça
 local WIDTH = tonumber(sys.get_config("display.width")) 
 local HEIGHT = tonumber(sys.get_config("display.height")) 
 

@@ -9,6 +9,9 @@ local color = require "Resources.ExternalModules.convercolor"
 
 local black_color = color.rgba(0, 0, 0, 1)
 
+local pressed_button_color = color.hex("994d00")
+local unpressed_button_color = color.hex("cc80331")
+
 -- coins:
 local current_generated_coins = {}
 local duration_up = 0.15
@@ -189,5 +192,6 @@ function vfx.run_on_update_effects()
 		end
 	end
 end
+
 
 return vfx

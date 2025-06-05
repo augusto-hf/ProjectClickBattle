@@ -2230,6 +2230,201 @@ nodes {
   parent: "shop_icon_cursor"
   inherit_alpha: true
 }
+nodes {
+  position {
+    x: 757.0
+    y: 168.0
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "shop_buy_amounts"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: -53.0
+  }
+  scale {
+    x: 0.3256
+    y: 0.3256
+    z: 0.3256
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.6
+    y: 0.302
+    z: 0.0
+  }
+  type: TYPE_BOX
+  id: "shop_amount_to_buy_1"
+  parent: "shop_buy_amounts"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1.594828
+    y: -2.215515
+  }
+  scale {
+    x: 2.785559
+    y: 2.785559
+    z: 2.785559
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "x1"
+  font: "Doom"
+  id: "amount_to_buy_1"
+  parent: "shop_amount_to_buy_1"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: -20.0
+  }
+  scale {
+    x: 0.3256
+    y: 0.3256
+    z: 0.3256
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.8
+    y: 0.502
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "shop_amount_to_buy_10"
+  parent: "shop_buy_amounts"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1.594828
+    y: -2.215515
+  }
+  scale {
+    x: 2.785559
+    y: 2.785559
+    z: 2.785559
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "x10"
+  font: "Doom"
+  id: "amount_to_buy_10"
+  parent: "shop_amount_to_buy_10"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 13.0
+  }
+  scale {
+    x: 0.3256
+    y: 0.3256
+    z: 0.3256
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.8
+    y: 0.502
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "shop_amount_to_buy_25"
+  parent: "shop_buy_amounts"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1.594828
+    y: -2.215515
+  }
+  scale {
+    x: 2.785559
+    y: 2.785559
+    z: 2.785559
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "x25"
+  font: "Doom"
+  id: "amount_to_buy_25"
+  parent: "shop_amount_to_buy_25"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 46.0
+  }
+  scale {
+    x: 0.3256
+    y: 0.3256
+    z: 0.3256
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.8
+    y: 0.502
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "shop_amount_to_buy_100"
+  parent: "shop_buy_amounts"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1.594828
+    y: -2.215515
+  }
+  scale {
+    x: 2.284158
+    y: 2.284158
+    z: 2.284158
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "x100"
+  font: "Doom"
+  id: "amount_to_buy_100"
+  parent: "shop_amount_to_buy_100"
+  inherit_alpha: true
+}
 layers {
   name: "Game"
 }
