@@ -9,8 +9,8 @@ local color = require "Resources.ExternalModules.convercolor"
 
 local black_color = color.rgba(0, 0, 0, 1)
 
-local pressed_button_color = color.hex("994d00")
-local unpressed_button_color = color.hex("cc80331")
+local pressed_button_color = color.hex("994d00", 1)
+local unpressed_button_color = color.hex("cc80331", 1)
 
 -- coins:
 local current_generated_coins = {}
@@ -188,10 +188,46 @@ function vfx.run_on_update_effects()
 		gui.set_position(_G.Enemy_node, p)
 		shake_timer = shake_timer - 1
 		if shake_timer == 0 then
-			gui.set_position(_G.Enemy_node, _G.Enemy_node_position)	
+			gui.set_position(_G.Enemy_node, _G.Enemy_node_position)
 		end
 	end
 end
 
+function vfx.press_button(button_node, is_pressed)
+	local bt_color
+	
+	if is_pressed then 
+		bt_color = pressed_button_color
+	end
+	if not is_pressed then 
+		bt_color = unpressed_button_color
+	end
+		
+		
+	gui.set_color(button_node, color)
+end
+
+function vfx.swapping_increasing_button(current_button)
+	if gui.get_node(hash("shop_amount_to_buy_1")) then
+		gui.set_color(gui.get_node(hash("shop_amount_to_buy_1")), unpressed_button_color)
+	end
+
+	if gui.get_node(hash("shop_amount_to_buy_10")) then
+		gui.set_color(gui.get_node(hash("shop_amount_to_buy_10")), unpressed_button_color)
+	end
+
+	if gui.get_node(hash("shop_amount_to_buy_25")) then
+		gui.set_color(gui.get_node(hash("shop_amount_to_buy_25")), unpressed_button_color)
+	end
+
+	if gui.get_node(hash("shop_amount_to_buy_100")) then
+		gui.set_color(gui.get_node(hash("shop_amount_to_buy_100")), unpressed_button_color)
+	end
+
+	gui.set_color(current_button, pressed_button_color)
+
+	
+	
+end
 
 return vfx

@@ -131,5 +131,13 @@ function shop_buttons.SkillUpgrade(skill, has_a_passive, price_increase, is_curs
 	end
 end
 
+function shop_buttons.reset_increase_amount()
+	level_increase_amount = original_level_increase_amount
+end
+
+function shop_buttons.change_increase_amount(new_amount)
+	level_increase_amount = new_amount
+end
+
 
 return shop_buttons

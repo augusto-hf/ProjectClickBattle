@@ -113,6 +113,26 @@ function on_input(self, action_id, action)
 		if gui.pick_node(gui.get_node(hash("cursor_upgrade_button")), action.x, action.y)then
 			shop_buttons.SkillUpgrade(_G.cursor, false, _G.cursor.price_bonus, true)
 		end
+
+		if gui.pick_node(gui.get_node(hash("shop_amount_to_buy_1")), action.x, action.y)then
+			shop_buttons.reset_increase_amount()
+			_G.vfx.swapping_increasing_button(gui.get_node(hash("shop_amount_to_buy_1")))
+		end
+
+		if gui.pick_node(gui.get_node(hash("shop_amount_to_buy_10")), action.x, action.y)then
+			shop_buttons.change_increase_amount(10)
+			_G.vfx.swapping_increasing_button(gui.get_node(hash("shop_amount_to_buy_10")))
+		end
+
+		if gui.pick_node(gui.get_node(hash("shop_amount_to_buy_25")), action.x, action.y)then
+			shop_buttons.change_increase_amount(25)
+			_G.vfx.swapping_increasing_button(gui.get_node(hash("shop_amount_to_buy_25")))
+		end
+
+		if gui.pick_node(gui.get_node(hash("shop_amount_to_buy_100")), action.x, action.y)then
+			shop_buttons.change_increase_amount(100)
+			_G.vfx.swapping_increasing_button(gui.get_node(hash("shop_amount_to_buy_100")))
+		end
 		
 		for _, skill in ipairs(_G.skills.all_skills_passive_damage) do
 			-- shop
