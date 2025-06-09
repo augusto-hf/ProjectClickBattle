@@ -51,7 +51,10 @@ function num_format.set_gui_formatted_number(text_node, text_before_number, numb
 		formatted_number = formatted_number * 0.001
 	end
 
-	gui.set_text(text_node, text_before_number .. formatted_number .. symbol_after_number)
+	local number_string = tostring(formatted_number)
+	local number_to_text = string.sub(number_string, 1, 4)
+
+	gui.set_text(text_node, text_before_number .. number_to_text .. symbol_after_number)
 end
 
 return num_format
