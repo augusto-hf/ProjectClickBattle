@@ -64,7 +64,7 @@ function shop_buttons.CursorUpgrade(cursor)
 	end
 end
 
-local function price_prediction(skill, price_increase, level_increase)
+function shop_buttons.price_prediction(skill, price_increase, level_increase)
 	local current_price = 0
 	local current_skill_level = skill.upgrade_level
 	local final_skill_level = current_skill_level + level_increase
@@ -91,7 +91,7 @@ function shop_buttons.SkillUpgrade(skill, has_a_passive, price_increase, is_curs
 	
 	if level_increase < 1 or level_increase == nil then print("invalid level increase") return end
 	
-	local price = price_prediction(skill, price_increase, level_increase)
+	local price = shop_buttons.price_prediction(skill, price_increase, level_increase)
 	
 	if _G.Money > price or _G.Money == price then
 		_G.Money = _G.Money - price

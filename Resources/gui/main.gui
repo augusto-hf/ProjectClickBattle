@@ -23,6 +23,10 @@ textures {
   name: "SlimeEnemy"
   texture: "/Resources/Tiles/SlimeEnemy.atlas"
 }
+textures {
+  name: "moldura"
+  texture: "/Resources/Tiles/moldura.atlas"
+}
 nodes {
   position {
     x: 523.0
@@ -1242,6 +1246,22 @@ nodes {
   id: "level_magma"
   parent: "shop_icon_magma"
   inherit_alpha: true
+}
+nodes {
+  position {
+    x: -276.0
+  }
+  scale {
+    x: 0.089056
+    y: 0.1
+    z: 0.1
+  }
+  type: TYPE_BOX
+  texture: "moldura/moldura"
+  id: "buy_frame"
+  parent: "Shop"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {

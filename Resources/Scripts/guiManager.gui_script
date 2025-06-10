@@ -1,4 +1,4 @@
--- integer
+	-- integer
 _G.Numbers_update_speed = 1
 _G.Clicks_per_second = 0
 _G.Number_of_click = 0
@@ -84,6 +84,11 @@ function update(self, dt)
 	debug.manage_debug_info()
 	_G.vfx.run_on_update_effects()
 	
+	for _, skill in ipairs(_G.skills.all_skills_passive_damage) do
+		_G.vfx.show_buy_frame(skill)
+	
+		
+	end 
 	
 	if _G.current_enemy.hp <= 0 and _G.current_enemy.is_alive then
 		print("Enemy defeated. Current Enemy Index:", _G.Enemy_index)

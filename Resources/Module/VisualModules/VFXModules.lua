@@ -6,11 +6,15 @@ local taking_damage_handle
 local coin_management = require "Resources.Module.VisualModules.CoinManagementModule"
 local temp_nodes = require "Resources.Module.VisualModules.Animation.TemporaryNodesAnimationsModule"
 local color = require "Resources.ExternalModules.convercolor"
+local shop_buttons = require "Resources.Module.ButtonsModules.ShopButtonsLib"
 
 local black_color = color.rgba(0, 0, 0, 1)
 
 local pressed_button_color = color.hex("994d00", 1)
 local unpressed_button_color = color.hex("cc80331", 1)
+
+--buy frame 
+
 
 -- coins:
 local current_generated_coins = {}
@@ -225,9 +229,20 @@ function vfx.swapping_increasing_button(current_button)
 	end
 
 	gui.set_color(current_button, pressed_button_color)
+end
 
+function vfx.show_buy_frame(skill)
+	local frame_node = gui.get_node("buy_frame")
 	
-	
+	if skill.upgrade_level > 0 and gui.get_alpha(frame_node) > 0 then
+		if shop_buttons.price_prediction(skill, 1.0, 1) > _G.Money then
+			
+			local shop_skill_node = gui.get_node(skill.shop_button)
+			gui.set_position(frame_node, gui.get_position(shop_skill_node))
+			gui.set_alpha(frame_node, 1)
+			
+		end
+	end
 end
 
 return vfx
