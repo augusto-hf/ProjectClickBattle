@@ -1249,7 +1249,7 @@ nodes {
 }
 nodes {
   position {
-    x: -276.0
+    x: -279.0
   }
   scale {
     x: 0.089056
@@ -1260,6 +1260,19 @@ nodes {
   texture: "moldura/moldura"
   id: "buy_frame"
   parent: "Shop"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  scale {
+    x: 0.692616
+    y: 0.777732
+    z: 0.777732
+  }
+  type: TYPE_BOX
+  texture: "moldura/moldura"
+  id: "buy_frame1"
+  parent: "buy_frame"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }

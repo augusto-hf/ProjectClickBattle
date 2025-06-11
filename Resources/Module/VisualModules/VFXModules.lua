@@ -13,8 +13,11 @@ local black_color = color.rgba(0, 0, 0, 1)
 local pressed_button_color = color.hex("994d00", 1)
 local unpressed_button_color = color.hex("cc80331", 1)
 
---buy frame 
-
+-- frame 
+local frame_node
+local frame_animation_time = 2
+local frame_animation_max_size_multplier = 1.25
+local frame_current_target_skill
 
 -- coins:
 local current_generated_coins = {}
@@ -170,6 +173,13 @@ function vfx.trigger_damage_number_on_click(action, damage, type)
 end
 
 function vfx.setup()
+
+	--frame node setup
+	frame_node = gui.get_node("buy_frame")
+	
+	local frame_target_scale = gui.get_scale(frame_node) * frame_animation_max_size_multplier
+	gui.animate(frame_node, "scale", frame_target_scale, gui.EASING_INELASTIC, frame_animation_time, 0, nil, gui.PLAYBACK_LOOP_PINGPONG)
+	gui.set_alpha(frame_node, 0)
 	
 end
 
@@ -232,13 +242,15 @@ function vfx.swapping_increasing_button(current_button)
 end
 
 function vfx.show_buy_frame(skill)
-	local frame_node = gui.get_node("buy_frame")
 	
-	if skill.upgrade_level > 0 and gui.get_alpha(frame_node) > 0 then
-		if shop_buttons.price_prediction(skill, 1.0, 1) > _G.Money then
-			
+	
+	if skill.upgrade_level <= 0 then
+		if shop_buttons.price_prediction(skill, 1.0, 1) > _G.Money and frame_current_target_skill == nil then
+			print("hero feedback ".. skill.shop_button)
 			local shop_skill_node = gui.get_node(skill.shop_button)
-			gui.set_position(frame_node, gui.get_position(shop_skill_node))
+			
+			frame_current_target_skill = skill
+			gui.set_screen_position(frame_node, gui.get_screen_position(shop_skill_node))
 			gui.set_alpha(frame_node, 1)
 			
 		end
