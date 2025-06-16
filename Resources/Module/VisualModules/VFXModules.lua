@@ -205,6 +205,11 @@ function vfx.run_on_update_effects()
 			gui.set_position(_G.Enemy_node, _G.Enemy_node_position)
 		end
 	end
+
+	if	frame_current_target_skill ~= nil then
+		local shop_skill_node = gui.get_node(frame_current_target_skill.shop_button)
+		gui.set_screen_position(frame_node, gui.get_screen_position(shop_skill_node))
+	end
 end
 
 function vfx.press_button(button_node, is_pressed)
@@ -241,20 +246,37 @@ function vfx.swapping_increasing_button(current_button)
 	gui.set_color(current_button, pressed_button_color)
 end
 
-function vfx.show_buy_frame(skill)
+function vfx.show_buy_frame()
+	local skill_to_frame
 	
-	
-	if skill.upgrade_level <= 0 then
-		if shop_buttons.price_prediction(skill, 1.0, 1) > _G.Money and frame_current_target_skill == nil then
-			print("hero feedback ".. skill.shop_button)
-			local shop_skill_node = gui.get_node(skill.shop_button)
-			
-			frame_current_target_skill = skill
-			gui.set_screen_position(frame_node, gui.get_screen_position(shop_skill_node))
-			gui.set_alpha(frame_node, 1)
-			
+	if frame_current_target_skill ~= nil then
+		if frame_current_target_skill.upgrade_level > 0 then
+			frame_current_target_skill = nil
+			gui.set_alpha(frame_node, 0)
 		end
 	end
+	
+	for _, skill in ipairs(_G.skills.all_skills_passive_damage) do
+		
+		if skill.upgrade_level <= 0 and frame_current_target_skill == nil then
+			if shop_buttons.price_prediction(skill, 1.0, 1) <= _G.Money and frame_current_target_skill ~= skill then
+				skill_to_frame = skill
+				
+			end
+		end
+		
+	end 
+	
+	if skill_to_frame ~= nil then
+		print("hero feedback ".. skill_to_frame.shop_button)
+
+
+		frame_current_target_skill = skill_to_frame
+		
+
+		gui.set_alpha(frame_node, 1)
+	end
+	
 end
 
 return vfx
