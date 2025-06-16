@@ -1,0 +1,20 @@
+images {
+  image: "/builtins/assets/images/logo/logo_256.png"
+}
+images {
+  image: "/Resources/Sprites/heart.png"
+}
+images {
+  image: "/Resources/Sprites/heart_fill.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_8
+}
+images {
+  image: "/Resources/Sprites/heart_v2.png"
+}
+images {
+  image: "/Resources/Sprites/wave.png"
+}
+images {
+  image: "/Resources/Sprites/waveWhite.png"
+}
+extrude_borders: 2

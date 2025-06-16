@@ -27,15 +27,19 @@ textures {
   name: "moldura"
   texture: "/Resources/Tiles/moldura.atlas"
 }
+textures {
+  name: "HealthHeartTiles"
+  texture: "/Resources/Tiles/HealthHeartTiles.atlas"
+}
 nodes {
   position {
-    x: 523.0
-    y: 392.0
+    x: 480.0
+    y: 353.0
   }
   scale {
-    x: 0.575077
-    y: 0.575077
-    z: 0.575077
+    x: 0.391052
+    y: 0.391052
+    z: 0.391052
   }
   type: TYPE_BOX
   texture: "SlimeEnemy/Green-Slime"
@@ -85,6 +89,48 @@ nodes {
   id: "label_hp_value"
   parent: "Enemy"
   inherit_alpha: true
+}
+nodes {
+  position {
+    x: 385.52386
+  }
+  type: TYPE_BOX
+  texture: "HealthHeartTiles/heart"
+  id: "heart"
+  parent: "Enemy"
+  layer: "Hud"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 1.025398
+    y: -170.06201
+  }
+  type: TYPE_BOX
+  texture: "HealthHeartTiles/waveWhite"
+  id: "box"
+  parent: "heart"
+  layer: "Hud"
+  clipping_mode: CLIPPING_MODE_STENCIL
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    y: 174.2828
+  }
+  scale {
+    x: 1.00912
+    y: 1.00912
+    z: 1.00912
+  }
+  type: TYPE_BOX
+  texture: "HealthHeartTiles/heart_fill"
+  id: "heartFill"
+  parent: "box"
+  layer: "Hud"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
 }
 nodes {
   size {
@@ -1982,7 +2028,7 @@ nodes {
 }
 nodes {
   position {
-    x: 492.0
+    x: 480.0
     y: 169.0
   }
   scale {
@@ -2460,6 +2506,9 @@ nodes {
 }
 layers {
   name: "Game"
+}
+layers {
+  name: "Hud_under"
 }
 layers {
   name: "Hud"
