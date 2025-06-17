@@ -1089,7 +1089,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "moldura/moldura"
-  id: "frame_warrior_soap3"
+  id: "frame_snapper"
   parent: "shop_icon_snapper"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
@@ -1201,7 +1201,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "moldura/moldura"
-  id: "frame_warrior_soap4"
+  id: "frame_gravedigger"
   parent: "shop_icon_gravedigger"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
@@ -1313,7 +1313,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "moldura/moldura"
-  id: "frame_warrior_soap5"
+  id: "frame_samurai"
   parent: "shop_icon_samurai"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
@@ -1425,7 +1425,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "moldura/moldura"
-  id: "frame_warrior_soap6"
+  id: "frame_detonator"
   parent: "shop_icon_detonator"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
@@ -1537,7 +1537,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "moldura/moldura"
-  id: "frame_warrior_soap7"
+  id: "frame_apprentice_mage"
   parent: "shop_icon_apprentice_mage"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
@@ -1649,7 +1649,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "moldura/moldura"
-  id: "frame_warrior_soap8"
+  id: "frame_young_necromancer"
   parent: "shop_icon_young_necromancer"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
@@ -1761,7 +1761,7 @@ nodes {
   }
   type: TYPE_BOX
   texture: "moldura/moldura"
-  id: "frame_warrior_soap9"
+  id: "frame_magma"
   parent: "shop_icon_magma"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
