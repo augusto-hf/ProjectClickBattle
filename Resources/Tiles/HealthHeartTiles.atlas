@@ -6,7 +6,6 @@ images {
 }
 images {
   image: "/Resources/Sprites/heart_fill.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_8
 }
 images {
   image: "/Resources/Sprites/heart_v2.png"
@@ -16,5 +15,8 @@ images {
 }
 images {
   image: "/Resources/Sprites/waveWhite.png"
+}
+images {
+  image: "/Resources/Sprites/heart_bigger.png"
 }
 extrude_borders: 2

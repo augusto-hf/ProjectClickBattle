@@ -92,7 +92,7 @@ nodes {
 }
 nodes {
   position {
-    x: 385.52386
+    x: 400.8671
   }
   type: TYPE_BOX
   texture: "HealthHeartTiles/heart"
@@ -100,35 +100,20 @@ nodes {
   parent: "Enemy"
   layer: "Hud"
   inherit_alpha: true
+  clipping_inverted: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
-  position {
-    x: 1.025398
-    y: -170.06201
-  }
-  type: TYPE_BOX
-  texture: "HealthHeartTiles/waveWhite"
-  id: "box"
-  parent: "heart"
-  layer: "Hud"
-  clipping_mode: CLIPPING_MODE_STENCIL
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    y: 174.2828
-  }
   scale {
-    x: 1.00912
-    y: 1.00912
-    z: 1.00912
+    x: 0.969408
+    y: 0.969408
+    z: 0.969408
   }
   type: TYPE_BOX
   texture: "HealthHeartTiles/heart_fill"
-  id: "heartFill"
-  parent: "box"
-  layer: "Hud"
+  id: "box"
+  parent: "heart"
+  layer: "Hud_under"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -266,1059 +251,6 @@ nodes {
   id: "coin6"
   parent: "coins"
   layer: "Game"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: 480.0
-    y: 85.0
-  }
-  size {
-    x: 675.0
-    y: 125.0
-  }
-  color {
-    x: 0.8
-    y: 0.502
-    z: 0.2
-  }
-  type: TYPE_BOX
-  id: "Shop"
-  layer: "Hud"
-  inherit_alpha: true
-  clipping_mode: CLIPPING_MODE_STENCIL
-}
-nodes {
-  position {
-    x: 166.0
-  }
-  size {
-    x: 1000.0
-    y: 100.0
-  }
-  type: TYPE_BOX
-  id: "Shop_items"
-  parent: "Shop"
-  inherit_alpha: true
-  alpha: 0.0
-}
-nodes {
-  position {
-    x: -444.0
-  }
-  size {
-    x: 90.0
-    y: 100.0
-  }
-  color {
-    x: 0.4
-    y: 0.2
-    z: 0.4
-  }
-  type: TYPE_BOX
-  id: "warrior_soap_upgrade_button"
-  parent: "Shop_items"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-  visible: false
-}
-nodes {
-  position {
-    x: 1.0
-    y: -0.53355
-  }
-  scale {
-    x: 2.405104
-    y: 2.405104
-    z: 2.405104
-  }
-  type: TYPE_BOX
-  texture: "Icons/weapon_level1"
-  id: "warrior_soap_icon"
-  parent: "warrior_soap_upgrade_button"
-  layer: "Hud"
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -5.405172
-    y: -16.215515
-  }
-  scale {
-    x: 0.303552
-    y: 0.303552
-    z: 0.303552
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "level:"
-  font: "Doom"
-  id: "label_warrior_soap"
-  parent: "warrior_soap_icon"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    y: 15.799732
-  }
-  scale {
-    x: 0.434
-    y: 0.434
-    z: 0.434
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "value_warrior_soap"
-  parent: "warrior_soap_icon"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 10.39456
-    y: -16.215515
-  }
-  scale {
-    x: 0.3472
-    y: 0.3472
-    z: 0.3472
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "level_warrior_soap"
-  parent: "warrior_soap_icon"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: -344.0
-  }
-  size {
-    x: 90.0
-    y: 100.0
-  }
-  color {
-    x: 0.4
-    y: 0.2
-    z: 0.4
-  }
-  type: TYPE_BOX
-  id: "circus_mage_upgrade_button"
-  parent: "Shop_items"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-  visible: false
-}
-nodes {
-  position {
-    x: 1.0
-    y: -0.53355
-  }
-  scale {
-    x: 2.405104
-    y: 2.405104
-    z: 2.405104
-  }
-  type: TYPE_BOX
-  texture: "Icons/weapon_level1"
-  id: "shop_icon_circus_mage"
-  parent: "circus_mage_upgrade_button"
-  layer: "Hud"
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -5.405172
-    y: -16.215515
-  }
-  scale {
-    x: 0.303552
-    y: 0.303552
-    z: 0.303552
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "level:"
-  font: "Doom"
-  id: "label_circus_mage"
-  parent: "shop_icon_circus_mage"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    y: 15.799732
-  }
-  scale {
-    x: 0.434
-    y: 0.434
-    z: 0.434
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "value_circus_mage"
-  parent: "shop_icon_circus_mage"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 10.39456
-    y: -16.215515
-  }
-  scale {
-    x: 0.3472
-    y: 0.3472
-    z: 0.3472
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "level_circus_mage"
-  parent: "shop_icon_circus_mage"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: -244.0
-  }
-  size {
-    x: 90.0
-    y: 100.0
-  }
-  color {
-    x: 0.4
-    y: 0.2
-    z: 0.4
-  }
-  type: TYPE_BOX
-  id: "guardian_twig_upgrade_button"
-  parent: "Shop_items"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-  visible: false
-}
-nodes {
-  position {
-    x: 1.0
-    y: -0.53355
-  }
-  scale {
-    x: 2.405104
-    y: 2.405104
-    z: 2.405104
-  }
-  type: TYPE_BOX
-  texture: "Icons/weapon_level1"
-  id: "shop_icon_guardian_twig"
-  parent: "guardian_twig_upgrade_button"
-  layer: "Hud"
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -5.405172
-    y: -16.215515
-  }
-  scale {
-    x: 0.303552
-    y: 0.303552
-    z: 0.303552
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "level:"
-  font: "Doom"
-  id: "label_guardian_twig"
-  parent: "shop_icon_guardian_twig"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    y: 15.799732
-  }
-  scale {
-    x: 0.434
-    y: 0.434
-    z: 0.434
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "value_guardian_twig"
-  parent: "shop_icon_guardian_twig"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 10.39456
-    y: -16.215515
-  }
-  scale {
-    x: 0.3472
-    y: 0.3472
-    z: 0.3472
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "level_guardian_twig"
-  parent: "shop_icon_guardian_twig"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: -144.0
-  }
-  size {
-    x: 90.0
-    y: 100.0
-  }
-  color {
-    x: 0.4
-    y: 0.2
-    z: 0.4
-  }
-  type: TYPE_BOX
-  id: "snapper_upgrade_button"
-  parent: "Shop_items"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-  visible: false
-}
-nodes {
-  position {
-    x: 1.0
-    y: -0.53355
-  }
-  scale {
-    x: 2.405104
-    y: 2.405104
-    z: 2.405104
-  }
-  type: TYPE_BOX
-  texture: "Icons/weapon_level1"
-  id: "shop_icon_snapper"
-  parent: "snapper_upgrade_button"
-  layer: "Hud"
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -5.405172
-    y: -16.215515
-  }
-  scale {
-    x: 0.303552
-    y: 0.303552
-    z: 0.303552
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "level:"
-  font: "Doom"
-  id: "label_snapper"
-  parent: "shop_icon_snapper"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    y: 15.799732
-  }
-  scale {
-    x: 0.434
-    y: 0.434
-    z: 0.434
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "value_snapper"
-  parent: "shop_icon_snapper"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 10.39456
-    y: -16.215515
-  }
-  scale {
-    x: 0.3472
-    y: 0.3472
-    z: 0.3472
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "level_snapper"
-  parent: "shop_icon_snapper"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: -44.0
-  }
-  size {
-    x: 90.0
-    y: 100.0
-  }
-  color {
-    x: 0.4
-    y: 0.2
-    z: 0.4
-  }
-  type: TYPE_BOX
-  id: "gravedigger_upgrade_button"
-  parent: "Shop_items"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-  visible: false
-}
-nodes {
-  position {
-    x: 1.0
-    y: -0.53355
-  }
-  scale {
-    x: 2.405104
-    y: 2.405104
-    z: 2.405104
-  }
-  type: TYPE_BOX
-  texture: "Icons/weapon_level1"
-  id: "shop_icon_gravedigger"
-  parent: "gravedigger_upgrade_button"
-  layer: "Hud"
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -5.405172
-    y: -16.215515
-  }
-  scale {
-    x: 0.303552
-    y: 0.303552
-    z: 0.303552
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "level:"
-  font: "Doom"
-  id: "label_gravedigger"
-  parent: "shop_icon_gravedigger"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    y: 15.799732
-  }
-  scale {
-    x: 0.434
-    y: 0.434
-    z: 0.434
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "value_gravedigger"
-  parent: "shop_icon_gravedigger"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 10.39456
-    y: -16.215515
-  }
-  scale {
-    x: 0.3472
-    y: 0.3472
-    z: 0.3472
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "level_gravedigger"
-  parent: "shop_icon_gravedigger"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 56.0
-  }
-  size {
-    x: 90.0
-    y: 100.0
-  }
-  color {
-    x: 0.4
-    y: 0.2
-    z: 0.4
-  }
-  type: TYPE_BOX
-  id: "samurai_upgrade_button"
-  parent: "Shop_items"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-  visible: false
-}
-nodes {
-  position {
-    x: 1.0
-    y: -0.53355
-  }
-  scale {
-    x: 2.405104
-    y: 2.405104
-    z: 2.405104
-  }
-  type: TYPE_BOX
-  texture: "Icons/weapon_level1"
-  id: "shop_icon_samurai"
-  parent: "samurai_upgrade_button"
-  layer: "Hud"
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -5.405172
-    y: -16.215515
-  }
-  scale {
-    x: 0.303552
-    y: 0.303552
-    z: 0.303552
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "level:"
-  font: "Doom"
-  id: "label_samurai"
-  parent: "shop_icon_samurai"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    y: 15.799732
-  }
-  scale {
-    x: 0.434
-    y: 0.434
-    z: 0.434
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "value_samurai"
-  parent: "shop_icon_samurai"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 10.39456
-    y: -16.215515
-  }
-  scale {
-    x: 0.3472
-    y: 0.3472
-    z: 0.3472
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "level_samurai"
-  parent: "shop_icon_samurai"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 156.0
-  }
-  size {
-    x: 90.0
-    y: 100.0
-  }
-  color {
-    x: 0.4
-    y: 0.2
-    z: 0.4
-  }
-  type: TYPE_BOX
-  id: "detonator_upgrade_button"
-  parent: "Shop_items"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-  visible: false
-}
-nodes {
-  position {
-    x: 1.0
-    y: -0.53355
-  }
-  scale {
-    x: 2.405104
-    y: 2.405104
-    z: 2.405104
-  }
-  type: TYPE_BOX
-  texture: "Icons/weapon_level1"
-  id: "shop_icon_detonator"
-  parent: "detonator_upgrade_button"
-  layer: "Hud"
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -5.405172
-    y: -16.215515
-  }
-  scale {
-    x: 0.303552
-    y: 0.303552
-    z: 0.303552
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "level:"
-  font: "Doom"
-  id: "label_detonator"
-  parent: "shop_icon_detonator"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    y: 15.799732
-  }
-  scale {
-    x: 0.434
-    y: 0.434
-    z: 0.434
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "value_detonator"
-  parent: "shop_icon_detonator"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 10.39456
-    y: -16.215515
-  }
-  scale {
-    x: 0.3472
-    y: 0.3472
-    z: 0.3472
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "level_detonator"
-  parent: "shop_icon_detonator"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 256.0
-  }
-  size {
-    x: 90.0
-    y: 100.0
-  }
-  color {
-    x: 0.4
-    y: 0.2
-    z: 0.4
-  }
-  type: TYPE_BOX
-  id: "apprentice_mage_upgrade_button"
-  parent: "Shop_items"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-  visible: false
-}
-nodes {
-  position {
-    x: 1.0
-    y: -0.53355
-  }
-  scale {
-    x: 2.405104
-    y: 2.405104
-    z: 2.405104
-  }
-  type: TYPE_BOX
-  texture: "Icons/weapon_level1"
-  id: "shop_icon_apprentice_mage"
-  parent: "apprentice_mage_upgrade_button"
-  layer: "Hud"
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -5.405172
-    y: -16.215515
-  }
-  scale {
-    x: 0.303552
-    y: 0.303552
-    z: 0.303552
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "level:"
-  font: "Doom"
-  id: "label_apprentice_mage"
-  parent: "shop_icon_apprentice_mage"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    y: 15.799732
-  }
-  scale {
-    x: 0.434
-    y: 0.434
-    z: 0.434
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "value_apprentice_mage"
-  parent: "shop_icon_apprentice_mage"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 10.39456
-    y: -16.215515
-  }
-  scale {
-    x: 0.3472
-    y: 0.3472
-    z: 0.3472
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "level_apprentice_mage"
-  parent: "shop_icon_apprentice_mage"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 351.0
-  }
-  size {
-    x: 90.0
-    y: 100.0
-  }
-  color {
-    x: 0.4
-    y: 0.2
-    z: 0.4
-  }
-  type: TYPE_BOX
-  id: "young_necromancer_upgrade_button"
-  parent: "Shop_items"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-  visible: false
-}
-nodes {
-  position {
-    x: 1.0
-    y: -0.53355
-  }
-  scale {
-    x: 2.405104
-    y: 2.405104
-    z: 2.405104
-  }
-  type: TYPE_BOX
-  texture: "Icons/weapon_level1"
-  id: "shop_icon_young_necromancer"
-  parent: "young_necromancer_upgrade_button"
-  layer: "Hud"
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -5.405172
-    y: -16.215515
-  }
-  scale {
-    x: 0.303552
-    y: 0.303552
-    z: 0.303552
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "level:"
-  font: "Doom"
-  id: "label_young_necromancer"
-  parent: "shop_icon_young_necromancer"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    y: 15.799732
-  }
-  scale {
-    x: 0.434
-    y: 0.434
-    z: 0.434
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "value_young_necromancer"
-  parent: "shop_icon_young_necromancer"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 10.39456
-    y: -16.215515
-  }
-  scale {
-    x: 0.3472
-    y: 0.3472
-    z: 0.3472
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "level_young_necromancer"
-  parent: "shop_icon_young_necromancer"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 438.0
-  }
-  size {
-    x: 90.0
-    y: 100.0
-  }
-  color {
-    x: 0.4
-    y: 0.2
-    z: 0.4
-  }
-  type: TYPE_BOX
-  id: "magma_upgrade_button"
-  parent: "Shop_items"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-  visible: false
-}
-nodes {
-  position {
-    x: 1.0
-    y: -0.53355
-  }
-  scale {
-    x: 2.405104
-    y: 2.405104
-    z: 2.405104
-  }
-  type: TYPE_BOX
-  texture: "Icons/weapon_level1"
-  id: "shop_icon_magma"
-  parent: "magma_upgrade_button"
-  layer: "Hud"
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  position {
-    x: -5.405172
-    y: -16.215515
-  }
-  scale {
-    x: 0.303552
-    y: 0.303552
-    z: 0.303552
-  }
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "level:"
-  font: "Doom"
-  id: "label_magma"
-  parent: "shop_icon_magma"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    y: 15.799732
-  }
-  scale {
-    x: 0.434
-    y: 0.434
-    z: 0.434
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "value_magma"
-  parent: "shop_icon_magma"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: 10.39456
-    y: -16.215515
-  }
-  scale {
-    x: 0.3472
-    y: 0.3472
-    z: 0.3472
-  }
-  size {
-    x: 300.0
-    y: 100.0
-  }
-  type: TYPE_TEXT
-  text: "0"
-  font: "Doom"
-  id: "level_magma"
-  parent: "shop_icon_magma"
-  inherit_alpha: true
-}
-nodes {
-  position {
-    x: -279.0
-  }
-  scale {
-    x: 0.089056
-    y: 0.1
-    z: 0.1
-  }
-  type: TYPE_BOX
-  texture: "moldura/moldura"
-  id: "buy_frame"
-  parent: "Shop"
-  inherit_alpha: true
-  size_mode: SIZE_MODE_AUTO
-}
-nodes {
-  scale {
-    x: 0.692616
-    y: 0.777732
-    z: 0.777732
-  }
-  type: TYPE_BOX
-  texture: "moldura/moldura"
-  id: "buy_frame1"
-  parent: "buy_frame"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -1677,6 +609,1161 @@ nodes {
   id: "skill_cooldown_magma"
   parent: "skill_button_magma"
   pieFillAngle: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 480.0
+    y: 85.0
+  }
+  size {
+    x: 675.0
+    y: 125.0
+  }
+  color {
+    x: 0.8
+    y: 0.502
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "Shop"
+  layer: "Hud_under"
+  inherit_alpha: true
+  clipping_mode: CLIPPING_MODE_STENCIL
+}
+nodes {
+  position {
+    x: 166.0
+  }
+  size {
+    x: 1000.0
+    y: 100.0
+  }
+  type: TYPE_BOX
+  id: "Shop_items"
+  parent: "Shop"
+  layer: "Hud_under"
+  inherit_alpha: true
+  alpha: 0.0
+}
+nodes {
+  position {
+    x: -444.0
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.2
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "warrior_soap_upgrade_button"
+  parent: "Shop_items"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 1.0
+    y: -0.53355
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "warrior_soap_icon"
+  parent: "warrior_soap_upgrade_button"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -5.405172
+    y: -16.215515
+  }
+  scale {
+    x: 0.303552
+    y: 0.303552
+    z: 0.303552
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "Doom"
+  id: "label_warrior_soap"
+  parent: "warrior_soap_icon"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 15.799732
+  }
+  scale {
+    x: 0.434
+    y: 0.434
+    z: 0.434
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "value_warrior_soap"
+  parent: "warrior_soap_icon"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 10.39456
+    y: -16.215515
+  }
+  scale {
+    x: 0.3472
+    y: 0.3472
+    z: 0.3472
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "level_warrior_soap"
+  parent: "warrior_soap_icon"
+  inherit_alpha: true
+}
+nodes {
+  scale {
+    x: 0.036115
+    y: 0.044916
+    z: 0.036115
+  }
+  type: TYPE_BOX
+  texture: "moldura/moldura"
+  id: "frame_warrior_soap"
+  parent: "warrior_soap_icon"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -344.0
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.2
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "circus_mage_upgrade_button"
+  parent: "Shop_items"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 1.0
+    y: -0.53355
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "shop_icon_circus_mage"
+  parent: "circus_mage_upgrade_button"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -5.405172
+    y: -16.215515
+  }
+  scale {
+    x: 0.303552
+    y: 0.303552
+    z: 0.303552
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "Doom"
+  id: "label_circus_mage"
+  parent: "shop_icon_circus_mage"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 15.799732
+  }
+  scale {
+    x: 0.434
+    y: 0.434
+    z: 0.434
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "value_circus_mage"
+  parent: "shop_icon_circus_mage"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 10.39456
+    y: -16.215515
+  }
+  scale {
+    x: 0.3472
+    y: 0.3472
+    z: 0.3472
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "level_circus_mage"
+  parent: "shop_icon_circus_mage"
+  inherit_alpha: true
+}
+nodes {
+  scale {
+    x: 0.036115
+    y: 0.044916
+    z: 0.036115
+  }
+  type: TYPE_BOX
+  texture: "moldura/moldura"
+  id: "frame_circus_mage"
+  parent: "shop_icon_circus_mage"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -244.0
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.2
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "guardian_twig_upgrade_button"
+  parent: "Shop_items"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 1.0
+    y: -0.53355
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "shop_icon_guardian_twig"
+  parent: "guardian_twig_upgrade_button"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -5.405172
+    y: -16.215515
+  }
+  scale {
+    x: 0.303552
+    y: 0.303552
+    z: 0.303552
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "Doom"
+  id: "label_guardian_twig"
+  parent: "shop_icon_guardian_twig"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 15.799732
+  }
+  scale {
+    x: 0.434
+    y: 0.434
+    z: 0.434
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "value_guardian_twig"
+  parent: "shop_icon_guardian_twig"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 10.39456
+    y: -16.215515
+  }
+  scale {
+    x: 0.3472
+    y: 0.3472
+    z: 0.3472
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "level_guardian_twig"
+  parent: "shop_icon_guardian_twig"
+  inherit_alpha: true
+}
+nodes {
+  scale {
+    x: 0.036115
+    y: 0.044916
+    z: 0.036115
+  }
+  type: TYPE_BOX
+  texture: "moldura/moldura"
+  id: "frame_guardian_twig"
+  parent: "shop_icon_guardian_twig"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -144.0
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.2
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "snapper_upgrade_button"
+  parent: "Shop_items"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 1.0
+    y: -0.53355
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "shop_icon_snapper"
+  parent: "snapper_upgrade_button"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -5.405172
+    y: -16.215515
+  }
+  scale {
+    x: 0.303552
+    y: 0.303552
+    z: 0.303552
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "Doom"
+  id: "label_snapper"
+  parent: "shop_icon_snapper"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 15.799732
+  }
+  scale {
+    x: 0.434
+    y: 0.434
+    z: 0.434
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "value_snapper"
+  parent: "shop_icon_snapper"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 10.39456
+    y: -16.215515
+  }
+  scale {
+    x: 0.3472
+    y: 0.3472
+    z: 0.3472
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "level_snapper"
+  parent: "shop_icon_snapper"
+  inherit_alpha: true
+}
+nodes {
+  scale {
+    x: 0.036115
+    y: 0.044916
+    z: 0.036115
+  }
+  type: TYPE_BOX
+  texture: "moldura/moldura"
+  id: "frame_warrior_soap3"
+  parent: "shop_icon_snapper"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -44.0
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.2
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "gravedigger_upgrade_button"
+  parent: "Shop_items"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 1.0
+    y: -0.53355
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "shop_icon_gravedigger"
+  parent: "gravedigger_upgrade_button"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -5.405172
+    y: -16.215515
+  }
+  scale {
+    x: 0.303552
+    y: 0.303552
+    z: 0.303552
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "Doom"
+  id: "label_gravedigger"
+  parent: "shop_icon_gravedigger"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 15.799732
+  }
+  scale {
+    x: 0.434
+    y: 0.434
+    z: 0.434
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "value_gravedigger"
+  parent: "shop_icon_gravedigger"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 10.39456
+    y: -16.215515
+  }
+  scale {
+    x: 0.3472
+    y: 0.3472
+    z: 0.3472
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "level_gravedigger"
+  parent: "shop_icon_gravedigger"
+  inherit_alpha: true
+}
+nodes {
+  scale {
+    x: 0.036115
+    y: 0.044916
+    z: 0.036115
+  }
+  type: TYPE_BOX
+  texture: "moldura/moldura"
+  id: "frame_warrior_soap4"
+  parent: "shop_icon_gravedigger"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 56.0
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.2
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "samurai_upgrade_button"
+  parent: "Shop_items"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 1.0
+    y: -0.53355
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "shop_icon_samurai"
+  parent: "samurai_upgrade_button"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -5.405172
+    y: -16.215515
+  }
+  scale {
+    x: 0.303552
+    y: 0.303552
+    z: 0.303552
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "Doom"
+  id: "label_samurai"
+  parent: "shop_icon_samurai"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 15.799732
+  }
+  scale {
+    x: 0.434
+    y: 0.434
+    z: 0.434
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "value_samurai"
+  parent: "shop_icon_samurai"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 10.39456
+    y: -16.215515
+  }
+  scale {
+    x: 0.3472
+    y: 0.3472
+    z: 0.3472
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "level_samurai"
+  parent: "shop_icon_samurai"
+  inherit_alpha: true
+}
+nodes {
+  scale {
+    x: 0.036115
+    y: 0.044916
+    z: 0.036115
+  }
+  type: TYPE_BOX
+  texture: "moldura/moldura"
+  id: "frame_warrior_soap5"
+  parent: "shop_icon_samurai"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 156.0
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.2
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "detonator_upgrade_button"
+  parent: "Shop_items"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 1.0
+    y: -0.53355
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "shop_icon_detonator"
+  parent: "detonator_upgrade_button"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -5.405172
+    y: -16.215515
+  }
+  scale {
+    x: 0.303552
+    y: 0.303552
+    z: 0.303552
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "Doom"
+  id: "label_detonator"
+  parent: "shop_icon_detonator"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 15.799732
+  }
+  scale {
+    x: 0.434
+    y: 0.434
+    z: 0.434
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "value_detonator"
+  parent: "shop_icon_detonator"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 10.39456
+    y: -16.215515
+  }
+  scale {
+    x: 0.3472
+    y: 0.3472
+    z: 0.3472
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "level_detonator"
+  parent: "shop_icon_detonator"
+  inherit_alpha: true
+}
+nodes {
+  scale {
+    x: 0.036115
+    y: 0.044916
+    z: 0.036115
+  }
+  type: TYPE_BOX
+  texture: "moldura/moldura"
+  id: "frame_warrior_soap6"
+  parent: "shop_icon_detonator"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 256.0
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.2
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "apprentice_mage_upgrade_button"
+  parent: "Shop_items"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 1.0
+    y: -0.53355
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "shop_icon_apprentice_mage"
+  parent: "apprentice_mage_upgrade_button"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -5.405172
+    y: -16.215515
+  }
+  scale {
+    x: 0.303552
+    y: 0.303552
+    z: 0.303552
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "Doom"
+  id: "label_apprentice_mage"
+  parent: "shop_icon_apprentice_mage"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 15.799732
+  }
+  scale {
+    x: 0.434
+    y: 0.434
+    z: 0.434
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "value_apprentice_mage"
+  parent: "shop_icon_apprentice_mage"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 10.39456
+    y: -16.215515
+  }
+  scale {
+    x: 0.3472
+    y: 0.3472
+    z: 0.3472
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "level_apprentice_mage"
+  parent: "shop_icon_apprentice_mage"
+  inherit_alpha: true
+}
+nodes {
+  scale {
+    x: 0.036115
+    y: 0.044916
+    z: 0.036115
+  }
+  type: TYPE_BOX
+  texture: "moldura/moldura"
+  id: "frame_warrior_soap7"
+  parent: "shop_icon_apprentice_mage"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 351.0
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.2
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "young_necromancer_upgrade_button"
+  parent: "Shop_items"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 1.0
+    y: -0.53355
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "shop_icon_young_necromancer"
+  parent: "young_necromancer_upgrade_button"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -5.405172
+    y: -16.215515
+  }
+  scale {
+    x: 0.303552
+    y: 0.303552
+    z: 0.303552
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "Doom"
+  id: "label_young_necromancer"
+  parent: "shop_icon_young_necromancer"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 15.799732
+  }
+  scale {
+    x: 0.434
+    y: 0.434
+    z: 0.434
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "value_young_necromancer"
+  parent: "shop_icon_young_necromancer"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 10.39456
+    y: -16.215515
+  }
+  scale {
+    x: 0.3472
+    y: 0.3472
+    z: 0.3472
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "level_young_necromancer"
+  parent: "shop_icon_young_necromancer"
+  inherit_alpha: true
+}
+nodes {
+  scale {
+    x: 0.036115
+    y: 0.044916
+    z: 0.036115
+  }
+  type: TYPE_BOX
+  texture: "moldura/moldura"
+  id: "frame_warrior_soap8"
+  parent: "shop_icon_young_necromancer"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 438.0
+  }
+  size {
+    x: 90.0
+    y: 100.0
+  }
+  color {
+    x: 0.4
+    y: 0.2
+    z: 0.4
+  }
+  type: TYPE_BOX
+  id: "magma_upgrade_button"
+  parent: "Shop_items"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+  visible: false
+}
+nodes {
+  position {
+    x: 1.0
+    y: -0.53355
+  }
+  scale {
+    x: 2.405104
+    y: 2.405104
+    z: 2.405104
+  }
+  type: TYPE_BOX
+  texture: "Icons/weapon_level1"
+  id: "shop_icon_magma"
+  parent: "magma_upgrade_button"
+  layer: "Hud"
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -5.405172
+    y: -16.215515
+  }
+  scale {
+    x: 0.303552
+    y: 0.303552
+    z: 0.303552
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "level:"
+  font: "Doom"
+  id: "label_magma"
+  parent: "shop_icon_magma"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    y: 15.799732
+  }
+  scale {
+    x: 0.434
+    y: 0.434
+    z: 0.434
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "value_magma"
+  parent: "shop_icon_magma"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 10.39456
+    y: -16.215515
+  }
+  scale {
+    x: 0.3472
+    y: 0.3472
+    z: 0.3472
+  }
+  size {
+    x: 300.0
+    y: 100.0
+  }
+  type: TYPE_TEXT
+  text: "0"
+  font: "Doom"
+  id: "level_magma"
+  parent: "shop_icon_magma"
+  inherit_alpha: true
+}
+nodes {
+  scale {
+    x: 0.036115
+    y: 0.044916
+    z: 0.036115
+  }
+  type: TYPE_BOX
+  texture: "moldura/moldura"
+  id: "frame_warrior_soap9"
+  parent: "shop_icon_magma"
+  inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
@@ -2185,6 +2272,7 @@ nodes {
   font: "Doom"
   id: "label_shop"
   parent: "debug_info"
+  layer: "Debug"
   inherit_alpha: true
 }
 nodes {
