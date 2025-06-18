@@ -3,36 +3,20 @@ images {
   sprite_trim_mode: SPRITE_TRIM_MODE_8
 }
 images {
-  image: "/Resources/Sprites/heart.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_8
-}
-images {
-  image: "/Resources/Sprites/heart_v2.png"
-}
-images {
   image: "/Resources/Sprites/wave.png"
 }
 images {
   image: "/Resources/Sprites/waveWhite.png"
 }
 images {
-  image: "/Resources/Sprites/heart_bigger.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_8
-}
-images {
-  image: "/Resources/Sprites/heart_fill2.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_8
-}
-images {
-  image: "/Resources/Sprites/heart_fill5.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_8
-}
-images {
-  image: "/Resources/Sprites/heart_poligonal.png"
-  sprite_trim_mode: SPRITE_TRIM_MODE_8
-}
-images {
   image: "/Resources/Sprites/heart_poligonal_v2.png"
+  sprite_trim_mode: SPRITE_TRIM_MODE_8
+}
+images {
+  image: "/Resources/Sprites/heart_frame_v2.png"
+}
+images {
+  image: "/Resources/Sprites/heart_poligonal_v3.png"
   sprite_trim_mode: SPRITE_TRIM_MODE_8
 }
 extrude_borders: 2
