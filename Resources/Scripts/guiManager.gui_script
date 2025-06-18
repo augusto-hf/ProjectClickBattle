@@ -58,7 +58,7 @@ function init(self)
 	end)
 	
 	timer.delay(0.5, true, function()
-		_G.vfx.show_buy_frame()
+		--_G.vfx.show_buy_frame()
 	end)
 	
 	gui.set_text(gui.get_node(_G.cursor.price_text), math.max(_G.cursor.starting_price, _G.cursor.upgrade_level * _G.cursor.starting_price))

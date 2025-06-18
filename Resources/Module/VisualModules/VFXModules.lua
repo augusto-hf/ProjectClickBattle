@@ -175,11 +175,11 @@ end
 function vfx.setup()
 
 	--frame node setup
-	frame_node = gui.get_node("buy_frame")
+--	frame_node = gui.get_node("buy_frame")
 	
-	local frame_target_scale = gui.get_scale(frame_node) * frame_animation_max_size_multplier
-	gui.animate(frame_node, "scale", frame_target_scale, gui.EASING_INELASTIC, frame_animation_time, 0, nil, gui.PLAYBACK_LOOP_PINGPONG)
-	gui.set_alpha(frame_node, 0)
+--	local frame_target_scale = gui.get_scale(frame_node) * frame_animation_max_size_multplier
+--	gui.animate(frame_node, "scale", frame_target_scale, gui.EASING_INELASTIC, frame_animation_time, 0, nil, gui.PLAYBACK_LOOP_PINGPONG)
+--	gui.set_alpha(frame_node, 0)
 	
 end
 

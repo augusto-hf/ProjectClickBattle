@@ -93,27 +93,123 @@ nodes {
 nodes {
   position {
     x: 400.8671
+    y: -5.11441
   }
   type: TYPE_BOX
   texture: "HealthHeartTiles/heart"
   id: "heart"
   parent: "Enemy"
-  layer: "Hud"
+  layer: "Debug"
   inherit_alpha: true
   clipping_inverted: true
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
+  position {
+    y: -70.775955
+  }
   scale {
-    x: 0.969408
-    y: 0.969408
-    z: 0.969408
+    x: 1.791313
+    y: 7.851175
+    z: 3.04
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_PIE
+  id: "pie2"
+  parent: "heart"
+  layer: "Game"
+  innerRadius: 90.0
+  clipping_mode: CLIPPING_MODE_STENCIL
+  clipping_inverted: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: -0.861377
+    y: 89.358185
+  }
+  scale {
+    x: 2.304655
+    y: 1.815203
+    z: 1.815203
+  }
+  size {
+    x: 100.0
+    y: 100.0
+  }
+  type: TYPE_PIE
+  id: "pie1"
+  parent: "pie2"
+  layer: "Game"
+  innerRadius: 90.0
+  clipping_mode: CLIPPING_MODE_STENCIL
+  clipping_inverted: true
+  alpha: 0.0
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 0.6
+    y: -31.510273
+  }
+  scale {
+    x: 0.115261
+    y: 0.166502
+    z: 0.063504
+  }
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  type: TYPE_PIE
+  id: "pie"
+  parent: "pie1"
+  layer: "Hud_bottom"
+  perimeterVertices: 22
+  clipping_mode: CLIPPING_MODE_STENCIL
+  clipping_inverted: true
+  alpha: 0.0
+}
+nodes {
+  position {
+    x: -1.565111
+    y: -75.53167
+  }
+  scale {
+    x: 2.027937
+    y: 0.391234
+    z: 0.754126
+  }
+  size {
+    x: 208.0
+    y: 180.0
   }
   type: TYPE_BOX
-  texture: "HealthHeartTiles/heart_fill"
-  id: "box"
-  parent: "heart"
+  texture: "HealthHeartTiles/heart_fill2"
+  id: "heart_fill"
+  parent: "pie"
   layer: "Hud_under"
+  clipping_mode: CLIPPING_MODE_STENCIL
+}
+nodes {
+  position {
+    x: 142.4337
+    y: 18.567575
+  }
+  scale {
+    x: 0.75
+    y: 0.75
+    z: 0.75
+  }
+  type: TYPE_BOX
+  texture: "HealthHeartTiles/waveWhite"
+  id: "box1"
+  parent: "heart_fill"
+  layer: "Hud"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -2594,6 +2690,9 @@ nodes {
 }
 layers {
   name: "Game"
+}
+layers {
+  name: "Hud_bottom"
 }
 layers {
   name: "Hud_under"
